@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { CityGrid } from "@/components/splash/CityGrid";
 import { CitySearch } from "@/components/splash/CitySearch";
 import { GeoBanner } from "@/components/splash/GeoBanner";
@@ -38,21 +39,21 @@ export default function SplashPage() {
         />
       )}
 
-      {/* ── Background cinematográfico ── */}
+      {/* ── Background — foto real ── */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Gradient radial vermelho sutil no centro */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_40%,rgba(255,59,48,0.06)_0%,transparent_70%)]" />
-        {/* Grid pattern sutil */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
+        <Image
+          src="/hero-splash.jpg"
+          alt="LED wall concert hall"
+          fill
+          priority
+          className="object-cover object-center"
         />
-        {/* Vignette */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_100%_at_50%_50%,transparent_50%,rgba(0,0,0,0.7)_100%)]" />
+        {/* Escurecimento para legibilidade do texto */}
+        <div className="absolute inset-0 bg-black/65" />
+        {/* Vignette nas bordas */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_100%_at_50%_50%,transparent_40%,rgba(0,0,0,0.6)_100%)]" />
+        {/* Tom vermelho sutil no centro */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_40%,rgba(255,59,48,0.08)_0%,transparent_70%)]" />
       </div>
 
       {/* ── Conteúdo ── */}
