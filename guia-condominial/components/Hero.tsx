@@ -216,15 +216,13 @@ export default function Hero() {
           </div>
 
           {/* Logo completa estática abaixo da bússola */}
-          <div className="relative" style={{ width: 340, height: 120 }}>
+          <div className="relative" style={{ width: 280, height: 84 }}>
             <Image
-              src="/logo-guia-new.png"
+              src="/logo-nova.png"
               alt="Guia Gestão Condominial"
               fill
               className="object-contain"
               draggable={false}
-              unoptimized
-              style={{ mixBlendMode: 'lighten' }}
             />
           </div>
         </div>
