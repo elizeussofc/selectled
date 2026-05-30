@@ -96,9 +96,9 @@ export default function Hero() {
 
             {/* Logo completa estática abaixo da bússola mobile */}
             <div className="flex justify-center mt-5">
-              <div className="relative" style={{ width: 280, height: 100, background: 'transparent' }}>
+              <div className="relative" style={{ width: 280, height: 100 }}>
                 <Image
-                  src="/logo-guia-new.png"
+                  src="/logo-nova.png"
                   alt="Guia Gestão Condominial"
                   fill
                   className="object-contain"
@@ -216,7 +216,7 @@ export default function Hero() {
           </div>
 
           {/* Logo completa estática abaixo da bússola */}
-          <div className="relative" style={{ width: 340, height: 120, background: 'transparent' }}>
+          <div className="relative" style={{ width: 340, height: 120 }}>
             <Image
               src="/logo-guia-new.png"
               alt="Guia Gestão Condominial"
@@ -224,6 +224,7 @@ export default function Hero() {
               className="object-contain"
               draggable={false}
               unoptimized
+              style={{ mixBlendMode: 'lighten' }}
             />
           </div>
         </div>
