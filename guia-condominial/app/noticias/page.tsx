@@ -91,7 +91,7 @@ export default async function NoticiasPage() {
             <h1
               className="font-display font-black leading-none tracking-tight"
               style={{
-                fontSize: 'clamp(80px, 18vw, 180px)',
+                fontSize: 'clamp(52px, 9vw, 96px)',
                 color: '#D0B273',
                 textShadow: '0 4px 40px rgba(183,136,40,.25)',
                 letterSpacing: '-0.02em',

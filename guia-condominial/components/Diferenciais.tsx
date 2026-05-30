@@ -32,16 +32,26 @@ export default function Diferenciais() {
               Gestão de confiança
             </div>
 
-            {/* Photo — fundo transparente */}
-            <Image
-              src="/guia-oficial.png"
-              alt="Diretor da Guia Gestão Condominial — Brasília-DF"
-              width={500}
-              height={600}
-              className="w-full object-contain drop-shadow-2xl"
-              style={{ filter: 'drop-shadow(0 24px 48px rgba(2,26,41,.6))' }}
-              priority
-            />
+            {/* Photo — fundo transparente com fade na base */}
+            <div className="relative">
+              <Image
+                src="/guia-oficial.png"
+                alt="Diretor da Guia Gestão Condominial — Brasília-DF"
+                width={500}
+                height={600}
+                className="w-full object-contain"
+                priority
+              />
+              {/* Fade suave na base — dissolve o corte */}
+              <div
+                className="absolute bottom-0 left-0 w-full"
+                style={{
+                  height: '35%',
+                  background: 'linear-gradient(to top, #021A29 0%, #021A29 18%, rgba(2,26,41,0.6) 55%, transparent 100%)',
+                  pointerEvents: 'none',
+                }}
+              />
+            </div>
 
             {/* Badge bottom-right: 15 anos */}
             <div

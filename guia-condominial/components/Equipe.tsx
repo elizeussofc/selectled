@@ -60,9 +60,6 @@ export default function Equipe() {
           ))}
         </div>
 
-        <p className="text-center text-[13px] mt-6" style={{ color: '#7A919E' }}>
-          * Fotos ilustrativas. Imagens reais da equipe e do escritório em breve.
-        </p>
 
       </div>
     </section>
