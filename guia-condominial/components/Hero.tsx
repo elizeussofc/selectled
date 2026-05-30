@@ -80,7 +80,7 @@ export default function Hero() {
               />
               <div
                 className={`relative rounded-full overflow-hidden shadow-2xl ${compassState === 'spin' ? 'compass-spin' : 'compass-idle'}`}
-                style={{ width: 220, height: 220 }}
+                style={{ width: 180, height: 180 }}
                 onAnimationEnd={handleAnimationEnd}
               >
                 <Image
@@ -96,9 +96,9 @@ export default function Hero() {
 
             {/* Logo completa estática abaixo da bússola mobile */}
             <div className="flex justify-center mt-5">
-              <div className="relative" style={{ width: 200, height: 60 }}>
+              <div className="relative" style={{ width: 280, height: 100 }}>
                 <Image
-                  src="/logo-nova.png"
+                  src="/logo-guia-new.png"
                   alt="Guia Gestão Condominial"
                   fill
                   className="object-contain"
@@ -200,7 +200,7 @@ export default function Hero() {
             {/* Ícone da bússola */}
             <div
               className={`relative rounded-full overflow-hidden shadow-2xl ${compassState === 'spin' ? 'compass-spin' : 'compass-idle'}`}
-              style={{ width: 360, height: 360 }}
+              style={{ width: 300, height: 300 }}
               onAnimationEnd={handleAnimationEnd}
             >
               <Image
@@ -215,9 +215,9 @@ export default function Hero() {
           </div>
 
           {/* Logo completa estática abaixo da bússola */}
-          <div className="relative" style={{ width: 240, height: 72 }}>
+          <div className="relative" style={{ width: 340, height: 120 }}>
             <Image
-              src="/logo-nova.png"
+              src="/logo-guia-new.png"
               alt="Guia Gestão Condominial"
               fill
               className="object-contain"
