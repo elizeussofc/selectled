@@ -113,7 +113,7 @@ export default async function PaineisLEDPage({ params }: Props) {
                 </p>
                 <h1
                   className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-5 leading-tight"
-                  style={{ fontFamily: "var(--font-space)", letterSpacing: "-0.03em" }}
+                  style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.03em" }}
                 >
                   Locação de Painel de LED em {city.name}
                 </h1>
@@ -140,7 +140,7 @@ export default async function PaineisLEDPage({ params }: Props) {
 
               {/* Deliverables */}
               <div className="bg-[#141414] border border-[#2C2C2E] rounded-2xl p-6">
-                <p className="text-sm font-semibold text-white mb-4" style={{ fontFamily: "var(--font-space)" }}>
+                <p className="text-sm font-semibold text-white mb-4" style={{ fontFamily: "var(--font-display)" }}>
                   O que está incluso
                 </p>
                 <ul className="space-y-3">
@@ -160,7 +160,7 @@ export default async function PaineisLEDPage({ params }: Props) {
         <Section>
           <Container>
             <div className="text-center mb-10">
-              <h2 className="text-3xl font-bold text-white" style={{ fontFamily: "var(--font-space)" }}>
+              <h2 className="text-3xl font-bold text-white" style={{ fontFamily: "var(--font-display)" }}>
                 Tipos de painel disponíveis
               </h2>
               <p className="text-[#A1A1A6] mt-3">Clique para ver ficha técnica completa</p>
@@ -207,7 +207,7 @@ export default async function PaineisLEDPage({ params }: Props) {
         <Section className="bg-[#0D0D0D]">
           <Container>
             <div className="text-center mb-10">
-              <h2 className="text-3xl font-bold text-white" style={{ fontFamily: "var(--font-space)" }}>
+              <h2 className="text-3xl font-bold text-white" style={{ fontFamily: "var(--font-display)" }}>
                 Para qual evento serve?
               </h2>
             </div>
@@ -226,7 +226,7 @@ export default async function PaineisLEDPage({ params }: Props) {
         <Section>
           <Container>
             <div className="text-center mb-10">
-              <h2 className="text-3xl font-bold text-white" style={{ fontFamily: "var(--font-space)" }}>
+              <h2 className="text-3xl font-bold text-white" style={{ fontFamily: "var(--font-display)" }}>
                 Qual painel é ideal para o meu evento?
               </h2>
               <p className="text-[#A1A1A6] mt-3">Ajuste os controles abaixo e descubra em segundos</p>
@@ -239,7 +239,7 @@ export default async function PaineisLEDPage({ params }: Props) {
         <Section className="bg-[#0D0D0D]">
           <Container>
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-white" style={{ fontFamily: "var(--font-space)" }}>
+              <h2 className="text-3xl font-bold text-white" style={{ fontFamily: "var(--font-display)" }}>
                 Como funciona em {city.name}
               </h2>
             </div>
@@ -251,7 +251,7 @@ export default async function PaineisLEDPage({ params }: Props) {
                 { n: "04", title: "Operação", desc: "Operador técnico presente do início ao fim do evento" },
               ].map((step, i) => (
                 <div key={i} className="relative">
-                  <div className="text-5xl font-black text-[#1C1C1E] mb-3" style={{ fontFamily: "var(--font-space)" }}>
+                  <div className="text-5xl font-black text-[#1C1C1E] mb-3" style={{ fontFamily: "var(--font-display)" }}>
                     {step.n}
                   </div>
                   <div className="w-8 h-1 bg-[#FF3B30] mb-4 rounded-full" />
@@ -275,7 +275,7 @@ export default async function PaineisLEDPage({ params }: Props) {
           <Container>
             <div className="max-w-2xl mx-auto">
               <div className="text-center mb-10">
-                <h2 className="text-3xl font-bold text-white" style={{ fontFamily: "var(--font-space)" }}>
+                <h2 className="text-3xl font-bold text-white" style={{ fontFamily: "var(--font-display)" }}>
                   Dúvidas frequentes
                 </h2>
               </div>
@@ -300,7 +300,7 @@ export default async function PaineisLEDPage({ params }: Props) {
         <section className="py-20 border-t border-[#2C2C2E]">
           <Container>
             <div className="text-center max-w-xl mx-auto">
-              <h2 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-space)" }}>
+              <h2 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-display)" }}>
                 Pronto para iluminar seu evento?
               </h2>
               <p className="text-[#A1A1A6] mb-8">Fale com {city.rep.name} agora.</p>

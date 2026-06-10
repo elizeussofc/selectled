@@ -55,7 +55,7 @@ export function ProductPage({
               </p>
               <h1
                 className="text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight"
-                style={{ fontFamily: "var(--font-space)", letterSpacing: "-0.03em" }}
+                style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.03em" }}
               >
                 {title}
               </h1>
@@ -80,7 +80,7 @@ export function ProductPage({
         {/* Tabela comparativa de specs */}
         <Section>
           <Container>
-            <h2 className="text-2xl font-bold text-white mb-8" style={{ fontFamily: "var(--font-space)" }}>
+            <h2 className="text-2xl font-bold text-white mb-8" style={{ fontFamily: "var(--font-display)" }}>
               Especificações técnicas
             </h2>
             <div className="overflow-x-auto">
@@ -125,7 +125,7 @@ export function ProductPage({
         {/* Aplicações ideais */}
         <Section className="bg-[#0D0D0D]">
           <Container>
-            <h2 className="text-2xl font-bold text-white mb-8 text-center" style={{ fontFamily: "var(--font-space)" }}>
+            <h2 className="text-2xl font-bold text-white mb-8 text-center" style={{ fontFamily: "var(--font-display)" }}>
               Aplicações ideais
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -159,7 +159,7 @@ export function ProductPage({
         {/* Calculadora */}
         <Section>
           <Container>
-            <h2 className="text-2xl font-bold text-white mb-8 text-center" style={{ fontFamily: "var(--font-space)" }}>
+            <h2 className="text-2xl font-bold text-white mb-8 text-center" style={{ fontFamily: "var(--font-display)" }}>
               Calcule o tamanho ideal
             </h2>
             <PanelCalculator citySlug={city.slug} cityName={city.name} />
@@ -170,7 +170,7 @@ export function ProductPage({
         <section className="py-20 border-t border-[#2C2C2E]">
           <Container>
             <div className="text-center max-w-xl mx-auto">
-              <h2 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-space)" }}>
+              <h2 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-display)" }}>
                 Solicite uma proposta para {city.name}
               </h2>
               <p className="text-[#A1A1A6] mb-8">

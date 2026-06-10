@@ -45,7 +45,7 @@ export default async function Page({ params }: Props) {
             </div>
             <div className="max-w-3xl">
               <p className="text-xs font-semibold uppercase tracking-widest text-[#FF3B30] mb-3">Serviço técnico</p>
-              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight" style={{ fontFamily: "var(--font-space)", letterSpacing: "-0.03em" }}>
+              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight" style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.03em" }}>
                 Instalação de Painel LED em {city.name}
               </h1>
               <p className="text-lg text-[#A1A1A6] mb-8 leading-relaxed">
@@ -65,7 +65,7 @@ export default async function Page({ params }: Props) {
           <Container>
             <div className="grid lg:grid-cols-2 gap-12">
               <div>
-                <h2 className="text-2xl font-bold text-white mb-6" style={{ fontFamily: "var(--font-space)" }}>O que está incluído</h2>
+                <h2 className="text-2xl font-bold text-white mb-6" style={{ fontFamily: "var(--font-display)" }}>O que está incluído</h2>
                 <ul className="space-y-3">
                   {[
                     "Visita técnica prévia para levantamento do local",
@@ -86,7 +86,7 @@ export default async function Page({ params }: Props) {
                 </ul>
               </div>
               <div>
-                <h2 className="text-2xl font-bold text-white mb-6" style={{ fontFamily: "var(--font-space)" }}>Etapas da instalação</h2>
+                <h2 className="text-2xl font-bold text-white mb-6" style={{ fontFamily: "var(--font-display)" }}>Etapas da instalação</h2>
                 <div className="space-y-4">
                   {[
                     { n: "01", t: "Visita técnica", d: "Medição do espaço, análise estrutural e definição do projeto" },
@@ -96,7 +96,7 @@ export default async function Page({ params }: Props) {
                     { n: "05", t: "Comissionamento", d: "Testes, calibração e treinamento da equipe local" },
                   ].map((s) => (
                     <div key={s.n} className="flex gap-4 p-4 bg-[#141414] border border-[#2C2C2E] rounded-xl">
-                      <span className="text-2xl font-black text-[#2C2C2E] shrink-0" style={{ fontFamily: "var(--font-space)" }}>{s.n}</span>
+                      <span className="text-2xl font-black text-[#2C2C2E] shrink-0" style={{ fontFamily: "var(--font-display)" }}>{s.n}</span>
                       <div>
                         <p className="text-sm font-semibold text-white">{s.t}</p>
                         <p className="text-xs text-[#6E6E73] mt-0.5">{s.d}</p>

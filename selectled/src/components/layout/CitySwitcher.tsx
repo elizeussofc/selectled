@@ -63,7 +63,7 @@ export function CitySwitcher({ currentCity }: CitySwitcherProps) {
           >
             <div className="flex items-center justify-between p-5 border-b border-[#2C2C2E]">
               <div>
-                <h2 className="text-base font-semibold text-[#F5F5F7]" style={{ fontFamily: "var(--font-space)" }}>
+                <h2 className="text-base font-semibold text-[#F5F5F7]" style={{ fontFamily: "var(--font-display)" }}>
                   Selecione sua cidade
                 </h2>
                 <p className="text-xs text-[#6E6E73] mt-0.5">Iremos manter a página atual</p>

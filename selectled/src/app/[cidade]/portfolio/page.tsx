@@ -58,7 +58,7 @@ export default function PortfolioPage({ params }: Props) {
               <ChevronRight size={10} />
               <span className="text-[#A1A1A6]">Portfólio</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4 leading-tight" style={{ fontFamily: "var(--font-space)", letterSpacing: "-0.03em" }}>
+            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4 leading-tight" style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.03em" }}>
               Eventos que fizemos em {city.name}
             </h1>
             <p className="text-lg text-[#A1A1A6] mb-8">
@@ -138,7 +138,7 @@ export default function PortfolioPage({ params }: Props) {
         <section className="py-16 border-t border-[#2C2C2E]">
           <Container>
             <div className="text-center max-w-xl mx-auto">
-              <h2 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-space)" }}>
+              <h2 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-display)" }}>
                 Seu evento aqui →
               </h2>
               <p className="text-[#A1A1A6] mb-8">Adicione seu evento ao portfólio da Select LED em {city.name}.</p>
@@ -156,7 +156,7 @@ export default function PortfolioPage({ params }: Props) {
             <div className="flex items-center justify-between p-5 border-b border-[#2C2C2E]">
               <div>
                 <span className="text-xs font-semibold text-[#FF3B30] uppercase tracking-wide">{selectedCase.category}</span>
-                <h2 className="text-lg font-bold text-white mt-0.5" style={{ fontFamily: "var(--font-space)" }}>{selectedCase.title}</h2>
+                <h2 className="text-lg font-bold text-white mt-0.5" style={{ fontFamily: "var(--font-display)" }}>{selectedCase.title}</h2>
               </div>
               <button onClick={() => setSelectedCase(null)} className="p-1.5 rounded-lg text-[#6E6E73] hover:text-white hover:bg-[#2C2C2E] transition-colors"><X size={16} /></button>
             </div>

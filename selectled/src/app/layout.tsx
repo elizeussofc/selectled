@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter } from "next/font/google";
+import { Space_Grotesk, DM_Sans } from "next/font/google";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space",
+  variable: "--font-display",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const dmSans = DM_Sans({
+  variable: "--font-body",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -28,8 +30,7 @@ export const metadata: Metadata = {
     url: "https://selectled.com.br",
     siteName: "Select LED",
     title: "Select LED — Painéis de LED para Eventos no Brasil",
-    description:
-      "Locação e venda de painéis de LED para eventos em toda a Grande SP e interior.",
+    description: "Locação e venda de painéis de LED para eventos em toda a Grande SP e interior.",
     images: [{ url: "/og-default.jpg", width: 1200, height: 630 }],
   },
   twitter: {
@@ -37,27 +38,17 @@ export const metadata: Metadata = {
     title: "Select LED — Painéis de LED para Eventos",
     description: "Locação e venda de painéis de LED. +10 anos, +5.000 eventos.",
   },
-  themeColor: "#0A0A0A",
   icons: {
     icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="pt-BR"
-      className={`${spaceGrotesk.variable} ${inter.variable} h-full`}
-    >
-      <body
-        className="min-h-full flex flex-col"
-        style={{ fontFamily: "var(--font-inter), system-ui, sans-serif" }}
-      >
+    <html lang="pt-BR" className={`${spaceGrotesk.variable} ${dmSans.variable} h-full`}>
+      <body className="min-h-full flex flex-col" style={{ fontFamily: "var(--font-body), system-ui, sans-serif" }}>
         {children}
       </body>
     </html>

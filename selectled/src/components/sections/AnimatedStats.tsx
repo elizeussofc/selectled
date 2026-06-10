@@ -11,9 +11,9 @@ interface Stat {
 
 const stats: Stat[] = [
   { value: 10, suffix: "+ anos", label: "de mercado" },
-  { value: 5000, suffix: "+", prefix: "+", label: "eventos realizados" },
-  { value: 500, suffix: "+", prefix: "+", label: "clientes ativos" },
-  { value: 3, suffix: "", label: "sedes próprias" },
+  { value: 5000, suffix: "+", label: "eventos realizados" },
+  { value: 500, suffix: "+", label: "clientes ativos" },
+  { value: 3, suffix: " sedes", label: "próprias" },
 ];
 
 function AnimatedNumber({ value, suffix, prefix }: { value: number; suffix: string; prefix?: string }) {
@@ -61,7 +61,7 @@ export function AnimatedStats() {
         >
           <div
             className="text-4xl lg:text-5xl font-bold text-white mb-2"
-            style={{ fontFamily: "var(--font-space)" }}
+            style={{ fontFamily: "var(--font-display)" }}
           >
             <AnimatedNumber value={stat.value} suffix={stat.suffix} prefix={stat.prefix} />
           </div>

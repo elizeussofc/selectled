@@ -80,7 +80,7 @@ export default function SobrePage() {
             <div className="w-7 h-7 bg-[#FF3B30] rounded-md flex items-center justify-center">
               <span className="text-white text-xs font-black">SL</span>
             </div>
-            <span className="text-white font-bold" style={{ fontFamily: "var(--font-space)" }}>Select LED</span>
+            <span className="text-white font-bold" style={{ fontFamily: "var(--font-display)" }}>Select LED</span>
           </Link>
           <nav className="flex items-center gap-4 text-sm text-[#A1A1A6]">
             <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
@@ -97,7 +97,7 @@ export default function SobrePage() {
           <Container>
             <div className="max-w-3xl">
               <p className="text-xs font-semibold uppercase tracking-widest text-[#FF3B30] mb-4">Sobre nós</p>
-              <h1 className="text-5xl sm:text-6xl font-bold text-white mb-6 leading-tight" style={{ fontFamily: "var(--font-space)", letterSpacing: "-0.03em" }}>
+              <h1 className="text-5xl sm:text-6xl font-bold text-white mb-6 leading-tight" style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.03em" }}>
                 Sobre a Select LED
               </h1>
               <p className="text-xl text-[#A1A1A6] leading-relaxed mb-6">
@@ -118,7 +118,7 @@ export default function SobrePage() {
         <Section>
           <Container>
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-white" style={{ fontFamily: "var(--font-space)" }}>Nossos valores</h2>
+              <h2 className="text-3xl font-bold text-white" style={{ fontFamily: "var(--font-display)" }}>Nossos valores</h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {values.map(({ icon: Icon, title, desc }) => (
@@ -126,7 +126,7 @@ export default function SobrePage() {
                   <div className="p-2.5 bg-[rgba(255,59,48,0.1)] rounded-xl w-fit mb-4">
                     <Icon size={20} className="text-[#FF3B30]" />
                   </div>
-                  <h3 className="font-semibold text-white mb-2" style={{ fontFamily: "var(--font-space)" }}>{title}</h3>
+                  <h3 className="font-semibold text-white mb-2" style={{ fontFamily: "var(--font-display)" }}>{title}</h3>
                   <p className="text-sm text-[#6E6E73] leading-relaxed">{desc}</p>
                 </div>
               ))}
@@ -138,7 +138,7 @@ export default function SobrePage() {
         <Section className="bg-[#0D0D0D]">
           <Container>
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-white" style={{ fontFamily: "var(--font-space)" }}>Nossa história</h2>
+              <h2 className="text-3xl font-bold text-white" style={{ fontFamily: "var(--font-display)" }}>Nossa história</h2>
             </div>
             <div className="max-w-2xl mx-auto">
               {timeline.map((t, i) => (
@@ -163,7 +163,7 @@ export default function SobrePage() {
         <Section>
           <Container>
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-white" style={{ fontFamily: "var(--font-space)" }}>Nossa equipe</h2>
+              <h2 className="text-3xl font-bold text-white" style={{ fontFamily: "var(--font-display)" }}>Nossa equipe</h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
               {team.map((member) => (
@@ -182,7 +182,7 @@ export default function SobrePage() {
         <Section className="bg-[#0D0D0D]">
           <Container>
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-white mb-3" style={{ fontFamily: "var(--font-space)" }}>
+              <h2 className="text-3xl font-bold text-white mb-3" style={{ fontFamily: "var(--font-display)" }}>
                 Presença em 16 cidades
               </h2>
               <p className="text-[#A1A1A6]">Encontre o representante Select LED mais próximo de você</p>
@@ -215,7 +215,7 @@ export default function SobrePage() {
             <div className="max-w-3xl mx-auto">
               <div className="text-center mb-10">
                 <p className="text-xs font-semibold uppercase tracking-widest text-[#FF3B30] mb-2">Ecossistema</p>
-                <h2 className="text-3xl font-bold text-white" style={{ fontFamily: "var(--font-space)" }}>Somos parte do Select Hub</h2>
+                <h2 className="text-3xl font-bold text-white" style={{ fontFamily: "var(--font-display)" }}>Somos parte do Select Hub</h2>
                 <p className="text-[#A1A1A6] mt-3">Um ecossistema de empresas parceiras que oferecem soluções completas para produção de eventos.</p>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -234,7 +234,7 @@ export default function SobrePage() {
         <Section className="bg-[#0D0D0D]">
           <Container>
             <div className="text-center mb-10">
-              <h2 className="text-3xl font-bold text-white" style={{ fontFamily: "var(--font-space)" }}>Nossas sedes</h2>
+              <h2 className="text-3xl font-bold text-white" style={{ fontFamily: "var(--font-display)" }}>Nossas sedes</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl mx-auto">
               {cities.slice(0, 3).map((city) => (

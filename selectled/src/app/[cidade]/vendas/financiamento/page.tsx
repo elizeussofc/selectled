@@ -46,7 +46,7 @@ export default async function Page({ params }: Props) {
             </div>
             <div className="max-w-3xl">
               <p className="text-xs font-semibold uppercase tracking-widest text-[#FF3B30] mb-3">Financiamento</p>
-              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight" style={{ fontFamily: "var(--font-space)", letterSpacing: "-0.03em" }}>
+              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight" style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.03em" }}>
                 Financie seu painel em até 48 parcelas
               </h1>
               <p className="text-lg text-[#A1A1A6] mb-8 leading-relaxed">
@@ -74,7 +74,7 @@ export default async function Page({ params }: Props) {
                 { title: "Aprovação ágil", desc: "Análise em até 48h úteis para PJ" },
               ].map((b) => (
                 <div key={b.title} className="text-center p-6 bg-[#141414] border border-[#2C2C2E] rounded-2xl">
-                  <h3 className="font-semibold text-white mb-2" style={{ fontFamily: "var(--font-space)" }}>{b.title}</h3>
+                  <h3 className="font-semibold text-white mb-2" style={{ fontFamily: "var(--font-display)" }}>{b.title}</h3>
                   <p className="text-sm text-[#6E6E73]">{b.desc}</p>
                 </div>
               ))}

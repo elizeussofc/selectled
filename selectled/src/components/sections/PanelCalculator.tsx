@@ -37,7 +37,7 @@ export function PanelCalculator({ citySlug, cityName }: PanelCalculatorProps) {
           <Calculator size={20} className="text-[#FF3B30]" />
         </div>
         <div>
-          <h3 className="font-semibold text-white" style={{ fontFamily: "var(--font-space)" }}>
+          <h3 className="font-semibold text-white" style={{ fontFamily: "var(--font-display)" }}>
             Calculadora de painel
           </h3>
           <p className="text-xs text-[#6E6E73]">Descubra o modelo ideal para seu evento</p>
@@ -79,21 +79,21 @@ export function PanelCalculator({ citySlug, cityName }: PanelCalculatorProps) {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
           <div>
             <p className="text-xs text-[#6E6E73] mb-1">Modelo recomendado</p>
-            <p className="text-2xl font-bold text-[#FF3B30]" style={{ fontFamily: "var(--font-space)" }}>
+            <p className="text-2xl font-bold text-[#FF3B30]" style={{ fontFamily: "var(--font-display)" }}>
               {panel}
             </p>
             <p className="text-xs text-[#6E6E73] mt-0.5">{config.label}</p>
           </div>
           <div>
             <p className="text-xs text-[#6E6E73] mb-1">Área total</p>
-            <p className="text-2xl font-bold text-white" style={{ fontFamily: "var(--font-space)" }}>
+            <p className="text-2xl font-bold text-white" style={{ fontFamily: "var(--font-display)" }}>
               {area} m²
             </p>
             <p className="text-xs text-[#6E6E73] mt-0.5">{width}m × {height}m</p>
           </div>
           <div>
             <p className="text-xs text-[#6E6E73] mb-1">Estimativa a partir de</p>
-            <p className="text-2xl font-bold text-white" style={{ fontFamily: "var(--font-space)" }}>
+            <p className="text-2xl font-bold text-white" style={{ fontFamily: "var(--font-display)" }}>
               R$ {estimatedPrice.toLocaleString("pt-BR")}
             </p>
             <p className="text-xs text-[#6E6E73] mt-0.5">por diária · referência</p>

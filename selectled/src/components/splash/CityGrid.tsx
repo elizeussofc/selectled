@@ -3,7 +3,15 @@
 import { useRouter } from "next/navigation";
 import { MapPin } from "lucide-react";
 import { cities } from "@/data/cities";
-import { cn } from "@/lib/utils";
+
+const groups = [
+  { label: "Capital",          regions: ["Capital"] },
+  { label: "Grande SP",        regions: ["Grande SP"] },
+  { label: "ABC Paulista",     regions: ["ABC Paulista"] },
+  { label: "Interior SP",      regions: ["Interior SP"] },
+  { label: "Baixada Santista", regions: ["Baixada Santista"] },
+  { label: "Vale do Paraíba",  regions: ["Vale do Paraíba"] },
+];
 
 export function CityGrid() {
   const router = useRouter();
@@ -13,48 +21,37 @@ export function CityGrid() {
     router.push(`/${slug}`);
   }
 
-  const groupedCities = [
-    { label: "Capital", items: cities.filter((c) => c.region === "Capital") },
-    { label: "Grande SP", items: cities.filter((c) => c.region === "Grande SP") },
-    { label: "ABC Paulista", items: cities.filter((c) => c.region === "ABC Paulista") },
-    { label: "Interior SP", items: cities.filter((c) => c.region === "Interior SP") },
-    { label: "Baixada Santista", items: cities.filter((c) => c.region === "Baixada Santista") },
-    { label: "Vale do Paraíba", items: cities.filter((c) => c.region === "Vale do Paraíba") },
-  ].filter((g) => g.items.length > 0);
-
   return (
-    <div className="w-full max-w-3xl mx-auto">
-      {groupedCities.map((group) => (
-        <div key={group.label} className="mb-6">
-          <p className="text-xs font-semibold uppercase tracking-widest text-[#6E6E73] mb-3 px-1">
-            {group.label}
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
-            {group.items.map((city) => (
-              <button
-                key={city.slug}
-                onClick={() => handleCity(city.slug)}
-                className={cn(
-                  "group relative flex flex-col items-start p-3.5 rounded-xl",
-                  "bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.07)]",
-                  "hover:bg-[rgba(255,59,48,0.08)] hover:border-[rgba(255,59,48,0.35)]",
-                  "transition-all duration-200 hover:scale-[1.03] active:scale-[0.98]",
-                  "text-left cursor-pointer"
-                )}
-              >
-                <MapPin
-                  size={13}
-                  className="text-[#3A3A3C] group-hover:text-[#FF3B30] transition-colors mb-1.5"
-                />
-                <span className="text-sm font-semibold text-[#F5F5F7] leading-tight">
-                  {city.name}
-                </span>
-                <span className="text-xs text-[#6E6E73] mt-0.5">{city.state}</span>
-              </button>
-            ))}
+    <div className="w-full max-w-2xl mx-auto rounded-2xl border border-[rgba(255,255,255,0.07)] bg-[rgba(0,0,0,0.45)] backdrop-blur-md overflow-hidden">
+      {groups.map((group, gi) => {
+        const items = cities.filter((c) => group.regions.includes(c.region));
+        if (!items.length) return null;
+        return (
+          <div key={group.label} className={gi > 0 ? "border-t border-[rgba(255,255,255,0.05)]" : ""}>
+            {/* Region header */}
+            <div className="px-5 pt-3 pb-1">
+              <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#3A3A3C]">
+                {group.label}
+              </span>
+            </div>
+            {/* City buttons */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-px px-5 pb-3">
+              {items.map((city) => (
+                <button
+                  key={city.slug}
+                  onClick={() => handleCity(city.slug)}
+                  className="group flex items-center gap-2 py-2.5 px-2 rounded-lg hover:bg-[rgba(255,59,48,0.08)] transition-all duration-150 text-left cursor-pointer"
+                >
+                  <MapPin size={11} className="text-[#3A3A3C] group-hover:text-[#FF3B30] transition-colors shrink-0" />
+                  <span className="text-sm text-[#8A8A8E] group-hover:text-white transition-colors">
+                    {city.name}
+                  </span>
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }

@@ -29,7 +29,7 @@ export function FinancingSimulator({ repWhatsapp }: FinancingSimulatorProps) {
 
   return (
     <div className="bg-[#141414] border border-[#2C2C2E] rounded-2xl p-6 lg:p-8">
-      <h3 className="text-xl font-bold text-white mb-6" style={{ fontFamily: "var(--font-space)" }}>
+      <h3 className="text-xl font-bold text-white mb-6" style={{ fontFamily: "var(--font-display)" }}>
         Simulador de financiamento
       </h3>
 

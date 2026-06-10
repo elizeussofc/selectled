@@ -21,44 +21,43 @@ export function Footer({ citySlug }: FooterProps) {
   const city = getCityBySlug(citySlug);
 
   return (
-    <footer className="bg-[#0A0A0A] border-t border-[#2C2C2E]">
+    <footer className="bg-[#080808] border-t border-[#1C1C1E]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Coluna 1: Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-[#FF3B30] rounded-md flex items-center justify-center">
+            <div className="flex items-center gap-2 mb-5">
+              <div className="w-8 h-8 bg-[#FF3B30] rounded-md flex items-center justify-center shadow-md shadow-red-900/30">
                 <span className="text-white text-xs font-black">SL</span>
               </div>
-              <span className="text-white font-bold text-lg" style={{ fontFamily: "var(--font-space)" }}>
+              <span className="text-white font-bold text-lg" style={{ fontFamily: "var(--font-display)" }}>
                 Select LED
               </span>
             </div>
-            <p className="text-sm text-[#6E6E73] leading-relaxed mb-6">
-              Tecnologia LED que transforma eventos em experiências inesquecíveis. +10 anos de mercado,
-              +5.000 eventos, 3 sedes próprias.
+            <p className="text-sm text-[#4A4A4F] leading-relaxed mb-6">
+              Tecnologia LED que transforma eventos em experiências inesquecíveis. +10 anos, +5.000 eventos, 3 sedes próprias.
             </p>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
               <a
                 href="https://instagram.com/selectled"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-[#1C1C1E] text-[#A1A1A6] hover:text-white hover:bg-[#2C2C2E] transition-colors"
+                className="p-2 rounded-lg bg-[#141414] border border-[#1C1C1E] text-[#6E6E73] hover:text-white hover:border-[#2C2C2E] transition-colors"
                 aria-label="Instagram"
               >
-                <InstagramIcon size={16} />
+                <InstagramIcon size={15} />
               </a>
               <a
                 href={`https://wa.me/${city?.rep.whatsapp ?? "5511971945576"}?text=Olá, preciso de um orçamento`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-[#1C1C1E] text-[#A1A1A6] hover:text-[#25D366] hover:bg-[#1C1C1E] transition-colors"
+                className="p-2 rounded-lg bg-[#141414] border border-[#1C1C1E] text-[#6E6E73] hover:text-[#25D366] hover:border-[#25D366]/30 transition-colors"
                 aria-label="WhatsApp"
               >
-                <MessageCircle size={16} />
+                <MessageCircle size={15} />
               </a>
             </div>
-            <p className="text-xs text-[#3A3A3C] mt-6">
+            <p className="text-[11px] text-[#2C2C2E] mt-6 leading-relaxed">
               CNPJ 35.554.822/0001-07<br />
               Select Led LTDA
             </p>
@@ -66,7 +65,7 @@ export function Footer({ citySlug }: FooterProps) {
 
           {/* Coluna 2: Serviços */}
           <div>
-            <h3 className="text-sm font-semibold text-[#F5F5F7] mb-4">Serviços</h3>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-[#3A3A3C] mb-4">Serviços</h3>
             <ul className="space-y-2">
               {services.map((s) => (
                 <li key={s.slug}>
@@ -99,7 +98,7 @@ export function Footer({ citySlug }: FooterProps) {
 
           {/* Coluna 3: Cidades */}
           <div>
-            <h3 className="text-sm font-semibold text-[#F5F5F7] mb-4">Cidades atendidas</h3>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-[#3A3A3C] mb-4">Cidades atendidas</h3>
             <ul className="space-y-2">
               {cities.map((c) => (
                 <li key={c.slug}>
@@ -120,7 +119,7 @@ export function Footer({ citySlug }: FooterProps) {
 
           {/* Coluna 4: Contato local */}
           <div>
-            <h3 className="text-sm font-semibold text-[#F5F5F7] mb-4">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-[#3A3A3C] mb-4">
               {city ? `Sede em ${city.name}` : "Contato"}
             </h3>
             {city && (
@@ -165,8 +164,8 @@ export function Footer({ citySlug }: FooterProps) {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-6 border-t border-[#1C1C1E] flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-[#3A3A3C]">
+        <div className="mt-12 pt-6 border-t border-[#141414] flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-[11px] text-[#2C2C2E]">
             © {new Date().getFullYear()} Select Led LTDA. Todos os direitos reservados.
           </p>
           <div className="flex gap-4">

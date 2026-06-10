@@ -137,7 +137,7 @@ export default function OrcamentoPage({ params }: Props) {
             <div className="w-16 h-16 bg-[rgba(48,209,88,0.1)] rounded-full flex items-center justify-center mx-auto mb-6">
               <CheckCircle size={32} className="text-[#30D158]" />
             </div>
-            <h1 className="text-3xl font-bold text-white mb-3" style={{ fontFamily: "var(--font-space)" }}>
+            <h1 className="text-3xl font-bold text-white mb-3" style={{ fontFamily: "var(--font-display)" }}>
               Orçamento enviado!
             </h1>
             <p className="text-[#A1A1A6] mb-4">
@@ -166,7 +166,7 @@ export default function OrcamentoPage({ params }: Props) {
             <div className="w-7 h-7 bg-[#FF3B30] rounded-md flex items-center justify-center">
               <span className="text-white text-xs font-black">SL</span>
             </div>
-            <span className="text-white font-bold text-sm" style={{ fontFamily: "var(--font-space)" }}>Select LED</span>
+            <span className="text-white font-bold text-sm" style={{ fontFamily: "var(--font-display)" }}>Select LED</span>
           </Link>
           <span className="text-xs text-[#6E6E73]">Orçamento — {city.name}</span>
         </div>
@@ -245,7 +245,7 @@ function Step1({ initial, onNext }: { initial: Partial<FormData>; onNext: (d: z.
   return (
     <form onSubmit={handleSubmit(onNext)} className="space-y-6">
       <div>
-        <h2 className="text-xl font-bold text-white mb-1" style={{ fontFamily: "var(--font-space)" }}>Sobre o evento</h2>
+        <h2 className="text-xl font-bold text-white mb-1" style={{ fontFamily: "var(--font-display)" }}>Sobre o evento</h2>
         <p className="text-sm text-[#6E6E73]">Etapa 1 de 3</p>
       </div>
       <div>
@@ -299,7 +299,7 @@ function Step2({ initial, onNext, onBack }: { initial: Partial<FormData>; onNext
   return (
     <form onSubmit={handleSubmit(onNext)} className="space-y-6">
       <div>
-        <h2 className="text-xl font-bold text-white mb-1" style={{ fontFamily: "var(--font-space)" }}>O que você precisa?</h2>
+        <h2 className="text-xl font-bold text-white mb-1" style={{ fontFamily: "var(--font-display)" }}>O que você precisa?</h2>
         <p className="text-sm text-[#6E6E73]">Etapa 2 de 3</p>
       </div>
       <div>
@@ -355,7 +355,7 @@ function Step3({ initial, onSubmit, onBack, loading, cityName }: {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
       <div>
-        <h2 className="text-xl font-bold text-white mb-1" style={{ fontFamily: "var(--font-space)" }}>Seus dados de contato</h2>
+        <h2 className="text-xl font-bold text-white mb-1" style={{ fontFamily: "var(--font-display)" }}>Seus dados de contato</h2>
         <p className="text-sm text-[#6E6E73]">Etapa 3 de 3 — Vamos enviar sua proposta!</p>
       </div>
       {[

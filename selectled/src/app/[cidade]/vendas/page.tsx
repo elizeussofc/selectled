@@ -85,7 +85,7 @@ export default async function VendasPage({ params }: Props) {
             </p>
             <h1
               className="text-6xl sm:text-7xl md:text-8xl font-bold text-white mb-6 leading-none"
-              style={{ fontFamily: "var(--font-space)", letterSpacing: "-0.04em" }}
+              style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.04em" }}
             >
               Compre o seu<br />
               <span className="text-[#FF3B30]">painel de LED</span>
@@ -142,7 +142,7 @@ export default async function VendasPage({ params }: Props) {
         <Section>
           <Container>
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-white" style={{ fontFamily: "var(--font-space)" }}>
+              <h2 className="text-3xl md:text-4xl font-bold text-white" style={{ fontFamily: "var(--font-display)" }}>
                 Por que comprar com a Select LED?
               </h2>
             </div>
@@ -169,7 +169,7 @@ export default async function VendasPage({ params }: Props) {
         <Section id="catalogo" className="bg-[#0D0D0D]">
           <Container>
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-white" style={{ fontFamily: "var(--font-space)" }}>
+              <h2 className="text-3xl md:text-4xl font-bold text-white" style={{ fontFamily: "var(--font-display)" }}>
                 Catálogo de produtos
               </h2>
               <p className="text-[#A1A1A6] mt-3">Todos os modelos disponíveis para compra em {city.name}</p>
@@ -184,7 +184,7 @@ export default async function VendasPage({ params }: Props) {
                   {/* Imagem placeholder */}
                   <div className="relative h-48 bg-gradient-to-br from-[#1A1A1A] to-[#0D0D0D] flex items-center justify-center">
                     <div className="text-center">
-                      <div className="text-3xl font-black text-[rgba(255,59,48,0.15)] mb-1" style={{ fontFamily: "var(--font-space)" }}>
+                      <div className="text-3xl font-black text-[rgba(255,59,48,0.15)] mb-1" style={{ fontFamily: "var(--font-display)" }}>
                         {product.shortName}
                       </div>
                       <div className="text-xs text-[#3A3A3C]">{product.pitch} pitch</div>
@@ -206,7 +206,7 @@ export default async function VendasPage({ params }: Props) {
 
                   <div className="p-5">
                     <div className="flex items-start justify-between mb-2">
-                      <h3 className="font-semibold text-white text-sm leading-tight" style={{ fontFamily: "var(--font-space)" }}>
+                      <h3 className="font-semibold text-white text-sm leading-tight" style={{ fontFamily: "var(--font-display)" }}>
                         {product.name}
                       </h3>
                     </div>
@@ -239,7 +239,7 @@ export default async function VendasPage({ params }: Props) {
         <Section>
           <Container>
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-white" style={{ fontFamily: "var(--font-space)" }}>
+              <h2 className="text-3xl font-bold text-white" style={{ fontFamily: "var(--font-display)" }}>
                 Clientes que compraram
               </h2>
             </div>
@@ -264,7 +264,7 @@ export default async function VendasPage({ params }: Props) {
         <Section id="financiamento" className="bg-[#0D0D0D]">
           <Container>
             <div className="text-center mb-10">
-              <h2 className="text-3xl font-bold text-white" style={{ fontFamily: "var(--font-space)" }}>
+              <h2 className="text-3xl font-bold text-white" style={{ fontFamily: "var(--font-display)" }}>
                 Simule seu financiamento
               </h2>
               <p className="text-[#A1A1A6] mt-3">Financiamento em até 48 parcelas</p>
@@ -279,7 +279,7 @@ export default async function VendasPage({ params }: Props) {
         <Section>
           <Container>
             <div className="max-w-2xl mx-auto">
-              <h2 className="text-3xl font-bold text-white mb-8 text-center" style={{ fontFamily: "var(--font-space)" }}>
+              <h2 className="text-3xl font-bold text-white mb-8 text-center" style={{ fontFamily: "var(--font-display)" }}>
                 Dúvidas sobre compra
               </h2>
               <div className="space-y-3">
@@ -310,7 +310,7 @@ export default async function VendasPage({ params }: Props) {
         <section className="py-24 bg-[#0D0D0D] border-t border-[#2C2C2E]">
           <Container>
             <div className="max-w-2xl mx-auto text-center">
-              <h2 className="text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-space)" }}>
+              <h2 className="text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-display)" }}>
                 Pronto para ter seu próprio painel em {city.name}?
               </h2>
               <p className="text-[#A1A1A6] mb-10">

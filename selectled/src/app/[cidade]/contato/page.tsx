@@ -68,7 +68,7 @@ export default async function ContatoPage({ params }: Props) {
               <ChevronRight size={10} />
               <span className="text-[#A1A1A6]">Contato</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-space)", letterSpacing: "-0.03em" }}>
+            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.03em" }}>
               Fale com a Select LED em {city.name}
             </h1>
             <p className="text-lg text-[#A1A1A6]">
@@ -150,7 +150,7 @@ export default async function ContatoPage({ params }: Props) {
         {/* Outras cidades */}
         <Section className="bg-[#0D0D0D]">
           <Container>
-            <h2 className="text-2xl font-bold text-white mb-6" style={{ fontFamily: "var(--font-space)" }}>
+            <h2 className="text-2xl font-bold text-white mb-6" style={{ fontFamily: "var(--font-display)" }}>
               Outras cidades atendidas
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">

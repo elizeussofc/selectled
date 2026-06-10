@@ -71,7 +71,7 @@ export default async function BlogPostPage({ params }: Props) {
             <div className="w-7 h-7 bg-[#FF3B30] rounded-md flex items-center justify-center">
               <span className="text-white text-xs font-black">SL</span>
             </div>
-            <span className="text-white font-bold" style={{ fontFamily: "var(--font-space)" }}>Select LED</span>
+            <span className="text-white font-bold" style={{ fontFamily: "var(--font-display)" }}>Select LED</span>
           </Link>
           <Link href="/blog" className="flex items-center gap-1.5 text-sm text-[#A1A1A6] hover:text-white transition-colors">
             <ArrowLeft size={14} /> Blog
@@ -92,7 +92,7 @@ export default async function BlogPostPage({ params }: Props) {
               <span className="inline-flex items-center gap-1.5 text-xs font-semibold bg-[rgba(255,59,48,0.12)] text-[#FF3B30] px-3 py-1 rounded-full mb-4">
                 {post.category}
               </span>
-              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight" style={{ fontFamily: "var(--font-space)", letterSpacing: "-0.03em" }}>
+              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight" style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.03em" }}>
                 {post.title}
               </h1>
               <p className="text-lg text-[#A1A1A6] mb-6">{post.description}</p>
@@ -166,7 +166,7 @@ export default async function BlogPostPage({ params }: Props) {
         {related.length > 0 && (
           <section className="py-12 border-t border-[#1C1C1E]">
             <Container>
-              <h2 className="text-2xl font-bold text-white mb-6" style={{ fontFamily: "var(--font-space)" }}>Posts relacionados</h2>
+              <h2 className="text-2xl font-bold text-white mb-6" style={{ fontFamily: "var(--font-display)" }}>Posts relacionados</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                 {related.map((p) => (
                   <Link key={p.slug} href={`/blog/${p.slug}`}

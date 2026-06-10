@@ -52,7 +52,7 @@ export function ServicePage({ city, service }: ServicePageProps) {
               </p>
               <h1
                 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-5 leading-tight"
-                style={{ fontFamily: "var(--font-space)", letterSpacing: "-0.03em" }}
+                style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.03em" }}
               >
                 {service.name} em {city.name}
               </h1>
@@ -85,7 +85,7 @@ export function ServicePage({ city, service }: ServicePageProps) {
               <div>
                 <h2
                   className="text-3xl font-bold text-white mb-8"
-                  style={{ fontFamily: "var(--font-space)" }}
+                  style={{ fontFamily: "var(--font-display)" }}
                 >
                   O que você recebe
                 </h2>
@@ -103,7 +103,7 @@ export function ServicePage({ city, service }: ServicePageProps) {
               <div>
                 <h2
                   className="text-3xl font-bold text-white mb-8"
-                  style={{ fontFamily: "var(--font-space)" }}
+                  style={{ fontFamily: "var(--font-display)" }}
                 >
                   Equipamentos
                 </h2>
@@ -127,7 +127,7 @@ export function ServicePage({ city, service }: ServicePageProps) {
           <Container>
             <h2
               className="text-3xl font-bold text-white mb-10 text-center"
-              style={{ fontFamily: "var(--font-space)" }}
+              style={{ fontFamily: "var(--font-display)" }}
             >
               Como funciona
             </h2>
@@ -139,7 +139,7 @@ export function ServicePage({ city, service }: ServicePageProps) {
                 { n: "04", title: "Execução", desc: "Nossa equipe cuida de tudo no dia" },
               ].map((step, i) => (
                 <div key={i}>
-                  <div className="text-5xl font-black text-[#1C1C1E] mb-3" style={{ fontFamily: "var(--font-space)" }}>
+                  <div className="text-5xl font-black text-[#1C1C1E] mb-3" style={{ fontFamily: "var(--font-display)" }}>
                     {step.n}
                   </div>
                   <div className="w-8 h-1 bg-[#FF3B30] mb-4 rounded-full" />
@@ -159,7 +159,7 @@ export function ServicePage({ city, service }: ServicePageProps) {
               <div>
                 <h2
                   className="text-2xl font-bold text-white mb-4"
-                  style={{ fontFamily: "var(--font-space)" }}
+                  style={{ fontFamily: "var(--font-display)" }}
                 >
                   Outros serviços em {city.name}
                 </h2>
@@ -194,7 +194,7 @@ export function ServicePage({ city, service }: ServicePageProps) {
             <div className="max-w-2xl mx-auto">
               <h2
                 className="text-3xl font-bold text-white mb-8 text-center"
-                style={{ fontFamily: "var(--font-space)" }}
+                style={{ fontFamily: "var(--font-display)" }}
               >
                 Dúvidas sobre {service.shortName}
               </h2>
@@ -219,7 +219,7 @@ export function ServicePage({ city, service }: ServicePageProps) {
         <section className="py-20 border-t border-[#2C2C2E]">
           <Container>
             <div className="text-center max-w-xl mx-auto">
-              <h2 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-space)" }}>
+              <h2 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-display)" }}>
                 Pronto para contratar {service.shortName} em {city.name}?
               </h2>
               <p className="text-[#A1A1A6] mb-8">
