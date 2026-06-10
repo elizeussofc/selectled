@@ -1,0 +1,38 @@
+# Environment
+.env
+.env.local
+.env.*.local
+*.env
+
+# LightRAG storage (embeddings, cache, vectors)
+tools/lightrag/rag_storage/
+tools/lightrag/.index_manifest.json
+tools/lightrag/.venv/
+tools/lightrag/__pycache__/
+tools/lightrag/lightrag_kg/__pycache__/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+*.egg-info/
+dist/
+build/
+
+# Node
+node_modules/
+.next/
+dist/
+
+# OS
+.DS_Store
+Thumbs.db
+
+.vercel
+
+# Projetos separados — não pertencem a este repo
+guia-condominial/
+cabral-advogados/
+docs/
+*.png
