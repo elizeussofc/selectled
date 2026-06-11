@@ -76,11 +76,11 @@ export default function SobrePage() {
       {/* Header simples */}
       <header className="fixed top-0 left-0 right-0 z-40 bg-[rgba(10,10,10,0.9)] backdrop-blur-xl border-b border-[#2C2C2E]">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-7 h-7 bg-[#FF3B30] rounded-md flex items-center justify-center">
-              <span className="text-white text-xs font-black">SL</span>
-            </div>
-            <span className="text-white font-bold" style={{ fontFamily: "var(--font-display)" }}>Select LED</span>
+          <Link href="/" className="flex items-center gap-2.5">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/sl-icon.png" alt="SL" style={{ width: 28, height: 28, borderRadius: 8, objectFit: "contain" }} />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/selectled-logo.png" alt="Select LED" style={{ height: 16, objectFit: "contain" }} />
           </Link>
           <nav className="flex items-center gap-4 text-sm text-[#A1A1A6]">
             <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>

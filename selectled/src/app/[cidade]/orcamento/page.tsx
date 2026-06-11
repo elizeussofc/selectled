@@ -162,11 +162,11 @@ export default function OrcamentoPage({ params }: Props) {
       {/* Header reduzido */}
       <div className="border-b border-[#1C1C1E] px-6 py-4">
         <div className="max-w-3xl mx-auto flex items-center justify-between">
-          <Link href={`/${cidade}`} className="flex items-center gap-2">
-            <div className="w-7 h-7 bg-[#FF3B30] rounded-md flex items-center justify-center">
-              <span className="text-white text-xs font-black">SL</span>
-            </div>
-            <span className="text-white font-bold text-sm" style={{ fontFamily: "var(--font-display)" }}>Select LED</span>
+          <Link href={`/${cidade}`} className="flex items-center gap-2.5">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/sl-icon.png" alt="SL" style={{ width: 28, height: 28, borderRadius: 8, objectFit: "contain" }} />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/selectled-logo.png" alt="Select LED" style={{ height: 16, objectFit: "contain" }} />
           </Link>
           <span className="text-xs text-[#6E6E73]">Orçamento — {city.name}</span>
         </div>

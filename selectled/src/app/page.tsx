@@ -102,15 +102,10 @@ export default function SplashPage() {
       {/* ── Header ── */}
       <header className="relative z-20 flex items-center justify-between px-6 md:px-10 pt-6 pb-4">
         <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 bg-[#FF3B30] rounded-lg flex items-center justify-center shadow-lg shadow-red-900/40">
-            <span className="text-white text-xs font-black tracking-tight">SL</span>
-          </div>
-          <span
-            className="text-white font-semibold text-lg tracking-tight"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            Select LED
-          </span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/sl-icon.png" alt="SL" style={{ width: 32, height: 32, borderRadius: 9, objectFit: "contain" }} />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/selectled-logo.png" alt="Select LED" style={{ height: 18, objectFit: "contain" }} />
         </div>
 
         {preferredCity && (
