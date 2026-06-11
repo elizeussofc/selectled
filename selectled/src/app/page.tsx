@@ -147,12 +147,15 @@ export default function SplashPage() {
           {/* Headline — zoom in principal */}
           <h1
             className="text-7xl sm:text-8xl md:text-9xl font-black leading-none tracking-tight mb-4"
-            style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.05em", opacity: 0, animation: "zoomInSettle 0.9s cubic-bezier(0.16,1,0.3,1) 0.1s forwards" }}
+            style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.02em", opacity: 0, animation: "zoomInSettle 0.9s cubic-bezier(0.16,1,0.3,1) 0.1s forwards" }}
           >
-            <span className="text-white">Select </span>
-            <span style={{ color: "#FF2020", animation: "ledR 3.2s ease-in-out 1.2s infinite" }}>L</span>
-            <span style={{ color: "#00FF87", animation: "ledG 2.7s ease-in-out 1.4s infinite" }}>E</span>
-            <span style={{ color: "#4FC3F7", animation: "ledB 3.8s ease-in-out 1.6s infinite" }}>D</span>
+            <span style={{
+              color: "white",
+              WebkitTextStroke: "1.5px rgba(160,160,160,0.35)",
+            }}>SELECT</span>
+            <span style={{ color: "#FF2020", animation: "ledR 3.2s ease-in-out 1.2s infinite", WebkitTextStroke: "0px" }}>L</span>
+            <span style={{ color: "#00FF87", animation: "ledG 2.7s ease-in-out 1.4s infinite", WebkitTextStroke: "0px" }}>E</span>
+            <span style={{ color: "#4FC3F7", animation: "ledB 3.8s ease-in-out 1.6s infinite", WebkitTextStroke: "0px" }}>D</span>
           </h1>
 
           {/* Slogan — fade in */}
