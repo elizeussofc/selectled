@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MessageCircle, CheckCircle, ChevronRight, ArrowRight } from "lucide-react";
 import type { City } from "@/data/cities";
 import type { Service } from "@/data/services";
@@ -56,6 +57,22 @@ export function ServicePage({ city, service }: ServicePageProps) {
               >
                 {service.name} em {city.name}
               </h1>
+              {service.heroImage && (
+                <div className="relative w-full rounded-2xl overflow-hidden mb-8" style={{ maxHeight: 480 }}>
+                  <Image
+                    src={service.heroImage}
+                    alt={service.name}
+                    width={1200}
+                    height={480}
+                    className="w-full object-cover"
+                    style={{ maxHeight: 480, objectPosition: "center 30%" }}
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/60 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A]/20 via-transparent to-[#0A0A0A]/20" />
+                  <div className="absolute inset-0 rounded-2xl ring-1 ring-white/5" />
+                </div>
+              )}
               <p className="text-lg text-[#A1A1A6] mb-8 leading-relaxed max-w-2xl">
                 {service.intro}
               </p>

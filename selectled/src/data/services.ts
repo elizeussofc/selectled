@@ -6,6 +6,7 @@ export type Service = {
   name: string;
   shortName: string;
   hero: string;
+  heroImage?: string;
   icon: string;
   tagline: string;
   intro: string;
@@ -21,6 +22,7 @@ export const services: Service[] = [
     name: "Som e Iluminação",
     shortName: "Som & Luz",
     hero: "/services/som-iluminacao-hero.webp",
+    heroImage: "/images/sound-and-lighting.jpg",
     icon: "volume-2",
     tagline: "Áudio e luz que elevam cada cena do seu evento",
     intro:
