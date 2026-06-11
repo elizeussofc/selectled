@@ -226,7 +226,7 @@ export default async function CityHomePage({ params }: Props) {
                   style={{
                     fontFamily: "var(--font-display)",
                     letterSpacing: "-0.04em",
-                    fontSize: "clamp(3.2rem, 6.5vw, 8rem)",
+                    fontSize: "clamp(2.4rem, 5vw, 5rem)",
                   }}
                 >
                   Painéis de LED<br />
