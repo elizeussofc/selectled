@@ -107,8 +107,20 @@ export default function PortfolioPage({ params }: Props) {
                     onClick={() => setSelectedCase(c)}
                     className="group text-left bg-[#141414] border border-[#2C2C2E] rounded-2xl overflow-hidden hover:border-[rgba(255,255,255,0.2)] transition-all hover:-translate-y-1 hover:shadow-xl"
                   >
-                    <div className="relative h-48 bg-gradient-to-br from-[#1A1A1A] to-[#0D0D0D] flex items-center justify-center overflow-hidden">
-                      <ImageIcon size={32} className="text-[#2C2C2E]" />
+                    <div className="relative h-48 bg-[#111] overflow-hidden">
+                      {c.thumbnail ? (
+                        <Image
+                          src={c.thumbnail}
+                          alt={c.title}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-gradient-to-br from-[#1A1A1A] to-[#0D0D0D] flex items-center justify-center">
+                          <ImageIcon size={32} className="text-[#2C2C2E]" />
+                        </div>
+                      )}
                       <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                         <span className="text-white text-sm font-medium">Ver detalhes →</span>
                       </div>

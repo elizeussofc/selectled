@@ -524,24 +524,17 @@ export default async function CityHomePage({ params }: Props) {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                 {cases.map((c, idx) => (
                   <div key={c.id} className="group bg-[#111] border border-[#1C1C1E] rounded-2xl overflow-hidden hover:border-[rgba(255,59,48,0.3)] transition-all duration-300 hover:-translate-y-1">
-                    <div className="relative h-48 bg-[#0D0D0D] overflow-hidden">
-                      <div
-                        className="absolute inset-0 opacity-[0.04]"
-                        style={{
-                          backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
-                          backgroundSize: "36px 36px",
-                        }}
-                      />
-                      <div
-                        className="absolute w-48 h-48 rounded-full opacity-15 group-hover:opacity-25 transition-opacity"
-                        style={{
-                          background: "radial-gradient(circle, #FF3B30 0%, transparent 70%)",
-                          top: idx % 2 === 0 ? "-24px" : "auto",
-                          bottom: idx % 2 !== 0 ? "-24px" : "auto",
-                          right: "-24px",
-                        }}
-                      />
-                      <div className="absolute bottom-3 right-4 text-[56px] font-black leading-none select-none" style={{ fontFamily: "var(--font-display)", color: "rgba(255,255,255,0.04)" }}>
+                    <div
+                      className="relative h-48 bg-[#0D0D0D] overflow-hidden transition-transform duration-500 group-hover:scale-105"
+                      style={c.thumbnail ? {
+                        backgroundImage: `url(${c.thumbnail})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                      } : {}}
+                    >
+                      {/* dark overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                      <div className="absolute bottom-3 right-4 text-[56px] font-black leading-none select-none" style={{ fontFamily: "var(--font-display)", color: "rgba(255,255,255,0.12)" }}>
                         {String(idx + 1).padStart(2, "0")}
                       </div>
                     </div>
