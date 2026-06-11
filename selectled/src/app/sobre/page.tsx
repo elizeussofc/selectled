@@ -3,7 +3,7 @@ import Link from "next/link";
 import { cities } from "@/data/cities";
 import { CitySearch } from "@/components/splash/CitySearch";
 import { Container, Section } from "@/components/ui/Container";
-import { MapPin, Calendar, Users, Award, Target, Handshake, Clock, TrendingUp } from "lucide-react";
+import { MapPin, Calendar, Award, Handshake, Clock, TrendingUp } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Sobre a Select LED | +10 anos em Painéis de LED no Brasil",
@@ -168,7 +168,14 @@ export default function SobrePage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
               {team.map((member) => (
                 <div key={member.name} className="bg-[#141414] border border-[#2C2C2E] rounded-2xl p-5 text-center">
-                  <div className="w-20 h-20 rounded-full bg-[#1C1C1E] mx-auto mb-4 border-2 border-[rgba(255,59,48,0.2)]" />
+                  <div className="w-20 h-20 rounded-full mx-auto mb-4 border-2 border-[rgba(255,59,48,0.2)] overflow-hidden bg-[#1C1C1E] flex items-center justify-center">
+                    {member.photo ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={member.photo} alt={member.name} className="w-full h-full object-cover object-top" />
+                    ) : (
+                      <span className="text-lg font-bold text-[#A1A1A6]">{member.name.split(" ").map(n => n[0]).join("").slice(0, 2)}</span>
+                    )}
+                  </div>
                   <h3 className="text-sm font-semibold text-white mb-1">{member.name}</h3>
                   <p className="text-xs text-[#FF3B30] font-medium mb-2">{member.role}</p>
                   <p className="text-xs text-[#6E6E73] leading-relaxed">{member.specialty}</p>
