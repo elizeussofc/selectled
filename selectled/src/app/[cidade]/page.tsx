@@ -207,10 +207,10 @@ export default async function CityHomePage({ params }: Props) {
               {/* ── Left: text ── */}
               <div className="stagger">
                 {/* Breadcrumb */}
-                <div className="flex items-center gap-1.5 text-xs text-[#6E6E73] mb-8">
-                  <Link href="/" className="hover:text-[#A1A1A6] transition-colors">Select LED</Link>
-                  <ChevronRight size={10} />
-                  <span className="text-[#A1A1A6]">{city.name}</span>
+                <div className="flex items-center gap-2 mb-8">
+                  <Link href="/" className="text-sm text-[#A1A1A6] hover:text-white transition-colors font-medium">Select LED</Link>
+                  <ChevronRight size={12} className="text-[#3A3A3C]" />
+                  <span className="text-sm text-white font-semibold">{city.name}</span>
                 </div>
 
                 {/* Badge */}
@@ -254,11 +254,11 @@ export default async function CityHomePage({ params }: Props) {
                 </div>
 
                 {/* Selos */}
-                <div className="flex flex-wrap gap-x-7 gap-y-3 pt-8 border-t border-[rgba(255,255,255,0.06)]">
+                <div className="flex flex-wrap gap-x-8 gap-y-3 pt-6 border-t border-[rgba(255,255,255,0.1)]">
                   {["+10 anos no mercado", "+5.000 eventos", "3 sedes próprias", "Orçamento em 2h"].map((s) => (
-                    <div key={s} className="flex items-center gap-2">
-                      <div className="w-1 h-1 rounded-full bg-[#FF3B30]" />
-                      <span className="text-xs text-[#6E6E73] font-medium tracking-wide">{s}</span>
+                    <div key={s} className="flex items-center gap-2.5">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#FF3B30] shadow-[0_0_6px_rgba(255,59,48,0.8)]" />
+                      <span className="text-sm text-[#C0C0C5] font-medium">{s}</span>
                     </div>
                   ))}
                 </div>
