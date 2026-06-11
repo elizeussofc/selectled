@@ -240,7 +240,13 @@ export default async function CityHomePage({ params }: Props) {
                 </h1>
 
                 {/* Foto produto */}
-                <div className="mb-8 animate-float" style={{ transformOrigin: "center bottom" }}>
+                <div
+                  className="mb-8"
+                  style={{
+                    transformOrigin: "center bottom",
+                    animation: "float 4s ease-in-out infinite",
+                  }}
+                >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/images/foto-capa-1.png"
