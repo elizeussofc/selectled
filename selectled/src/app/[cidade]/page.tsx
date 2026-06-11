@@ -467,7 +467,7 @@ export default async function CityHomePage({ params }: Props) {
                   className="text-3xl md:text-4xl font-bold text-white mb-3"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
-                  Vai vender o painel ao invés de alugar?
+                  Já pensou em obter um painel ao invés de alugar?
                 </h2>
                 <p className="text-[#A1A1A6] leading-relaxed">
                   Linha completa de painéis para compra com instalação, garantia de 2 anos e financiamento em até 48x.
