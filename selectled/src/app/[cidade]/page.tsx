@@ -239,6 +239,16 @@ export default async function CityHomePage({ params }: Props) {
                   </span>
                 </h1>
 
+                {/* Foto produto */}
+                <div className="mb-8 -ml-2">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/images/foto-capa-1.png"
+                    alt="Painel de LED Select LED"
+                    style={{ maxHeight: 220, objectFit: "contain", filter: "drop-shadow(0 8px 40px rgba(255,59,48,0.18))" }}
+                  />
+                </div>
+
                 <p className="text-lg text-[#6E6E73] mb-10 max-w-md leading-relaxed">
                   Locação, montagem e operação com o representante local{" "}
                   <span className="text-[#A1A1A6] font-medium">{city.rep.name}</span>. Orçamento em até 2h.
