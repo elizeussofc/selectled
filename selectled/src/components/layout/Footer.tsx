@@ -26,13 +26,15 @@ export function Footer({ citySlug }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Coluna 1: Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-5">
-              <div className="w-8 h-8 bg-[#FF3B30] rounded-md flex items-center justify-center shadow-md shadow-red-900/30">
-                <span className="text-white text-xs font-black">SL</span>
-              </div>
-              <span className="text-white font-bold text-lg" style={{ fontFamily: "var(--font-display)" }}>
-                Select LED
-              </span>
+            <div className="flex items-center gap-2.5 mb-5">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/sl-icon.png" alt="SL" style={{ width: 36, height: 36, borderRadius: 10, objectFit: "contain" }} />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/selectled-logo.png"
+                alt="Select LED"
+                style={{ height: 20, objectFit: "contain", filter: "drop-shadow(0 0 6px rgba(255,255,255,0.45)) drop-shadow(0 0 2px rgba(255,255,255,0.3))" }}
+              />
             </div>
             <p className="text-sm text-[#4A4A4F] leading-relaxed mb-6">
               Tecnologia LED que transforma eventos em experiências inesquecíveis. +10 anos, +5.000 eventos, 3 sedes próprias.
