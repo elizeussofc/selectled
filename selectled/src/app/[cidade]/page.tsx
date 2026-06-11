@@ -240,12 +240,12 @@ export default async function CityHomePage({ params }: Props) {
                 </h1>
 
                 {/* Foto produto */}
-                <div className="mb-8 -ml-2">
+                <div className="mb-8">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/images/foto-capa-1.png"
                     alt="Painel de LED Select LED"
-                    style={{ maxHeight: 220, objectFit: "contain", filter: "drop-shadow(0 8px 40px rgba(255,59,48,0.18))" }}
+                    style={{ width: "100%", maxWidth: 460, height: "auto", filter: "drop-shadow(0 12px 48px rgba(255,59,48,0.2))" }}
                   />
                 </div>
 
