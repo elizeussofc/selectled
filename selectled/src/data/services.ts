@@ -70,10 +70,10 @@ export const services: Service[] = [
       "Relatório fotográfico para redes sociais",
     ],
     equipment: [
-      { name: "Sony A7 IV (câmera principal)", image: "/equip/sony-a7.webp" },
-      { name: "DJI RS3 Pro (estabilizador)", image: "/equip/dji-rs3.webp" },
-      { name: "DJI Mavic 3 (drone)", image: "/equip/mavic3.webp" },
-      { name: "Luzes Godox (iluminação)", image: "/equip/godox.webp" },
+      { name: "Sony A7 IV (câmera principal)", image: "/images/equip-sony-a7.jpg" },
+      { name: "DJI RS3 Pro (estabilizador)", image: "/images/equip-dji-rs3.jpg" },
+      { name: "DJI Mavic 3 (drone)", image: "/images/equip-mavic3.jpg" },
+      { name: "Luzes Godox (iluminação)", image: "/images/equip-godox.jpg" },
     ],
     faq: [
       { q: "Em quantos dias recebo as fotos editadas?", a: "As fotos são entregues em até 7 dias úteis após o evento. Para demandas urgentes, negociamos prazo expresso." },
@@ -103,10 +103,10 @@ export const services: Service[] = [
       "Plano de contingência com link de backup 4G",
     ],
     equipment: [
-      { name: "Access Points Ubiquiti UniFi", image: "/equip/unifi.webp" },
-      { name: "Switch PoE gerenciável", image: "/equip/switch.webp" },
-      { name: "Roteador pfSense dedicado", image: "/equip/pfsense.webp" },
-      { name: "Modem link dedicado", image: "/equip/modem.webp" },
+      { name: "Access Points Ubiquiti UniFi", image: "/images/equip-unifi.jpg" },
+      { name: "Switch PoE gerenciável", image: "/images/equip-switch.jpg" },
+      { name: "Roteador pfSense dedicado", image: "/images/equip-pfsense.jpg" },
+      { name: "Modem link dedicado", image: "/images/equip-modem.jpg" },
     ],
     faq: [
       { q: "Quantos usuários simultâneos a rede suporta?", a: "Dependendo do projeto, nossas redes comportam de 100 a mais de 2.000 usuários simultâneos." },
@@ -136,10 +136,10 @@ export const services: Service[] = [
       "Integração com plataformas de inscrição (Sympla, Eventbrite)",
     ],
     equipment: [
-      { name: "Software Credenciamento Web", image: "/equip/cred-soft.webp" },
-      { name: "Impressora Zebra ZD620", image: "/equip/zebra.webp" },
-      { name: "Leitor RFID/QR Code", image: "/equip/rfid.webp" },
-      { name: "Totem Auto-Credenciamento", image: "/equip/totem.webp" },
+      { name: "Software Credenciamento Web", image: "/images/equip-cred-soft.jpg" },
+      { name: "Impressora Zebra ZD620", image: "/images/equip-zebra.jpg" },
+      { name: "Leitor RFID/QR Code", image: "/images/equip-rfid.jpg" },
+      { name: "Totem Auto-Credenciamento", image: "/images/equip-totem.jpg" },
     ],
     faq: [
       { q: "Quanto tempo leva para credenciar 500 pessoas?", a: "Com múltiplos pontos de credenciamento, 500 pessoas são atendidas em menos de 30 minutos." },
