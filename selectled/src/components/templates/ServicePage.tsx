@@ -126,11 +126,26 @@ export function ServicePage({ city, service }: ServicePageProps) {
                 </h2>
                 <div className="grid grid-cols-2 gap-3">
                   {service.equipment.map((eq) => (
-                    <div key={eq.name} className="bg-[#141414] border border-[#2C2C2E] rounded-xl p-4">
-                      <div className="h-24 bg-[#1C1C1E] rounded-lg mb-3 flex items-center justify-center">
-                        <span className="text-xs text-[#3A3A3C]">Foto</span>
+                    <div key={eq.name} className="bg-[#141414] border border-[#2C2C2E] rounded-xl overflow-hidden group hover:border-[rgba(255,59,48,0.3)] transition-colors">
+                      <div className="relative h-36 bg-[#1C1C1E] overflow-hidden">
+                        {eq.image && !eq.image.includes("/equip/") ? (
+                          <Image
+                            src={eq.image}
+                            alt={eq.name}
+                            fill
+                            className="object-cover transition-transform duration-500 group-hover:scale-105"
+                            sizes="(max-width: 768px) 50vw, 200px"
+                          />
+                        ) : (
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <span className="text-xs text-[#3A3A3C]">Foto</span>
+                          </div>
+                        )}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                       </div>
-                      <p className="text-xs font-medium text-[#A1A1A6]">{eq.name}</p>
+                      <div className="px-3 py-2.5">
+                        <p className="text-xs font-medium text-[#A1A1A6]">{eq.name}</p>
+                      </div>
                     </div>
                   ))}
                 </div>

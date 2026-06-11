@@ -37,10 +37,10 @@ export const services: Service[] = [
       "Suporte técnico em tempo real",
     ],
     equipment: [
-      { name: "Mesa Yamaha QL5", image: "/equip/ql5.webp" },
-      { name: "Line Array L-Acoustics", image: "/equip/la.webp" },
-      { name: "Moving Head Robe", image: "/equip/robe.webp" },
-      { name: "Microfone Shure UR4D", image: "/equip/shure.webp" },
+      { name: "Mesa Yamaha QL5", image: "/images/equip-yamaha-ql5.jpg" },
+      { name: "Line Array L-Acoustics", image: "/images/equip-line-array.jpg" },
+      { name: "Moving Head Robe", image: "/images/equip-moving-head.jpg" },
+      { name: "Microfone Shure UR4D", image: "/images/equip-shure-ur4d.jpg" },
     ],
     faq: [
       { q: "Vocês atendem eventos de pequeno porte?", a: "Sim, atendemos desde pequenos eventos corporativos com 50 pessoas até grandes shows e congressos com mais de 5.000 presentes." },
