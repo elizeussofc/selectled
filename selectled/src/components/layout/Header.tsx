@@ -62,7 +62,7 @@ export function Header({ citySlug }: HeaderProps) {
               src="/images/selectled-logo.png"
               alt="Select LED"
               className="hidden sm:block object-contain"
-              style={{ height: 18, filter: "drop-shadow(0 0 6px rgba(255,255,255,0.45)) drop-shadow(0 0 2px rgba(255,255,255,0.3))" }}
+              style={{ height: 18 }}
             />
           </Link>
 

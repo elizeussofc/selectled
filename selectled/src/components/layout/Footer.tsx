@@ -33,7 +33,7 @@ export function Footer({ citySlug }: FooterProps) {
               <img
                 src="/images/selectled-logo.png"
                 alt="Select LED"
-                style={{ height: 20, objectFit: "contain", filter: "drop-shadow(0 0 6px rgba(255,255,255,0.45)) drop-shadow(0 0 2px rgba(255,255,255,0.3))" }}
+                style={{ height: 20, objectFit: "contain" }}
               />
             </div>
             <p className="text-sm text-[#4A4A4F] leading-relaxed mb-6">
