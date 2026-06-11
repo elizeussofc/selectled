@@ -43,7 +43,7 @@ function Avatar({ name, photo, size = "lg" }: { name: string; photo: string; siz
     <div
       className={
         size === "lg"
-          ? "relative w-32 h-32 rounded-2xl overflow-hidden bg-[#1C1C1E] ring-2 ring-[rgba(255,59,48,0.15)] shrink-0"
+          ? "relative w-40 h-48 rounded-2xl overflow-hidden bg-[#1C1C1E] ring-2 ring-[rgba(255,59,48,0.15)] shrink-0"
           : "relative w-12 h-12 rounded-full overflow-hidden bg-[#1C1C1E] shrink-0"
       }
     >
@@ -51,8 +51,8 @@ function Avatar({ name, photo, size = "lg" }: { name: string; photo: string; siz
         src={photo}
         alt={name}
         fill
-        className="object-cover"
-        sizes={size === "lg" ? "128px" : "48px"}
+        className="object-cover object-top"
+        sizes={size === "lg" ? "160px" : "48px"}
         onError={() => setImgError(true)}
       />
     </div>
