@@ -26,21 +26,25 @@
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* Reset universal removido — o preflight do Tailwind v4 já zera margin/padding
+   dentro de @layer base. Um reset sem layer sobrepõe TODAS as utilities
+   (mx-auto, px-*, p-*), quebrando o layout inteiro. */
 
-html {
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
 
-body {
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  font-size: 16px;
-  line-height: 1.6;
-  overflow-x: hidden;
+  body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
 }
 
 ::-webkit-scrollbar { width: 5px; }
