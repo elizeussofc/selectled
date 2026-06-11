@@ -140,7 +140,7 @@ export default async function PaineisLEDPage({ params }: Props) {
                 </p>
                 <div className="flex flex-wrap gap-3">
                   <Link href={`/${cidade}/orcamento`}>
-                    <Button size="lg">Solicitar orçamento</Button>
+                    <Button size="lg" className="animate-cta-pulse">Solicitar orçamento</Button>
                   </Link>
                   <a
                     href={`https://wa.me/${city.rep.whatsapp}?text=${encodeURIComponent(`Olá, quero alugar painel LED em ${city.name}`)}`}
@@ -323,7 +323,7 @@ export default async function PaineisLEDPage({ params }: Props) {
               <p className="text-[#A1A1A6] mb-8">Fale com {city.rep.name} agora.</p>
               <div className="flex flex-wrap gap-3 justify-center">
                 <Link href={`/${cidade}/orcamento`}>
-                  <Button size="lg">Solicitar orçamento gratuito</Button>
+                  <Button size="lg" className="animate-cta-pulse">Solicitar orçamento gratuito</Button>
                 </Link>
                 <a
                   href={`https://wa.me/${city.rep.whatsapp}?text=${encodeURIComponent(`Olá, quero alugar painel LED em ${city.name}`)}`}

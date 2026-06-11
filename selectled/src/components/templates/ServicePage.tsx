@@ -78,7 +78,7 @@ export function ServicePage({ city, service }: ServicePageProps) {
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href={`/${city.slug}/orcamento`}>
-                  <Button size="lg">Solicitar orçamento</Button>
+                  <Button size="lg" className="animate-cta-pulse">Solicitar orçamento</Button>
                 </Link>
                 <a
                   href={`https://wa.me/${city.rep.whatsapp}?text=${encodeURIComponent(`Olá, ${city.rep.name}! Tenho interesse em ${service.name} para um evento em ${city.name}.`)}`}
@@ -259,7 +259,7 @@ export function ServicePage({ city, service }: ServicePageProps) {
               </p>
               <div className="flex flex-wrap gap-3 justify-center">
                 <Link href={`/${city.slug}/orcamento`}>
-                  <Button size="lg">Solicitar orçamento</Button>
+                  <Button size="lg" className="animate-cta-pulse">Solicitar orçamento</Button>
                 </Link>
                 <a
                   href={`https://wa.me/${city.rep.whatsapp}?text=${encodeURIComponent(`Olá, quero contratar ${service.name} para um evento em ${city.name}.`)}`}

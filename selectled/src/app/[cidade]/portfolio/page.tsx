@@ -154,7 +154,7 @@ export default function PortfolioPage({ params }: Props) {
                 Seu evento aqui →
               </h2>
               <p className="text-[#A1A1A6] mb-8">Adicione seu evento ao portfólio da Select LED em {city.name}.</p>
-              <Link href={`/${cidade}/orcamento`}><Button size="lg">Solicitar orçamento</Button></Link>
+              <Link href={`/${cidade}/orcamento`}><Button size="lg" className="animate-cta-pulse">Solicitar orçamento</Button></Link>
             </div>
           </Container>
         </section>

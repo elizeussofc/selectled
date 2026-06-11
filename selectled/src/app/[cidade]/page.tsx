@@ -657,7 +657,7 @@ export default async function CityHomePage({ params }: Props) {
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <Link href={`/${cidade}/orcamento`}>
-                  <Button size="lg">Solicitar orçamento</Button>
+                  <Button size="lg" className="animate-cta-pulse">Solicitar orçamento</Button>
                 </Link>
                 <a
                   href={`https://wa.me/${city.rep.whatsapp}?text=${encodeURIComponent(`Olá, ${city.rep.name}! Preciso de um orçamento para um evento em ${city.name}.`)}`}

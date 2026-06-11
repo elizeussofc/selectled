@@ -143,7 +143,7 @@ export function Header({ citySlug }: HeaderProps) {
               <Link
                 href={`/${citySlug}/orcamento`}
                 onClick={() => setMenuOpen(false)}
-                className="flex items-center justify-center h-10 rounded-lg bg-[#FF3B30] text-white text-sm font-semibold hover:bg-[#FF1A0E] transition-colors"
+                className="flex items-center justify-center h-10 rounded-lg bg-[#FF3B30] text-white text-sm font-semibold hover:bg-[#FF1A0E] transition-colors animate-cta-pulse"
               >
                 Solicitar orçamento
               </Link>
