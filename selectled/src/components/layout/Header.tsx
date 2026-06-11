@@ -50,16 +50,20 @@ export function Header({ citySlug }: HeaderProps) {
         <div className="flex items-center justify-between h-14 md:h-16">
 
           {/* Logo */}
-          <Link href={`/${citySlug}`} className="flex items-center gap-2 shrink-0 group">
-            <div className="w-7 h-7 bg-[#FF3B30] rounded-md flex items-center justify-center shadow-lg shadow-red-900/40 group-hover:scale-105 transition-transform duration-200">
-              <span className="text-white text-[10px] font-black leading-none tracking-tight">SL</span>
-            </div>
-            <span
-              className="text-white font-semibold text-sm tracking-tight hidden sm:block"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              Select LED
-            </span>
+          <Link href={`/${citySlug}`} className="flex items-center gap-2.5 shrink-0 group">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/sl-icon.png"
+              alt="SL"
+              className="w-8 h-8 rounded-xl object-contain group-hover:scale-105 transition-transform duration-200"
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/selectled-logo.png"
+              alt="Select LED"
+              className="hidden sm:block object-contain"
+              style={{ height: 18 }}
+            />
           </Link>
 
           {/* Nav desktop */}
