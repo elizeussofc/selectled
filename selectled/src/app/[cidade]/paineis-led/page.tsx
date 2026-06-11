@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { getCityBySlug, getAllCitySlugs } from "@/data/cities";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -112,11 +113,27 @@ export default async function PaineisLEDPage({ params }: Props) {
                   Locação de LED
                 </p>
                 <h1
-                  className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-5 leading-tight"
+                  className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
                   style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.03em" }}
                 >
                   Locação de Painel de LED em {city.name}
                 </h1>
+
+                {/* Imagem hero */}
+                <div className="relative w-full rounded-2xl overflow-hidden mb-6" style={{ height: 260 }}>
+                  <Image
+                    src="/images/technicians-led-panel.jpg"
+                    alt="Técnicos instalando painel de LED"
+                    fill
+                    className="object-cover"
+                    style={{ objectPosition: "center 40%" }}
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/50 via-transparent to-transparent" />
+                  <div className="absolute inset-0 rounded-2xl ring-1 ring-white/5" />
+                </div>
+
                 <p className="text-lg text-[#A1A1A6] mb-8 leading-relaxed">
                   Indoor, outdoor, alta resolução. Entrega, montagem e operador inclusos em{" "}
                   {city.name} e região.
