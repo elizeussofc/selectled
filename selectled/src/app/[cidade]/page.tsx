@@ -240,12 +240,12 @@ export default async function CityHomePage({ params }: Props) {
                 </h1>
 
                 {/* Foto produto */}
-                <div className="mb-8">
+                <div className="mb-8 animate-float" style={{ transformOrigin: "center bottom" }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/images/foto-capa-1.png"
                     alt="Painel de LED Select LED"
-                    style={{ width: "100%", maxWidth: 460, height: "auto", filter: "drop-shadow(0 12px 48px rgba(255,59,48,0.2))" }}
+                    style={{ width: "100%", maxWidth: 460, height: "auto", filter: "drop-shadow(0 18px 56px rgba(255,59,48,0.28)) drop-shadow(0 4px 16px rgba(0,0,0,0.6))" }}
                   />
                 </div>
 
@@ -256,7 +256,7 @@ export default async function CityHomePage({ params }: Props) {
 
                 <div className="flex flex-wrap gap-3 mb-12">
                   <Link href={`/${cidade}/orcamento`}>
-                    <Button size="lg">Solicitar orçamento</Button>
+                    <Button size="lg" className="animate-cta-pulse">Solicitar orçamento</Button>
                   </Link>
                   <Link href={`/${cidade}/paineis-led`}>
                     <Button size="lg" variant="outline">Ver painéis disponíveis</Button>
