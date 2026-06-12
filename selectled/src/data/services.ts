@@ -56,6 +56,7 @@ export const services: Service[] = [
     name: "Foto e Filmagem",
     shortName: "Foto & Filme",
     hero: "/services/foto-filmagem-hero.webp",
+    heroImage: "/images/foto-filmagem-hero.jpg",
     icon: "camera",
     tagline: "Memórias que duram décadas, entregas que encantam",
     intro:
@@ -89,6 +90,7 @@ export const services: Service[] = [
     name: "Internet para Eventos",
     shortName: "Internet",
     hero: "/services/internet-eventos-hero.webp",
+    heroImage: "/images/internet-eventos-hero.jpg",
     icon: "wifi",
     tagline: "Conectividade que não cai no momento crítico",
     intro:
@@ -122,6 +124,7 @@ export const services: Service[] = [
     name: "Credenciamento e Staff",
     shortName: "Credenciamento",
     hero: "/services/credenciamento-hero.webp",
+    heroImage: "/images/credenciamento-hero.jpg",
     icon: "badge-check",
     tagline: "Entrada organizada, experiência impecável desde o início",
     intro:
