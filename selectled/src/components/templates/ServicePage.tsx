@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { MessageCircle, CheckCircle, ChevronRight, ArrowRight } from "lucide-react";
@@ -9,6 +11,8 @@ import { WAFloat } from "@/components/layout/WAFloat";
 import { RepCard } from "@/components/sections/RepCard";
 import { Button } from "@/components/ui/Button";
 import { Container, Section } from "@/components/ui/Container";
+import { useT } from "@/contexts/language-context";
+import { tpl } from "@/data/translations";
 
 interface ServicePageProps {
   city: City;
@@ -16,6 +20,9 @@ interface ServicePageProps {
 }
 
 export function ServicePage({ city, service }: ServicePageProps) {
+  const t = useT();
+  const sp = t.servicePage;
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -78,7 +85,7 @@ export function ServicePage({ city, service }: ServicePageProps) {
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href={`/${city.slug}/orcamento`}>
-                  <Button size="lg" className="animate-cta-pulse">Solicitar orçamento</Button>
+                  <Button size="lg" className="animate-cta-pulse">{sp.ctaPrimary}</Button>
                 </Link>
                 <a
                   href={`https://wa.me/${city.rep.whatsapp}?text=${encodeURIComponent(`Olá, ${city.rep.name}! Tenho interesse em ${service.name} para um evento em ${city.name}.`)}`}
@@ -104,7 +111,7 @@ export function ServicePage({ city, service }: ServicePageProps) {
                   className="text-3xl font-bold text-white mb-8"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
-                  O que você recebe
+                  {sp.whatYouGet}
                 </h2>
                 <ul className="space-y-4">
                   {service.deliverables.map((d) => (
@@ -122,7 +129,7 @@ export function ServicePage({ city, service }: ServicePageProps) {
                   className="text-3xl font-bold text-white mb-8"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
-                  Equipamentos
+                  {sp.equipment}
                 </h2>
                 <div className="grid grid-cols-2 gap-3">
                   {service.equipment.map((eq) => (
@@ -161,15 +168,10 @@ export function ServicePage({ city, service }: ServicePageProps) {
               className="text-3xl font-bold text-white mb-10 text-center"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              Como funciona
+              {sp.howItWorks}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              {[
-                { n: "01", title: "Briefing", desc: "Envie as informações do seu evento" },
-                { n: "02", title: "Proposta", desc: "Receba orçamento em até 2h úteis" },
-                { n: "03", title: "Confirmação", desc: "Contrato e pagamento simples" },
-                { n: "04", title: "Execução", desc: "Nossa equipe cuida de tudo no dia" },
-              ].map((step, i) => (
+              {sp.steps.map((step, i) => (
                 <div key={i}>
                   <div className="text-5xl font-black text-[#1C1C1E] mb-3" style={{ fontFamily: "var(--font-display)" }}>
                     {step.n}
@@ -193,25 +195,25 @@ export function ServicePage({ city, service }: ServicePageProps) {
                   className="text-2xl font-bold text-white mb-4"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
-                  Outros serviços em {city.name}
+                  {tpl(sp.otherServices, { city: city.name })}
                 </h2>
                 <div className="space-y-3">
                   <Link
                     href={`/${city.slug}/paineis-led`}
                     className="flex items-center justify-between p-4 bg-[#141414] border border-[#2C2C2E] rounded-xl hover:border-[rgba(255,59,48,0.3)] transition-colors"
                   >
-                    <span className="text-sm text-[#A1A1A6]">Precisa de painel LED também?</span>
+                    <span className="text-sm text-[#A1A1A6]">{sp.needPanelToo}</span>
                     <span className="text-xs text-[#FF3B30] flex items-center gap-1">
-                      Ver painéis <ArrowRight size={11} />
+                      {sp.viewPanels} <ArrowRight size={11} />
                     </span>
                   </Link>
                   <Link
                     href={`/${city.slug}/vendas`}
                     className="flex items-center justify-between p-4 bg-[#141414] border border-[#2C2C2E] rounded-xl hover:border-[rgba(255,59,48,0.3)] transition-colors"
                   >
-                    <span className="text-sm text-[#A1A1A6]">Quer comprar ao invés de alugar?</span>
+                    <span className="text-sm text-[#A1A1A6]">{sp.wantToBuy}</span>
                     <span className="text-xs text-[#FF3B30] flex items-center gap-1">
-                      Ver linha de venda <ArrowRight size={11} />
+                      {sp.viewSales} <ArrowRight size={11} />
                     </span>
                   </Link>
                 </div>
@@ -228,7 +230,7 @@ export function ServicePage({ city, service }: ServicePageProps) {
                 className="text-3xl font-bold text-white mb-8 text-center"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                Dúvidas sobre {service.shortName}
+                {tpl(sp.faqTitle, { service: service.shortName })}
               </h2>
               <div className="space-y-3">
                 {service.faq.map((faq, i) => (
@@ -252,14 +254,14 @@ export function ServicePage({ city, service }: ServicePageProps) {
           <Container>
             <div className="text-center max-w-xl mx-auto">
               <h2 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-display)" }}>
-                Pronto para contratar {service.shortName} em {city.name}?
+                {tpl(sp.ctaTitle, { service: service.shortName, city: city.name })}
               </h2>
               <p className="text-[#A1A1A6] mb-8">
-                Fale com {city.rep.name} e receba sua proposta em até 2h úteis.
+                {tpl(sp.ctaDesc, { rep: city.rep.name })}
               </p>
               <div className="flex flex-wrap gap-3 justify-center">
                 <Link href={`/${city.slug}/orcamento`}>
-                  <Button size="lg" className="animate-cta-pulse">Solicitar orçamento</Button>
+                  <Button size="lg" className="animate-cta-pulse">{sp.ctaPrimary}</Button>
                 </Link>
                 <a
                   href={`https://wa.me/${city.rep.whatsapp}?text=${encodeURIComponent(`Olá, quero contratar ${service.name} para um evento em ${city.name}.`)}`}
@@ -268,7 +270,7 @@ export function ServicePage({ city, service }: ServicePageProps) {
                 >
                   <Button size="lg" variant="whatsapp">
                     <MessageCircle size={16} />
-                    WhatsApp agora
+                    {sp.ctaWhatsapp}
                   </Button>
                 </a>
               </div>

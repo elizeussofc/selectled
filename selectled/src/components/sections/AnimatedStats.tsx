@@ -1,20 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useT } from "@/contexts/language-context";
 
-interface Stat {
-  value: number;
-  suffix: string;
-  prefix?: string;
-  label: string;
-}
-
-const stats: Stat[] = [
-  { value: 10, suffix: "+ anos", label: "de mercado" },
-  { value: 5000, suffix: "+", label: "eventos realizados" },
-  { value: 500, suffix: "+", label: "clientes ativos" },
-  { value: 3, suffix: " sedes", label: "próprias" },
-];
+const statValues = [10, 5000, 500, 3];
 
 function AnimatedNumber({ value, suffix, prefix }: { value: number; suffix: string; prefix?: string }) {
   const [count, setCount] = useState(0);
@@ -52,6 +41,7 @@ function AnimatedNumber({ value, suffix, prefix }: { value: number; suffix: stri
 }
 
 export function AnimatedStats() {
+  const stats = useT().stats;
   return (
     <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
       {stats.map((stat, i) => (
@@ -63,7 +53,7 @@ export function AnimatedStats() {
             className="text-4xl lg:text-5xl font-bold text-white mb-2"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            <AnimatedNumber value={stat.value} suffix={stat.suffix} prefix={stat.prefix} />
+            <AnimatedNumber value={statValues[i]} suffix={stat.suffix} />
           </div>
           <p className="text-sm text-[#6E6E73]">{stat.label}</p>
         </div>

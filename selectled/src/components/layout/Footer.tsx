@@ -1,5 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import { MessageCircle, MapPin, Mail, Phone } from "lucide-react";
+import { useT } from "@/contexts/language-context";
+import { tpl } from "@/data/translations";
 
 function InstagramIcon({ size = 16 }: { size?: number }) {
   return (
@@ -19,6 +23,8 @@ interface FooterProps {
 
 export function Footer({ citySlug }: FooterProps) {
   const city = getCityBySlug(citySlug);
+  const translations = useT();
+  const t = translations.footer;
 
   return (
     <footer className="bg-[#080808] border-t border-[#1C1C1E]">
@@ -67,7 +73,7 @@ export function Footer({ citySlug }: FooterProps) {
 
           {/* Coluna 2: Serviços */}
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-widest text-[#3A3A3C] mb-4">Serviços</h3>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-[#3A3A3C] mb-4">{t.services}</h3>
             <ul className="space-y-2">
               {services.map((s) => (
                 <li key={s.slug}>
@@ -84,7 +90,7 @@ export function Footer({ citySlug }: FooterProps) {
                   href={`/${citySlug}/paineis-led`}
                   className="text-sm text-[#6E6E73] hover:text-[#A1A1A6] transition-colors"
                 >
-                  Painéis de LED
+                  {translations.nav.paineis}
                 </Link>
               </li>
               <li>
@@ -92,7 +98,7 @@ export function Footer({ citySlug }: FooterProps) {
                   href={`/${citySlug}/vendas`}
                   className="text-sm text-[#FF3B30] hover:text-[#FF6B60] transition-colors font-medium"
                 >
-                  Comprar Painel LED →
+                  {t.buyPanel}
                 </Link>
               </li>
             </ul>
@@ -100,7 +106,7 @@ export function Footer({ citySlug }: FooterProps) {
 
           {/* Coluna 3: Cidades */}
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-widest text-[#3A3A3C] mb-4">Cidades atendidas</h3>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-[#3A3A3C] mb-4">{t.cities}</h3>
             <ul className="space-y-2">
               {cities.map((c) => (
                 <li key={c.slug}>
@@ -122,7 +128,7 @@ export function Footer({ citySlug }: FooterProps) {
           {/* Coluna 4: Contato local */}
           <div>
             <h3 className="text-xs font-bold uppercase tracking-widest text-[#3A3A3C] mb-4">
-              {city ? `Sede em ${city.name}` : "Contato"}
+              {city ? tpl(t.officeIn, { city: city.name }) : t.contact}
             </h3>
             {city && (
               <div className="space-y-3">
@@ -148,13 +154,13 @@ export function Footer({ citySlug }: FooterProps) {
                     rel="noopener noreferrer"
                     className="text-sm text-[#6E6E73] hover:text-[#25D366] transition-colors"
                   >
-                    WhatsApp direto
+                    {t.whatsappDirect}
                   </a>
                 </div>
               </div>
             )}
             <div className="mt-6 pt-4 border-t border-[#1C1C1E]">
-              <p className="text-xs text-[#3A3A3C] mb-2">Parte do</p>
+              <p className="text-xs text-[#3A3A3C] mb-2">{t.partOf}</p>
               <div className="text-xs font-semibold text-[#6E6E73]">
                 Select Hub
               </div>
@@ -168,17 +174,17 @@ export function Footer({ citySlug }: FooterProps) {
         {/* Bottom bar */}
         <div className="mt-12 pt-6 border-t border-[#141414] flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-[11px] text-[#2C2C2E]">
-            © {new Date().getFullYear()} Select Led LTDA. Todos os direitos reservados.
+            © {new Date().getFullYear()} Select Led LTDA. {t.rights}
           </p>
           <div className="flex gap-4">
             <Link href="/sobre" className="text-xs text-[#3A3A3C] hover:text-[#6E6E73] transition-colors">
-              Sobre
+              {t.about}
             </Link>
             <Link href="/blog" className="text-xs text-[#3A3A3C] hover:text-[#6E6E73] transition-colors">
-              Blog
+              {t.blog}
             </Link>
             <Link href={`/${citySlug}/contato`} className="text-xs text-[#3A3A3C] hover:text-[#6E6E73] transition-colors">
-              Contato
+              {t.contact}
             </Link>
           </div>
         </div>

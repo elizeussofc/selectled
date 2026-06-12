@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, DM_Sans } from "next/font/google";
+import { LanguageProvider } from "@/contexts/language-context";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -49,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${spaceGrotesk.variable} ${dmSans.variable} h-full`}>
       <body className="min-h-full flex flex-col" style={{ fontFamily: "var(--font-body), system-ui, sans-serif" }}>
-        {children}
+        <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
   );

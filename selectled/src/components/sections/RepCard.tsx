@@ -6,6 +6,8 @@ import { MapPin, Mail, MessageCircle, Building2 } from "lucide-react";
 import type { City } from "@/data/cities";
 import { Button } from "@/components/ui/Button";
 import { buildWhatsAppUrl } from "@/lib/utils";
+import { useT } from "@/contexts/language-context";
+import { tpl } from "@/data/translations";
 
 interface RepCardProps {
   city: City;
@@ -60,6 +62,7 @@ function Avatar({ name, photo, size = "lg" }: { name: string; photo: string; siz
 }
 
 export function RepCard({ city, variant = "full" }: RepCardProps) {
+  const t = useT().repCard;
   const waMessage = `Olá, ${city.rep.name}! Preciso de um orçamento para um evento em ${city.name}.`;
   const waUrl = buildWhatsAppUrl(city.rep.whatsapp, waMessage);
 
@@ -79,7 +82,7 @@ export function RepCard({ city, variant = "full" }: RepCardProps) {
         <a href={waUrl} target="_blank" rel="noopener noreferrer" className="mt-4 block">
           <Button variant="whatsapp" size="sm" className="w-full">
             <MessageCircle size={14} />
-            WhatsApp direto
+            {t.whatsappDirect}
           </Button>
         </a>
       </div>
@@ -95,7 +98,7 @@ export function RepCard({ city, variant = "full" }: RepCardProps) {
 
           <div className="flex-1 min-w-0">
             <p className="text-xs font-semibold uppercase tracking-widest text-[#FF3B30] mb-2">
-              Representante em {city.name}
+              {tpl(t.repBadge, { city: city.name })}
             </p>
             <h3
               className="text-2xl lg:text-3xl font-bold text-[#F5F5F7] mb-1 leading-tight"
@@ -136,13 +139,13 @@ export function RepCard({ city, variant = "full" }: RepCardProps) {
               <a href={`mailto:${city.rep.email}`}>
                 <Button variant="outline">
                   <Mail size={15} />
-                  Enviar e-mail
+                  {t.sendEmail}
                 </Button>
               </a>
             </div>
 
             <p className="mt-5 text-xs text-[#3A3A3C] italic">
-              &ldquo;Seu evento em {city.name} merece atendimento de quem está aqui.&rdquo;
+              &ldquo;{tpl(t.quote, { city: city.name })}&rdquo;
             </p>
           </div>
         </div>
@@ -156,7 +159,7 @@ export function RepCard({ city, variant = "full" }: RepCardProps) {
           </div>
           <div>
             <p className="text-xs font-semibold text-[#6E6E73] uppercase tracking-wider mb-0.5">
-              Sede em {city.name}
+              {tpl(t.officeIn, { city: city.name })}
             </p>
             <p className="text-sm text-[#A1A1A6]">
               {city.address.street}
@@ -174,7 +177,7 @@ export function RepCard({ city, variant = "full" }: RepCardProps) {
               rel="noopener noreferrer"
               className="text-xs text-[#6E6E73] hover:text-[#A1A1A6] transition-colors flex items-center gap-1"
             >
-              Ver no mapa
+              {t.viewOnMap}
               <MapPin size={11} />
             </a>
           </div>

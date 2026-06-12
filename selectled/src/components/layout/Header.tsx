@@ -5,6 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { CitySwitcher } from "./CitySwitcher";
+import { LanguageSwitcher } from "./LanguageSwitcher";
+import { useT } from "@/contexts/language-context";
 import { cn } from "@/lib/utils";
 
 interface HeaderProps {
@@ -16,6 +18,7 @@ export function Header({ citySlug }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+  const t = useT();
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 40);
@@ -25,12 +28,12 @@ export function Header({ citySlug }: HeaderProps) {
   }, []);
 
   const navItems = [
-    { label: "Painéis LED", href: `/${citySlug}/paineis-led` },
-    { label: "Som & Luz", href: `/${citySlug}/som-iluminacao` },
-    { label: "Foto & Filme", href: `/${citySlug}/foto-filmagem` },
-    { label: "Internet", href: `/${citySlug}/internet-eventos` },
-    { label: "Credenciamento", href: `/${citySlug}/credenciamento` },
-    { label: "Portfólio", href: `/${citySlug}/portfolio` },
+    { label: t.nav.paineis, href: `/${citySlug}/paineis-led` },
+    { label: t.nav.som, href: `/${citySlug}/som-iluminacao` },
+    { label: t.nav.foto, href: `/${citySlug}/foto-filmagem` },
+    { label: t.nav.internet, href: `/${citySlug}/internet-eventos` },
+    { label: t.nav.credenciamento, href: `/${citySlug}/credenciamento` },
+    { label: t.nav.portfolio, href: `/${citySlug}/portfolio` },
   ];
 
   return (
@@ -94,18 +97,19 @@ export function Header({ citySlug }: HeaderProps) {
                   : "text-[#FF3B30] hover:bg-[rgba(255,59,48,0.08)]"
               )}
             >
-              Venda
+              {t.nav.venda}
             </Link>
           </nav>
 
           {/* Right */}
           <div className="flex items-center gap-2">
+            <LanguageSwitcher />
             <CitySwitcher currentCity={citySlug} />
             <Link
               href={`/${citySlug}/orcamento`}
               className="hidden sm:inline-flex items-center h-8 px-4 rounded-lg bg-[#FF3B30] text-white text-xs font-semibold hover:bg-[#FF1A0E] transition-colors shadow-md shadow-red-900/30"
             >
-              Orçamento
+              {t.nav.orcamento}
             </Link>
             <button
               onClick={() => setMenuOpen(!menuOpen)}
@@ -122,6 +126,7 @@ export function Header({ citySlug }: HeaderProps) {
       {menuOpen && (
         <div className="lg:hidden bg-[#0D0D0D]/95 backdrop-blur-xl border-t border-[#1C1C1E] animate-slide-down">
           <nav className="px-4 py-3 flex flex-col gap-0.5">
+            <LanguageSwitcher mobile />
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -137,7 +142,7 @@ export function Header({ citySlug }: HeaderProps) {
               onClick={() => setMenuOpen(false)}
               className="px-3 py-2.5 rounded-lg text-sm font-semibold text-[#FF3B30] hover:bg-[rgba(255,59,48,0.08)] transition-colors"
             >
-              Venda de painéis
+              {t.nav.venda}
             </Link>
             <div className="pt-2 pb-1 border-t border-[#1C1C1E] mt-1">
               <Link
@@ -145,7 +150,7 @@ export function Header({ citySlug }: HeaderProps) {
                 onClick={() => setMenuOpen(false)}
                 className="flex items-center justify-center h-10 rounded-lg bg-[#FF3B30] text-white text-sm font-semibold hover:bg-[#FF1A0E] transition-colors animate-cta-pulse"
               >
-                Solicitar orçamento
+                {t.sections.ctaPrimary}
               </Link>
             </div>
           </nav>
