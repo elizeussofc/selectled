@@ -3,7 +3,6 @@
 import { useState, use } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import { getCityBySlug } from "@/data/cities";
 import { cases, getCasesByCity } from "@/data/cases";
 import { Header } from "@/components/layout/Header";
@@ -13,17 +12,10 @@ import { Button } from "@/components/ui/Button";
 import { Container, Section } from "@/components/ui/Container";
 import { ChevronRight, Users, ImageIcon, X } from "lucide-react";
 import { notFound } from "next/navigation";
+import { useT } from "@/contexts/language-context";
+import { tpl } from "@/data/translations";
 
-const CATEGORIES = [
-  { value: "todos", label: "Todos" },
-  { value: "corporativo", label: "Corporativo" },
-  { value: "show", label: "Shows" },
-  { value: "casamento", label: "Casamentos" },
-  { value: "igreja", label: "Igrejas" },
-  { value: "feira", label: "Feiras" },
-  { value: "lancamento", label: "Lançamentos" },
-  { value: "palestra", label: "Palestras" },
-];
+const CATEGORY_KEYS = ["todos", "corporativo", "show", "casamento", "igreja", "feira", "lancamento", "palestra"] as const;
 
 interface Props { params: Promise<{ cidade: string }> }
 
@@ -32,17 +24,25 @@ export default function PortfolioPage({ params }: Props) {
   const city = getCityBySlug(cidade);
   if (!city) notFound();
 
+  const t = useT();
+  const tp = t.portfolio;
+
   const [activeCategory, setActiveCategory] = useState("todos");
   const [selectedCase, setSelectedCase] = useState<typeof cases[0] | null>(null);
 
   const cityCases = getCasesByCity(cidade);
   const allCases = cityCases.length > 0
     ? cityCases
-    : cases.slice(0, 6); // fallback with national cases
+    : cases.slice(0, 6);
 
   const filtered = activeCategory === "todos"
     ? allCases
     : allCases.filter((c) => c.category === activeCategory);
+
+  const categories = CATEGORY_KEYS.map((key) => ({
+    value: key,
+    label: tp.categories[key],
+  }));
 
   return (
     <>
@@ -56,19 +56,19 @@ export default function PortfolioPage({ params }: Props) {
               <ChevronRight size={10} />
               <Link href={`/${cidade}`} className="hover:text-[#A1A1A6] transition-colors">{city.name}</Link>
               <ChevronRight size={10} />
-              <span className="text-[#A1A1A6]">Portfólio</span>
+              <span className="text-[#A1A1A6]">{tp.breadcrumb}</span>
             </div>
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4 leading-tight" style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.03em" }}>
-              Eventos que fizemos em {city.name}
+              {tpl(tp.h1, { city: city.name })}
             </h1>
             <p className="text-lg text-[#A1A1A6] mb-8">
-              Cada evento é um projeto único. Aqui estão alguns dos trabalhos realizados com a Select LED.
+              {tp.subtitle}
             </p>
             <div className="flex flex-wrap gap-4">
               {[
-                { n: allCases.length, l: "eventos na cidade" },
-                { n: "500+", l: "clientes atendidos" },
-                { n: "10+", l: "anos de experiência" },
+                { n: allCases.length, l: tp.statsLocal },
+                { n: "500+", l: tp.statsClients },
+                { n: "10+", l: tp.statsYears },
               ].map((s) => (
                 <div key={s.l} className="bg-[#141414] border border-[#2C2C2E] rounded-xl px-5 py-3">
                   <span className="text-lg font-bold text-[#FF3B30]">{s.n}</span>
@@ -83,7 +83,7 @@ export default function PortfolioPage({ params }: Props) {
           <Container>
             {/* Filtros */}
             <div className="flex flex-wrap gap-2 mb-10">
-              {CATEGORIES.map((cat) => (
+              {categories.map((cat) => (
                 <button
                   key={cat.value}
                   onClick={() => setActiveCategory(cat.value)}
@@ -122,7 +122,7 @@ export default function PortfolioPage({ params }: Props) {
                         </div>
                       )}
                       <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span className="text-white text-sm font-medium">Ver detalhes →</span>
+                        <span className="text-white text-sm font-medium">{tp.viewDetails}</span>
                       </div>
                     </div>
                     <div className="p-5">
@@ -131,7 +131,7 @@ export default function PortfolioPage({ params }: Props) {
                       <p className="text-xs text-[#6E6E73]">{c.client}</p>
                       <div className="flex items-center gap-1.5 mt-2 text-xs text-[#6E6E73]">
                         <Users size={11} />
-                        {c.audience.toLocaleString("pt-BR")} pessoas
+                        {c.audience.toLocaleString()} {tp.people}
                       </div>
                     </div>
                   </button>
@@ -140,7 +140,7 @@ export default function PortfolioPage({ params }: Props) {
             ) : (
               <div className="text-center py-20">
                 <ImageIcon size={40} className="text-[#2C2C2E] mx-auto mb-4" />
-                <p className="text-[#6E6E73]">Nenhum case nessa categoria ainda.</p>
+                <p className="text-[#6E6E73]">{tp.noResults}</p>
               </div>
             )}
           </Container>
@@ -151,10 +151,10 @@ export default function PortfolioPage({ params }: Props) {
           <Container>
             <div className="text-center max-w-xl mx-auto">
               <h2 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-display)" }}>
-                Seu evento aqui →
+                {tp.ctaTitle}
               </h2>
-              <p className="text-[#A1A1A6] mb-8">Adicione seu evento ao portfólio da Select LED em {city.name}.</p>
-              <Link href={`/${cidade}/orcamento`}><Button size="lg" className="animate-cta-pulse">Solicitar orçamento</Button></Link>
+              <p className="text-[#A1A1A6] mb-8">{tpl(tp.ctaDesc, { city: city.name })}</p>
+              <Link href={`/${cidade}/orcamento`}><Button size="lg" className="animate-cta-pulse">{tp.ctaBtn}</Button></Link>
             </div>
           </Container>
         </section>
@@ -177,13 +177,13 @@ export default function PortfolioPage({ params }: Props) {
             </div>
             <div className="p-5 space-y-4">
               <div className="grid grid-cols-2 gap-3 text-sm">
-                <div><p className="text-xs text-[#6E6E73]">Cliente</p><p className="text-white font-medium">{selectedCase.client}</p></div>
-                <div><p className="text-xs text-[#6E6E73]">Local</p><p className="text-white font-medium">{selectedCase.location}</p></div>
-                <div><p className="text-xs text-[#6E6E73]">Público</p><p className="text-white font-medium">{selectedCase.audience.toLocaleString("pt-BR")} pessoas</p></div>
-                <div><p className="text-xs text-[#6E6E73]">Data</p><p className="text-white font-medium">{selectedCase.date}</p></div>
+                <div><p className="text-xs text-[#6E6E73]">{tp.modalClient}</p><p className="text-white font-medium">{selectedCase.client}</p></div>
+                <div><p className="text-xs text-[#6E6E73]">{tp.modalLocation}</p><p className="text-white font-medium">{selectedCase.location}</p></div>
+                <div><p className="text-xs text-[#6E6E73]">{tp.modalAudience}</p><p className="text-white font-medium">{selectedCase.audience.toLocaleString()} {tp.people}</p></div>
+                <div><p className="text-xs text-[#6E6E73]">{tp.modalDate}</p><p className="text-white font-medium">{selectedCase.date}</p></div>
               </div>
               <div>
-                <p className="text-xs text-[#6E6E73] mb-2">Equipamentos</p>
+                <p className="text-xs text-[#6E6E73] mb-2">{tp.modalEquipment}</p>
                 <div className="flex flex-wrap gap-2">
                   {selectedCase.equipment.map((e) => (
                     <span key={e} className="text-xs bg-[#1C1C1E] border border-[#2C2C2E] text-[#A1A1A6] rounded-full px-3 py-1">{e}</span>
@@ -192,13 +192,13 @@ export default function PortfolioPage({ params }: Props) {
               </div>
               {selectedCase.testimonial && (
                 <div className="bg-[#1C1C1E] rounded-xl p-4">
-                  <p className="text-sm text-[#A1A1A6] italic mb-2">"{selectedCase.testimonial.text}"</p>
+                  <p className="text-sm text-[#A1A1A6] italic mb-2">&ldquo;{selectedCase.testimonial.text}&rdquo;</p>
                   <p className="text-xs font-semibold text-white">{selectedCase.testimonial.author}</p>
                   <p className="text-xs text-[#6E6E73]">{selectedCase.testimonial.role}</p>
                 </div>
               )}
               <Link href={`/${cidade}/orcamento`} onClick={() => setSelectedCase(null)}>
-                <Button className="w-full justify-center">Quero um evento assim</Button>
+                <Button className="w-full justify-center">{tp.modalCta}</Button>
               </Link>
             </div>
           </div>

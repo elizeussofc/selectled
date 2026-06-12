@@ -22,6 +22,7 @@ interface ServicePageProps {
 export function ServicePage({ city, service }: ServicePageProps) {
   const t = useT();
   const sp = t.servicePage;
+  const serviceName = t.serviceNames[service.slug] ?? service.name;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -56,13 +57,13 @@ export function ServicePage({ city, service }: ServicePageProps) {
 
             <div className="max-w-3xl">
               <p className="text-xs font-semibold uppercase tracking-widest text-[#FF3B30] mb-3">
-                {service.name}
+                {serviceName}
               </p>
               <h1
                 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-5 leading-tight"
                 style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.03em" }}
               >
-                {service.name} em {city.name}
+                {serviceName} {t.hero.h1Line2} {city.name}
               </h1>
               {service.heroImage && (
                 <div className="relative w-full rounded-2xl overflow-hidden mb-8" style={{ maxHeight: 480 }}>

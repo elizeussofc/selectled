@@ -103,7 +103,6 @@ export function Header({ citySlug }: HeaderProps) {
 
           {/* Right */}
           <div className="flex items-center gap-2">
-            <LanguageSwitcher />
             <CitySwitcher currentCity={citySlug} />
             <Link
               href={`/${citySlug}/orcamento`}
@@ -111,6 +110,7 @@ export function Header({ citySlug }: HeaderProps) {
             >
               {t.nav.orcamento}
             </Link>
+            <LanguageSwitcher />
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="lg:hidden p-1.5 rounded-md text-[#8E8E93] hover:text-white hover:bg-white/8 transition-colors"
