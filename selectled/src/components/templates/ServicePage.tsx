@@ -56,7 +56,7 @@ export function ServicePage({ city, service }: ServicePageProps) {
             </div>
 
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#EF4444] mb-3">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#FF0000] mb-3">
                 {serviceName}
               </p>
               <h1
@@ -134,7 +134,7 @@ export function ServicePage({ city, service }: ServicePageProps) {
                 </h2>
                 <div className="grid grid-cols-2 gap-3">
                   {service.equipment.map((eq) => (
-                    <div key={eq.name} className="bg-[#141414] border border-[#2C2C2E] rounded-xl overflow-hidden group hover:border-[rgba(239,68,68,0.3)] transition-colors">
+                    <div key={eq.name} className="bg-[#141414] border border-[#2C2C2E] rounded-xl overflow-hidden group hover:border-[rgba(255,0,0,0.3)] transition-colors">
                       <div className="relative h-36 bg-[#1C1C1E] overflow-hidden">
                         {eq.image && !eq.image.includes("/equip/") ? (
                           <Image
@@ -177,7 +177,7 @@ export function ServicePage({ city, service }: ServicePageProps) {
                   <div className="text-5xl font-black text-[#1C1C1E] mb-3" style={{ fontFamily: "var(--font-display)" }}>
                     {step.n}
                   </div>
-                  <div className="w-8 h-1 bg-[#EF4444] mb-4 rounded-full" />
+                  <div className="w-8 h-1 bg-[#FF0000] mb-4 rounded-full" />
                   <h3 className="font-semibold text-white mb-2">{step.title}</h3>
                   <p className="text-sm text-[#6E6E73] leading-relaxed">{step.desc}</p>
                 </div>
@@ -201,19 +201,19 @@ export function ServicePage({ city, service }: ServicePageProps) {
                 <div className="space-y-3">
                   <Link
                     href={`/${city.slug}/paineis-led`}
-                    className="flex items-center justify-between p-4 bg-[#141414] border border-[#2C2C2E] rounded-xl hover:border-[rgba(239,68,68,0.3)] transition-colors"
+                    className="flex items-center justify-between p-4 bg-[#141414] border border-[#2C2C2E] rounded-xl hover:border-[rgba(255,0,0,0.3)] transition-colors"
                   >
                     <span className="text-sm text-[#A1A1A6]">{sp.needPanelToo}</span>
-                    <span className="text-xs text-[#EF4444] flex items-center gap-1">
+                    <span className="text-xs text-[#FF0000] flex items-center gap-1">
                       {sp.viewPanels} <ArrowRight size={11} />
                     </span>
                   </Link>
                   <Link
                     href={`/${city.slug}/vendas`}
-                    className="flex items-center justify-between p-4 bg-[#141414] border border-[#2C2C2E] rounded-xl hover:border-[rgba(239,68,68,0.3)] transition-colors"
+                    className="flex items-center justify-between p-4 bg-[#141414] border border-[#2C2C2E] rounded-xl hover:border-[rgba(255,0,0,0.3)] transition-colors"
                   >
                     <span className="text-sm text-[#A1A1A6]">{sp.wantToBuy}</span>
-                    <span className="text-xs text-[#EF4444] flex items-center gap-1">
+                    <span className="text-xs text-[#FF0000] flex items-center gap-1">
                       {sp.viewSales} <ArrowRight size={11} />
                     </span>
                   </Link>

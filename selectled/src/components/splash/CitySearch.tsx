@@ -39,7 +39,7 @@ export function CitySearch({ onFocus }: CitySearchProps) {
 
   return (
     <div ref={ref} className="relative w-full max-w-xl mx-auto">
-      <div className="flex items-center gap-3 bg-[rgba(255,255,255,0.06)] border border-[rgba(255,255,255,0.12)] rounded-full px-5 py-4 focus-within:border-[rgba(239,68,68,0.5)] focus-within:bg-[rgba(239,68,68,0.04)] focus-within:shadow-[0_0_0_4px_rgba(239,68,68,0.08)] transition-all duration-200">
+      <div className="flex items-center gap-3 bg-[rgba(255,255,255,0.06)] border border-[rgba(255,255,255,0.12)] rounded-full px-5 py-4 focus-within:border-[rgba(255,0,0,0.5)] focus-within:bg-[rgba(255,0,0,0.04)] focus-within:shadow-[0_0_0_4px_rgba(255,0,0,0.08)] transition-all duration-200">
         <Search size={18} className="text-[#4A4A4F] shrink-0 transition-colors" style={{}} />
         <input
           type="text"
@@ -60,9 +60,9 @@ export function CitySearch({ onFocus }: CitySearchProps) {
             <button
               key={city.slug}
               onClick={() => handleSelect(city.slug)}
-              className="w-full flex items-center gap-3 px-4 py-3 hover:bg-[rgba(239,68,68,0.06)] transition-colors text-left border-b border-[#1C1C1E] last:border-0"
+              className="w-full flex items-center gap-3 px-4 py-3 hover:bg-[rgba(255,0,0,0.06)] transition-colors text-left border-b border-[#1C1C1E] last:border-0"
             >
-              <MapPin size={13} className="text-[#EF4444] shrink-0" />
+              <MapPin size={13} className="text-[#FF0000] shrink-0" />
               <div>
                 <p className="text-sm font-medium text-[#F5F5F7]">{city.name}</p>
                 <p className="text-xs text-[#4A4A4F]">{city.region} · {city.state}</p>

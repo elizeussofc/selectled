@@ -40,9 +40,9 @@ export function CityGrid() {
                 <button
                   key={city.slug}
                   onClick={() => handleCity(city.slug)}
-                  className="group flex items-center gap-2 py-2.5 px-2 rounded-lg hover:bg-[rgba(239,68,68,0.08)] transition-all duration-150 text-left cursor-pointer"
+                  className="group flex items-center gap-2 py-2.5 px-2 rounded-lg hover:bg-[rgba(255,0,0,0.08)] transition-all duration-150 text-left cursor-pointer"
                 >
-                  <MapPin size={11} className="text-[#3A3A3C] group-hover:text-[#EF4444] transition-colors shrink-0" />
+                  <MapPin size={11} className="text-[#3A3A3C] group-hover:text-[#FF0000] transition-colors shrink-0" />
                   <span className="text-sm text-[#8A8A8E] group-hover:text-white transition-colors">
                     {city.name}
                   </span>

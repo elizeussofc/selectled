@@ -71,7 +71,7 @@ export default function PortfolioPage({ params }: Props) {
                 { n: "10+", l: tp.statsYears },
               ].map((s) => (
                 <div key={s.l} className="bg-[#141414] border border-[#2C2C2E] rounded-xl px-5 py-3">
-                  <span className="text-lg font-bold text-[#EF4444]">{s.n}</span>
+                  <span className="text-lg font-bold text-[#FF0000]">{s.n}</span>
                   <span className="text-sm text-[#6E6E73] ml-2">{s.l}</span>
                 </div>
               ))}
@@ -89,7 +89,7 @@ export default function PortfolioPage({ params }: Props) {
                   onClick={() => setActiveCategory(cat.value)}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                     activeCategory === cat.value
-                      ? "bg-[#EF4444] text-white"
+                      ? "bg-[#FF0000] text-white"
                       : "bg-[#141414] border border-[#2C2C2E] text-[#A1A1A6] hover:text-white hover:border-[rgba(255,255,255,0.14)]"
                   }`}
                 >
@@ -126,7 +126,7 @@ export default function PortfolioPage({ params }: Props) {
                       </div>
                     </div>
                     <div className="p-5">
-                      <span className="text-xs font-semibold text-[#EF4444] uppercase tracking-wide">{c.category}</span>
+                      <span className="text-xs font-semibold text-[#FF0000] uppercase tracking-wide">{c.category}</span>
                       <h3 className="text-sm font-semibold text-white mt-1 mb-1">{c.title}</h3>
                       <p className="text-xs text-[#6E6E73]">{c.client}</p>
                       <div className="flex items-center gap-1.5 mt-2 text-xs text-[#6E6E73]">
@@ -167,7 +167,7 @@ export default function PortfolioPage({ params }: Props) {
           <div className="relative w-full max-w-2xl bg-[#141414] border border-[#2C2C2E] rounded-2xl overflow-hidden shadow-2xl" onClick={(e) => e.stopPropagation()}>
             <div className="flex items-center justify-between p-5 border-b border-[#2C2C2E]">
               <div>
-                <span className="text-xs font-semibold text-[#EF4444] uppercase tracking-wide">{selectedCase.category}</span>
+                <span className="text-xs font-semibold text-[#FF0000] uppercase tracking-wide">{selectedCase.category}</span>
                 <h2 className="text-lg font-bold text-white mt-0.5" style={{ fontFamily: "var(--font-display)" }}>{selectedCase.title}</h2>
               </div>
               <button onClick={() => setSelectedCase(null)} className="p-1.5 rounded-lg text-[#6E6E73] hover:text-white hover:bg-[#2C2C2E] transition-colors"><X size={16} /></button>

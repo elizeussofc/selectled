@@ -33,8 +33,8 @@ export function PanelCalculator({ citySlug, cityName }: PanelCalculatorProps) {
   return (
     <div className="bg-[#141414] border border-[#2C2C2E] rounded-2xl p-6 lg:p-8">
       <div className="flex items-center gap-3 mb-8">
-        <div className="p-2.5 bg-[rgba(239,68,68,0.12)] rounded-xl">
-          <Calculator size={20} className="text-[#EF4444]" />
+        <div className="p-2.5 bg-[rgba(255,0,0,0.12)] rounded-xl">
+          <Calculator size={20} className="text-[#FF0000]" />
         </div>
         <div>
           <h3 className="font-semibold text-white" style={{ fontFamily: "var(--font-display)" }}>
@@ -75,11 +75,11 @@ export function PanelCalculator({ citySlug, cityName }: PanelCalculatorProps) {
       </div>
 
       {/* Resultado */}
-      <div className="bg-[rgba(239,68,68,0.06)] border border-[rgba(239,68,68,0.2)] rounded-xl p-6">
+      <div className="bg-[rgba(255,0,0,0.06)] border border-[rgba(255,0,0,0.2)] rounded-xl p-6">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
           <div>
             <p className="text-xs text-[#6E6E73] mb-1">Modelo recomendado</p>
-            <p className="text-2xl font-bold text-[#EF4444]" style={{ fontFamily: "var(--font-display)" }}>
+            <p className="text-2xl font-bold text-[#FF0000]" style={{ fontFamily: "var(--font-display)" }}>
               {panel}
             </p>
             <p className="text-xs text-[#6E6E73] mt-0.5">{config.label}</p>
@@ -135,7 +135,7 @@ function SliderField({
         step={step}
         value={value}
         onChange={(e) => onChange(parseFloat(e.target.value))}
-        className="w-full h-1.5 rounded-full appearance-none bg-[#2C2C2E] accent-[#EF4444] cursor-pointer"
+        className="w-full h-1.5 rounded-full appearance-none bg-[#2C2C2E] accent-[#FF0000] cursor-pointer"
       />
       <div className="flex justify-between mt-1">
         <span className="text-xs text-[#3A3A3C]">{min}{unit}</span>

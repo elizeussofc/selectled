@@ -89,7 +89,7 @@ export default async function BlogPostPage({ params }: Props) {
                 <span className="text-[#3A3A3C]">›</span>
                 <span className="text-xs text-[#A1A1A6]">{post.category}</span>
               </div>
-              <span className="inline-flex items-center gap-1.5 text-xs font-semibold bg-[rgba(239,68,68,0.12)] text-[#EF4444] px-3 py-1 rounded-full mb-4">
+              <span className="inline-flex items-center gap-1.5 text-xs font-semibold bg-[rgba(255,0,0,0.12)] text-[#FF0000] px-3 py-1 rounded-full mb-4">
                 {post.category}
               </span>
               <h1 className="text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight" style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.03em" }}>
@@ -113,11 +113,11 @@ export default async function BlogPostPage({ params }: Props) {
               <article className="lg:col-span-3 prose prose-invert prose-sm max-w-none
                 prose-headings:font-bold prose-headings:text-white prose-headings:tracking-tight
                 prose-p:text-[#A1A1A6] prose-p:leading-relaxed
-                prose-a:text-[#EF4444] prose-a:no-underline hover:prose-a:underline
+                prose-a:text-[#FF0000] prose-a:no-underline hover:prose-a:underline
                 prose-strong:text-white
                 prose-li:text-[#A1A1A6]
                 prose-hr:border-[#2C2C2E]
-                prose-blockquote:border-l-[#EF4444] prose-blockquote:text-[#A1A1A6]
+                prose-blockquote:border-l-[#FF0000] prose-blockquote:text-[#A1A1A6]
               ">
                 <MDXRemote source={post.content} />
               </article>
@@ -141,8 +141,8 @@ export default async function BlogPostPage({ params }: Props) {
                   </div>
 
                   {/* CTA contextual */}
-                  <div className="bg-[rgba(239,68,68,0.06)] border border-[rgba(239,68,68,0.2)] rounded-2xl p-5">
-                    <p className="text-xs font-semibold text-[#EF4444] mb-2">Quer colocar em prática?</p>
+                  <div className="bg-[rgba(255,0,0,0.06)] border border-[rgba(255,0,0,0.2)] rounded-2xl p-5">
+                    <p className="text-xs font-semibold text-[#FF0000] mb-2">Quer colocar em prática?</p>
                     <p className="text-xs text-[#A1A1A6] mb-4">Solicite orçamento na sua cidade.</p>
                     <CitySearch />
                   </div>
@@ -155,7 +155,7 @@ export default async function BlogPostPage({ params }: Props) {
         {/* CTA mobile */}
         <div className="lg:hidden py-8 border-t border-[#2C2C2E]">
           <Container>
-            <div className="bg-[rgba(239,68,68,0.06)] border border-[rgba(239,68,68,0.2)] rounded-2xl p-5 text-center">
+            <div className="bg-[rgba(255,0,0,0.06)] border border-[rgba(255,0,0,0.2)] rounded-2xl p-5 text-center">
               <p className="text-sm font-semibold text-white mb-3">Solicite orçamento na sua cidade</p>
               <CitySearch />
             </div>
@@ -171,8 +171,8 @@ export default async function BlogPostPage({ params }: Props) {
                 {related.map((p) => (
                   <Link key={p.slug} href={`/blog/${p.slug}`}
                     className="group bg-[#141414] border border-[#2C2C2E] rounded-xl p-5 hover:border-[rgba(255,255,255,0.14)] transition-all">
-                    <span className="text-xs font-semibold text-[#EF4444]">{p.category}</span>
-                    <h3 className="text-sm font-semibold text-white mt-1 line-clamp-2 group-hover:text-[#EF4444] transition-colors">{p.title}</h3>
+                    <span className="text-xs font-semibold text-[#FF0000]">{p.category}</span>
+                    <h3 className="text-sm font-semibold text-white mt-1 line-clamp-2 group-hover:text-[#FF0000] transition-colors">{p.title}</h3>
                     <p className="text-xs text-[#6E6E73] mt-1">{p.readingTime}</p>
                   </Link>
                 ))}

@@ -19,8 +19,8 @@ export function GeoBanner({ cityName, citySlug, onDismiss }: GeoBannerProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between py-3 gap-4">
             <div className="flex items-center gap-3">
-              <div className="p-1.5 bg-[rgba(239,68,68,0.12)] rounded-lg">
-                <MapPin size={14} className="text-[#EF4444]" />
+              <div className="p-1.5 bg-[rgba(255,0,0,0.12)] rounded-lg">
+                <MapPin size={14} className="text-[#FF0000]" />
               </div>
               <p className="text-sm text-[#F5F5F7]">
                 Detectamos que você está em{" "}

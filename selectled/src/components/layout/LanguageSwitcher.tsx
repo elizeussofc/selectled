@@ -35,7 +35,7 @@ export function LanguageSwitcher({ mobile = false }: { mobile?: boolean }) {
             onClick={() => setLang(code)}
             className={`flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-semibold transition-all duration-200 ${
               lang === code
-                ? "bg-[#EF4444] text-white"
+                ? "bg-[#FF0000] text-white"
                 : "text-[#6E6E73] hover:text-white bg-white/5"
             }`}
           >
@@ -70,14 +70,14 @@ export function LanguageSwitcher({ mobile = false }: { mobile?: boolean }) {
               onClick={() => { setLang(code); setOpen(false); }}
               className={`w-full flex items-center gap-2.5 px-3.5 py-2.5 text-sm transition-colors ${
                 lang === code
-                  ? "text-white bg-[rgba(239,68,68,0.12)]"
+                  ? "text-white bg-[rgba(255,0,0,0.12)]"
                   : "text-[#8E8E93] hover:text-white hover:bg-white/5"
               }`}
             >
               <span className="text-base leading-none">{flag}</span>
               <span className="font-medium">{name}</span>
               {lang === code && (
-                <span className="ml-auto w-1.5 h-1.5 rounded-full bg-[#EF4444] shrink-0" />
+                <span className="ml-auto w-1.5 h-1.5 rounded-full bg-[#FF0000] shrink-0" />
               )}
             </button>
           ))}

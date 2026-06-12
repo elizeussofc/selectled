@@ -31,8 +31,8 @@ function Avatar({ name, photo, size = "lg" }: { name: string; photo: string; siz
       <div
         className={
           size === "lg"
-            ? "w-32 h-32 rounded-2xl bg-gradient-to-br from-[rgba(239,68,68,0.15)] to-[rgba(239,68,68,0.04)] border border-[rgba(239,68,68,0.2)] flex items-center justify-center text-3xl font-black text-[#EF4444] shrink-0"
-            : "w-12 h-12 rounded-full bg-gradient-to-br from-[rgba(239,68,68,0.15)] to-[rgba(239,68,68,0.04)] border border-[rgba(239,68,68,0.2)] flex items-center justify-center text-base font-black text-[#EF4444] shrink-0"
+            ? "w-32 h-32 rounded-2xl bg-gradient-to-br from-[rgba(255,0,0,0.15)] to-[rgba(255,0,0,0.04)] border border-[rgba(255,0,0,0.2)] flex items-center justify-center text-3xl font-black text-[#FF0000] shrink-0"
+            : "w-12 h-12 rounded-full bg-gradient-to-br from-[rgba(255,0,0,0.15)] to-[rgba(255,0,0,0.04)] border border-[rgba(255,0,0,0.2)] flex items-center justify-center text-base font-black text-[#FF0000] shrink-0"
         }
         style={{ fontFamily: "var(--font-display)" }}
       >
@@ -45,7 +45,7 @@ function Avatar({ name, photo, size = "lg" }: { name: string; photo: string; siz
     <div
       className={
         size === "lg"
-          ? "relative w-40 h-48 rounded-2xl overflow-hidden bg-[#1C1C1E] ring-2 ring-[rgba(239,68,68,0.15)] shrink-0"
+          ? "relative w-40 h-48 rounded-2xl overflow-hidden bg-[#1C1C1E] ring-2 ring-[rgba(255,0,0,0.15)] shrink-0"
           : "relative w-12 h-12 rounded-full overflow-hidden bg-[#1C1C1E] shrink-0"
       }
     >
@@ -97,7 +97,7 @@ export function RepCard({ city, variant = "full" }: RepCardProps) {
           <Avatar name={city.rep.name} photo={city.rep.photo} size="lg" />
 
           <div className="flex-1 min-w-0">
-            <p className="text-xs font-semibold uppercase tracking-widest text-[#EF4444] mb-2">
+            <p className="text-xs font-semibold uppercase tracking-widest text-[#FF0000] mb-2">
               {tpl(t.repBadge, { city: city.name })}
             </p>
             <h3
@@ -110,7 +110,7 @@ export function RepCard({ city, variant = "full" }: RepCardProps) {
 
             <div className="space-y-2.5 mb-7">
               <div className="flex items-start gap-3">
-                <MapPin size={14} className="text-[#EF4444] mt-0.5 shrink-0" />
+                <MapPin size={14} className="text-[#FF0000] mt-0.5 shrink-0" />
                 <span className="text-sm text-[#A1A1A6] leading-snug">
                   {city.address.street}
                   {city.address.complement && `, ${city.address.complement}`}
@@ -119,7 +119,7 @@ export function RepCard({ city, variant = "full" }: RepCardProps) {
                 </span>
               </div>
               <div className="flex items-center gap-3">
-                <Mail size={14} className="text-[#EF4444] shrink-0" />
+                <Mail size={14} className="text-[#FF0000] shrink-0" />
                 <a
                   href={`mailto:${city.rep.email}`}
                   className="text-sm text-[#A1A1A6] hover:text-white transition-colors truncate"
@@ -154,8 +154,8 @@ export function RepCard({ city, variant = "full" }: RepCardProps) {
       {/* Location block — replace broken Google Maps */}
       <div className="border-t border-[#1C1C1E] bg-[#0F0F0F] px-8 lg:px-10 py-5">
         <div className="flex items-center gap-4">
-          <div className="w-10 h-10 rounded-xl bg-[rgba(239,68,68,0.08)] border border-[rgba(239,68,68,0.15)] flex items-center justify-center shrink-0">
-            <Building2 size={17} className="text-[#EF4444]" />
+          <div className="w-10 h-10 rounded-xl bg-[rgba(255,0,0,0.08)] border border-[rgba(255,0,0,0.15)] flex items-center justify-center shrink-0">
+            <Building2 size={17} className="text-[#FF0000]" />
           </div>
           <div>
             <p className="text-xs font-semibold text-[#6E6E73] uppercase tracking-wider mb-0.5">

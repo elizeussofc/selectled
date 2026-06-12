@@ -45,7 +45,7 @@ export default async function Page({ params }: Props) {
               <span className="text-[#A1A1A6]">Financiamento</span>
             </div>
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#EF4444] mb-3">Financiamento</p>
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#FF0000] mb-3">Financiamento</p>
               <h1 className="text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight" style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.03em" }}>
                 Financie seu painel em até 48 parcelas
               </h1>

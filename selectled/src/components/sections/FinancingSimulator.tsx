@@ -42,7 +42,7 @@ export function FinancingSimulator({ repWhatsapp }: FinancingSimulatorProps) {
               type="number"
               value={total}
               onChange={(e) => setTotal(Math.max(0, Number(e.target.value)))}
-              className="w-full bg-[#1C1C1E] border border-[#2C2C2E] rounded-lg pl-8 pr-4 py-3 text-sm text-white outline-none focus:border-[#EF4444] transition-colors"
+              className="w-full bg-[#1C1C1E] border border-[#2C2C2E] rounded-lg pl-8 pr-4 py-3 text-sm text-white outline-none focus:border-[#FF0000] transition-colors"
             />
           </div>
         </div>
@@ -58,7 +58,7 @@ export function FinancingSimulator({ repWhatsapp }: FinancingSimulatorProps) {
             step={500}
             value={entry}
             onChange={(e) => setEntry(Number(e.target.value))}
-            className="w-full h-1.5 rounded-full appearance-none bg-[#2C2C2E] accent-[#EF4444] cursor-pointer"
+            className="w-full h-1.5 rounded-full appearance-none bg-[#2C2C2E] accent-[#FF0000] cursor-pointer"
           />
           <div className="flex justify-between mt-1">
             <span className="text-xs text-[#3A3A3C]">R$ 0</span>
