@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { forwardRef } from "react";
 import { cn } from "@/lib/utils";
@@ -13,7 +13,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-[#FF3B30] text-white hover:bg-[#E8352A] shadow-lg shadow-[rgba(255,59,48,0.25)] hover:shadow-[rgba(255,59,48,0.4)] active:scale-[0.97]",
+    "bg-[#EF4444] text-white hover:bg-[#DC2626] shadow-lg shadow-[rgba(239,68,68,0.25)] hover:shadow-[rgba(239,68,68,0.4)] active:scale-[0.97]",
   secondary:
     "bg-[#1C1C1E] text-[#F5F5F7] border border-[#2C2C2E] hover:bg-[#242424] hover:border-[#3A3A3C]",
   outline:
@@ -38,7 +38,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         "inline-flex items-center justify-center font-semibold rounded-xl",
         "transition-all duration-200 cursor-pointer select-none",
         "disabled:opacity-40 disabled:pointer-events-none",
-        "focus-visible:outline-2 focus-visible:outline-[#FF3B30] focus-visible:outline-offset-2",
+        "focus-visible:outline-2 focus-visible:outline-[#EF4444] focus-visible:outline-offset-2",
         variants[variant],
         sizes[size],
         className

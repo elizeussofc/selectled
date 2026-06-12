@@ -175,7 +175,7 @@ export default function OrcamentoPage({ params }: Props) {
       {/* Progress bar */}
       <div className="h-0.5 bg-[#1C1C1E]">
         <div
-          className="h-full bg-[#FF3B30] transition-all duration-500"
+          className="h-full bg-[#EF4444] transition-all duration-500"
           style={{ width: `${progress}%` }}
         />
       </div>
@@ -213,7 +213,7 @@ export default function OrcamentoPage({ params }: Props) {
               {[1, 2, 3].map((n) => (
                 <div key={n} className="flex items-center gap-2">
                   <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold transition-colors ${
-                    step > n ? "bg-[#30D158] text-white" : step === n ? "bg-[#FF3B30] text-white" : "bg-[#1C1C1E] text-[#6E6E73]"
+                    step > n ? "bg-[#30D158] text-white" : step === n ? "bg-[#EF4444] text-white" : "bg-[#1C1C1E] text-[#6E6E73]"
                   }`}>
                     {step > n ? <CheckCircle size={14} /> : n}
                   </div>
@@ -250,7 +250,7 @@ function Step1({ initial, onNext }: { initial: Partial<FormData>; onNext: (d: z.
       </div>
       <div>
         <label className="text-xs text-[#A1A1A6] mb-2 block">Tipo de evento *</label>
-        <select {...register("eventType")} className="w-full bg-[#141414] border border-[#2C2C2E] rounded-xl px-4 py-3 text-sm text-white outline-none focus:border-[#FF3B30] transition-colors">
+        <select {...register("eventType")} className="w-full bg-[#141414] border border-[#2C2C2E] rounded-xl px-4 py-3 text-sm text-white outline-none focus:border-[#EF4444] transition-colors">
           <option value="">Selecione...</option>
           {EVENT_TYPES.map((t) => <option key={t} value={t}>{t}</option>)}
         </select>
@@ -258,7 +258,7 @@ function Step1({ initial, onNext }: { initial: Partial<FormData>; onNext: (d: z.
       </div>
       <div>
         <label className="text-xs text-[#A1A1A6] mb-2 block">Data do evento *</label>
-        <input type="date" {...register("eventDate")} className="w-full bg-[#141414] border border-[#2C2C2E] rounded-xl px-4 py-3 text-sm text-white outline-none focus:border-[#FF3B30] transition-colors" />
+        <input type="date" {...register("eventDate")} className="w-full bg-[#141414] border border-[#2C2C2E] rounded-xl px-4 py-3 text-sm text-white outline-none focus:border-[#EF4444] transition-colors" />
         {errors.eventDate && <p className="text-xs text-[#FF453A] mt-1">{errors.eventDate.message}</p>}
       </div>
       <div>
@@ -268,7 +268,7 @@ function Step1({ initial, onNext }: { initial: Partial<FormData>; onNext: (d: z.
             <label key={loc} className="cursor-pointer">
               <input type="radio" {...register("location")} value={loc} className="sr-only" />
               <div className={`text-center py-2.5 rounded-xl border text-sm font-medium transition-all ${
-                watch("location") === loc ? "border-[#FF3B30] bg-[rgba(255,59,48,0.08)] text-[#FF3B30]" : "border-[#2C2C2E] text-[#6E6E73] hover:border-[rgba(255,255,255,0.14)]"
+                watch("location") === loc ? "border-[#EF4444] bg-[rgba(239,68,68,0.08)] text-[#EF4444]" : "border-[#2C2C2E] text-[#6E6E73] hover:border-[rgba(255,255,255,0.14)]"
               }`}>
                 {loc === "indoor" ? "Indoor" : loc === "outdoor" ? "Outdoor" : "Híbrido"}
               </div>
@@ -281,7 +281,7 @@ function Step1({ initial, onNext }: { initial: Partial<FormData>; onNext: (d: z.
           <label className="text-xs text-[#A1A1A6]">Público estimado</label>
           <span className="text-sm font-semibold text-white">{audience.toLocaleString("pt-BR")} pessoas</span>
         </div>
-        <input type="range" min={50} max={10000} step={50} {...register("audience", { valueAsNumber: true })} className="w-full h-1.5 rounded-full appearance-none bg-[#2C2C2E] accent-[#FF3B30] cursor-pointer" />
+        <input type="range" min={50} max={10000} step={50} {...register("audience", { valueAsNumber: true })} className="w-full h-1.5 rounded-full appearance-none bg-[#2C2C2E] accent-[#EF4444] cursor-pointer" />
       </div>
       <Button type="submit" size="lg" className="w-full justify-center">Próximo →</Button>
     </form>
@@ -307,7 +307,7 @@ function Step2({ initial, onNext, onBack }: { initial: Partial<FormData>; onNext
         <div className="space-y-2">
           {SERVICE_OPTIONS.map((s) => (
             <label key={s.value} className="flex items-center gap-3 p-3.5 rounded-xl border border-[#2C2C2E] bg-[#141414] cursor-pointer hover:border-[rgba(255,255,255,0.14)] transition-colors">
-              <input type="checkbox" value={s.value} {...register("services")} className="accent-[#FF3B30] w-4 h-4" />
+              <input type="checkbox" value={s.value} {...register("services")} className="accent-[#EF4444] w-4 h-4" />
               <span className="text-sm text-[#F5F5F7]">{s.label}</span>
             </label>
           ))}
@@ -315,20 +315,20 @@ function Step2({ initial, onNext, onBack }: { initial: Partial<FormData>; onNext
         {errors.services && <p className="text-xs text-[#FF453A] mt-1">{errors.services.message}</p>}
       </div>
       {hasPanel && (
-        <div className="grid grid-cols-2 gap-3 p-4 bg-[rgba(255,59,48,0.04)] border border-[rgba(255,59,48,0.15)] rounded-xl">
+        <div className="grid grid-cols-2 gap-3 p-4 bg-[rgba(239,68,68,0.04)] border border-[rgba(239,68,68,0.15)] rounded-xl">
           <div>
             <label className="text-xs text-[#A1A1A6] mb-2 block">Largura do painel (m)</label>
-            <input type="number" step="0.5" {...register("panelWidth")} placeholder="Ex: 4" className="w-full bg-[#141414] border border-[#2C2C2E] rounded-lg px-3 py-2.5 text-sm text-white outline-none focus:border-[#FF3B30] transition-colors" />
+            <input type="number" step="0.5" {...register("panelWidth")} placeholder="Ex: 4" className="w-full bg-[#141414] border border-[#2C2C2E] rounded-lg px-3 py-2.5 text-sm text-white outline-none focus:border-[#EF4444] transition-colors" />
           </div>
           <div>
             <label className="text-xs text-[#A1A1A6] mb-2 block">Altura do painel (m)</label>
-            <input type="number" step="0.5" {...register("panelHeight")} placeholder="Ex: 2.5" className="w-full bg-[#141414] border border-[#2C2C2E] rounded-lg px-3 py-2.5 text-sm text-white outline-none focus:border-[#FF3B30] transition-colors" />
+            <input type="number" step="0.5" {...register("panelHeight")} placeholder="Ex: 2.5" className="w-full bg-[#141414] border border-[#2C2C2E] rounded-lg px-3 py-2.5 text-sm text-white outline-none focus:border-[#EF4444] transition-colors" />
           </div>
         </div>
       )}
       <div>
         <label className="text-xs text-[#A1A1A6] mb-2 block">Detalhes do projeto (opcional)</label>
-        <textarea {...register("details")} rows={3} placeholder="Descreva o evento, local, necessidades específicas..." className="w-full bg-[#141414] border border-[#2C2C2E] rounded-xl px-4 py-3 text-sm text-white placeholder:text-[#6E6E73] outline-none focus:border-[#FF3B30] transition-colors resize-none" />
+        <textarea {...register("details")} rows={3} placeholder="Descreva o evento, local, necessidades específicas..." className="w-full bg-[#141414] border border-[#2C2C2E] rounded-xl px-4 py-3 text-sm text-white placeholder:text-[#6E6E73] outline-none focus:border-[#EF4444] transition-colors resize-none" />
       </div>
       <div className="flex gap-3">
         <button type="button" onClick={onBack} className="flex items-center gap-2 px-4 py-2.5 text-sm text-[#A1A1A6] hover:text-white transition-colors">
@@ -366,12 +366,12 @@ function Step3({ initial, onSubmit, onBack, loading, cityName }: {
       ].map((f) => (
         <div key={f.name}>
           <label className="text-xs text-[#A1A1A6] mb-2 block">{f.label}</label>
-          <input {...register(f.name)} placeholder={f.placeholder} className="w-full bg-[#141414] border border-[#2C2C2E] rounded-xl px-4 py-3 text-sm text-white placeholder:text-[#6E6E73] outline-none focus:border-[#FF3B30] transition-colors" />
+          <input {...register(f.name)} placeholder={f.placeholder} className="w-full bg-[#141414] border border-[#2C2C2E] rounded-xl px-4 py-3 text-sm text-white placeholder:text-[#6E6E73] outline-none focus:border-[#EF4444] transition-colors" />
           {errors[f.name] && <p className="text-xs text-[#FF453A] mt-1">{errors[f.name]?.message}</p>}
         </div>
       ))}
       <label className="flex items-center gap-2 cursor-pointer">
-        <input type="checkbox" {...register("acceptWhatsApp")} defaultChecked className="accent-[#FF3B30] w-4 h-4" />
+        <input type="checkbox" {...register("acceptWhatsApp")} defaultChecked className="accent-[#EF4444] w-4 h-4" />
         <span className="text-sm text-[#A1A1A6]">Aceito receber a proposta pelo WhatsApp</span>
       </label>
       <div className="flex gap-3">

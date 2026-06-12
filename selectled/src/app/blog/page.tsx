@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/blog";
 import { Container, Section } from "@/components/ui/Container";
@@ -32,7 +32,7 @@ export default function BlogPage() {
       <main className="bg-[#0A0A0A] pt-16">
         <section className="py-20 border-b border-[#1C1C1E]">
           <Container>
-            <p className="text-xs font-semibold uppercase tracking-widest text-[#FF3B30] mb-3">Blog</p>
+            <p className="text-xs font-semibold uppercase tracking-widest text-[#EF4444] mb-3">Blog</p>
             <h1 className="text-5xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.03em" }}>
               Tudo sobre painéis de LED
             </h1>
@@ -58,7 +58,7 @@ export default function BlogPage() {
                   <Link
                     key={post.slug}
                     href={`/blog/${post.slug}`}
-                    className="group bg-[#111] border border-[#1C1C1E] rounded-2xl overflow-hidden hover:border-[rgba(255,59,48,0.3)] transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/60"
+                    className="group bg-[#111] border border-[#1C1C1E] rounded-2xl overflow-hidden hover:border-[rgba(239,68,68,0.3)] transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/60"
                   >
                     <div className="h-44 relative overflow-hidden bg-[#0D0D0D]">
                       {/* Grid pattern */}
@@ -79,7 +79,7 @@ export default function BlogPage() {
                           glowPos === "center-right" ? "top-2 -right-8" :
                           "top-2 -left-8"
                         }`}
-                        style={{ background: "radial-gradient(circle, #FF3B30 0%, transparent 70%)" }}
+                        style={{ background: "radial-gradient(circle, #EF4444 0%, transparent 70%)" }}
                       />
                       {/* Post number */}
                       <div className="absolute bottom-3 right-4 text-[64px] font-black leading-none text-white/[0.04] select-none" style={{ fontFamily: "var(--font-display)" }}>
@@ -87,7 +87,7 @@ export default function BlogPage() {
                       </div>
                       {/* Category badge */}
                       <div className="absolute top-3 left-3">
-                        <span className="text-xs font-semibold bg-[rgba(255,59,48,0.15)] border border-[rgba(255,59,48,0.2)] text-[#FF3B30] px-2.5 py-1 rounded-full">
+                        <span className="text-xs font-semibold bg-[rgba(239,68,68,0.15)] border border-[rgba(239,68,68,0.2)] text-[#EF4444] px-2.5 py-1 rounded-full">
                           {post.category}
                         </span>
                       </div>
@@ -95,7 +95,7 @@ export default function BlogPage() {
                       <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#111] to-transparent" />
                     </div>
                     <div className="p-5">
-                      <h2 className="text-base font-semibold text-white mb-2 line-clamp-2 group-hover:text-[#FF3B30] transition-colors" style={{ fontFamily: "var(--font-display)" }}>
+                      <h2 className="text-base font-semibold text-white mb-2 line-clamp-2 group-hover:text-[#EF4444] transition-colors" style={{ fontFamily: "var(--font-display)" }}>
                         {post.title}
                       </h2>
                       <p className="text-sm text-[#6E6E73] line-clamp-2 mb-4">{post.description}</p>

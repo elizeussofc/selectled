@@ -1,4 +1,4 @@
-import { ImageResponse } from "next/og";
+﻿import { ImageResponse } from "next/og";
 import type { NextRequest } from "next/server";
 
 export const runtime = "edge";
@@ -38,7 +38,7 @@ export async function GET(req: NextRequest) {
             position: "absolute",
             inset: 0,
             backgroundImage:
-              "linear-gradient(rgba(255,59,48,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,59,48,0.04) 1px, transparent 1px)",
+              "linear-gradient(rgba(239,68,68,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(239,68,68,0.04) 1px, transparent 1px)",
             backgroundSize: "60px 60px",
           }}
         />
@@ -51,7 +51,7 @@ export async function GET(req: NextRequest) {
             right: "-200px",
             width: "600px",
             height: "600px",
-            background: "radial-gradient(circle, rgba(255,59,48,0.15) 0%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(239,68,68,0.15) 0%, transparent 70%)",
             borderRadius: "50%",
           }}
         />
@@ -62,7 +62,7 @@ export async function GET(req: NextRequest) {
             style={{
               width: "40px",
               height: "40px",
-              background: "#FF3B30",
+              background: "#EF4444",
               borderRadius: "10px",
               display: "flex",
               alignItems: "center",
@@ -87,11 +87,11 @@ export async function GET(req: NextRequest) {
             >
               <div
                 style={{
-                  background: "rgba(255,59,48,0.15)",
-                  border: "1px solid rgba(255,59,48,0.3)",
+                  background: "rgba(239,68,68,0.15)",
+                  border: "1px solid rgba(239,68,68,0.3)",
                   borderRadius: "100px",
                   padding: "6px 14px",
-                  color: "#FF3B30",
+                  color: "#EF4444",
                   fontSize: "13px",
                   fontWeight: 600,
                 }}
@@ -131,7 +131,7 @@ export async function GET(req: NextRequest) {
           <span style={{ color: "#6E6E73", fontSize: "16px" }}>selectled.com.br</span>
           <div
             style={{
-              background: "#FF3B30",
+              background: "#EF4444",
               color: "white",
               borderRadius: "8px",
               padding: "10px 20px",

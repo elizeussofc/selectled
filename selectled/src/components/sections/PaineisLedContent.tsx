@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -43,7 +43,7 @@ export function PaineisLedContent({ city }: Props) {
 
             <div className="grid lg:grid-cols-2 gap-10 items-center">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-[#FF3B30] mb-3">
+                <p className="text-xs font-semibold uppercase tracking-widest text-[#EF4444] mb-3">
                   {pl.badge}
                 </p>
                 <h1
@@ -131,7 +131,7 @@ export function PaineisLedContent({ city }: Props) {
                       key={p.model}
                       className={`border-b border-[#1C1C1E] hover:bg-[#141414] transition-colors ${i % 2 !== 0 ? "bg-[rgba(255,255,255,0.01)]" : ""}`}
                     >
-                      <td className="py-4 px-4 font-semibold text-[#FF3B30]">{p.model}</td>
+                      <td className="py-4 px-4 font-semibold text-[#EF4444]">{p.model}</td>
                       <td className="py-4 px-4 text-[#F5F5F7]">{p.pitch}</td>
                       <td className="py-4 px-4 text-[#A1A1A6]">{p.minDist}</td>
                       <td className="py-4 px-4 text-[#A1A1A6]">{p.idealFor}</td>
@@ -164,7 +164,7 @@ export function PaineisLedContent({ city }: Props) {
               {pl.eventTypes.map((label, i) => {
                 const Icon = EVENT_ICONS[i];
                 return (
-                  <div key={label} className="flex flex-col items-center gap-2 p-4 bg-[#141414] border border-[#2C2C2E] rounded-xl hover:border-[rgba(255,59,48,0.3)] transition-colors cursor-default">
+                  <div key={label} className="flex flex-col items-center gap-2 p-4 bg-[#141414] border border-[#2C2C2E] rounded-xl hover:border-[rgba(239,68,68,0.3)] transition-colors cursor-default">
                     <Icon size={24} className="text-[#A1A1A6]" />
                     <span className="text-xs text-[#6E6E73] text-center">{label}</span>
                   </div>
@@ -201,7 +201,7 @@ export function PaineisLedContent({ city }: Props) {
                   <div className="text-5xl font-black text-[#1C1C1E] mb-3" style={{ fontFamily: "var(--font-display)" }}>
                     {step.n}
                   </div>
-                  <div className="w-8 h-1 bg-[#FF3B30] mb-4 rounded-full" />
+                  <div className="w-8 h-1 bg-[#EF4444] mb-4 rounded-full" />
                   <h3 className="font-semibold text-white mb-2">{step.title}</h3>
                   <p className="text-sm text-[#6E6E73] leading-relaxed">{tpl(step.desc, { city: city.name })}</p>
                 </div>

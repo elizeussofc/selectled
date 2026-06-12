@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { MessageCircle, Mail, MapPin, Clock, ChevronRight } from "lucide-react";
@@ -69,8 +69,8 @@ export function ContatoContent({ city, citySlug }: Props) {
 
                 <div className="bg-[#141414] border border-[#2C2C2E] rounded-2xl p-5">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="p-2 bg-[rgba(255,59,48,0.1)] rounded-lg">
-                      <Mail size={18} className="text-[#FF3B30]" />
+                    <div className="p-2 bg-[rgba(239,68,68,0.1)] rounded-lg">
+                      <Mail size={18} className="text-[#EF4444]" />
                     </div>
                     <h3 className="font-semibold text-white">E-mail</h3>
                   </div>
@@ -81,8 +81,8 @@ export function ContatoContent({ city, citySlug }: Props) {
 
                 <div className="bg-[#141414] border border-[#2C2C2E] rounded-2xl p-5">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="p-2 bg-[rgba(255,59,48,0.1)] rounded-lg">
-                      <MapPin size={18} className="text-[#FF3B30]" />
+                    <div className="p-2 bg-[rgba(239,68,68,0.1)] rounded-lg">
+                      <MapPin size={18} className="text-[#EF4444]" />
                     </div>
                     <h3 className="font-semibold text-white">{ct.cardAddress}</h3>
                   </div>
@@ -125,7 +125,7 @@ export function ContatoContent({ city, citySlug }: Props) {
                   href={`/${c.slug}/contato`}
                   className="flex items-center gap-2 p-3 bg-[#141414] border border-[#2C2C2E] rounded-xl text-sm text-[#A1A1A6] hover:text-white hover:border-[rgba(255,255,255,0.14)] transition-all"
                 >
-                  <MapPin size={12} className="text-[#FF3B30] shrink-0" />
+                  <MapPin size={12} className="text-[#EF4444] shrink-0" />
                   {c.name}
                 </Link>
               ))}

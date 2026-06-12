@@ -44,7 +44,7 @@ export default async function Page({ params }: Props) {
               <span className="text-[#A1A1A6]">Instalação</span>
             </div>
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#FF3B30] mb-3">Serviço técnico</p>
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#EF4444] mb-3">Serviço técnico</p>
               <h1 className="text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight" style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.03em" }}>
                 Instalação de Painel LED em {city.name}
               </h1>

@@ -1,4 +1,4 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 
 :root {
   --bg-primary: #0A0A0A;
@@ -6,9 +6,9 @@
   --bg-card: #141414;
   --bg-elevated: #1C1C1E;
 
-  --accent: #FF3B30;
-  --accent-dim: rgba(255, 59, 48, 0.15);
-  --accent-glow: rgba(255, 59, 48, 0.25);
+  --accent: #EF4444;
+  --accent-dim: rgba(239, 68, 68, 0.15);
+  --accent-glow: rgba(239, 68, 68, 0.25);
 
   --text-primary: #F5F5F7;
   --text-secondary: #A1A1A6;
@@ -106,8 +106,8 @@
   to   { transform: translateX(-50%); }
 }
 @keyframes pulseRed {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(255,59,48,0.4); }
-  50%       { box-shadow: 0 0 0 8px rgba(255,59,48,0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(239,68,68,0.4); }
+  50%       { box-shadow: 0 0 0 8px rgba(239,68,68,0); }
 }
 @keyframes shimmer {
   from { background-position: 200% center; }
@@ -130,8 +130,8 @@
   50%       { transform: translateY(-14px) rotate(0.5deg); }
 }
 @keyframes ctaPulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(255,59,48,0.55), 0 4px 24px rgba(255,59,48,0.35); }
-  60%       { box-shadow: 0 0 0 10px rgba(255,59,48,0), 0 4px 24px rgba(255,59,48,0.35); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(239,68,68,0.55), 0 4px 24px rgba(239,68,68,0.35); }
+  60%       { box-shadow: 0 0 0 10px rgba(239,68,68,0), 0 4px 24px rgba(239,68,68,0.35); }
 }
 
 /* ── Animation utilities ── */
@@ -161,7 +161,7 @@
   background-clip: text;
 }
 .text-gradient-red {
-  background: linear-gradient(135deg, #FF3B30 0%, #FF8A80 100%);
+  background: linear-gradient(135deg, #EF4444 0%, #FF8A80 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

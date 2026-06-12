@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { MessageCircle, CheckCircle, ChevronRight } from "lucide-react";
 import type { City } from "@/data/cities";
 import type { Product } from "@/data/products";
@@ -50,7 +50,7 @@ export function ProductPage({
             </div>
 
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#FF3B30] mb-3">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#EF4444] mb-3">
                 Painéis para Compra — {city.name}
               </p>
               <h1
@@ -92,7 +92,7 @@ export function ProductPage({
                     </th>
                     {products.map((p) => (
                       <th key={p.slug} className="text-left py-3 px-5 text-xs uppercase tracking-wide font-medium border-b border-[#2C2C2E]">
-                        <span className="text-[#FF3B30]">{p.shortName}</span>
+                        <span className="text-[#EF4444]">{p.shortName}</span>
                       </th>
                     ))}
                   </tr>
@@ -108,7 +108,7 @@ export function ProductPage({
                       ))}
                     </tr>
                   ))}
-                  <tr className="border-b border-[#1C1C1E] bg-[rgba(255,59,48,0.03)]">
+                  <tr className="border-b border-[#1C1C1E] bg-[rgba(239,68,68,0.03)]">
                     <td className="py-3.5 px-5 text-[#6E6E73] font-medium">A partir de</td>
                     {products.map((p) => (
                       <td key={p.slug} className="py-3.5 px-5">

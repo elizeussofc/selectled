@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -85,7 +85,7 @@ export default function SplashPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-[#0A0A0A]" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A]/40 via-transparent to-[#0A0A0A]/40" />
         {/* Acento vermelho no topo */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-[#FF3B30]/60" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-[#EF4444]/60" />
       </div>
 
       {/* Geo Banner */}
@@ -113,7 +113,7 @@ export default function SplashPage() {
             href={`/${preferredCity}`}
             className="flex items-center gap-1.5 text-xs text-[#A1A1A6] hover:text-white transition-colors border border-[#2C2C2E] hover:border-[#3A3A3C] rounded-full px-3 py-1.5 backdrop-blur-sm bg-white/5"
           >
-            <MapPin size={11} className="text-[#FF3B30]" />
+            <MapPin size={11} className="text-[#EF4444]" />
             {preferredCity.replace(/-/g, " ")}
           </Link>
         )}
@@ -125,8 +125,8 @@ export default function SplashPage() {
 
           {/* Badge — fade in após o zoom */}
           <div className="flex justify-center mb-3" style={{ opacity: 0, animation: "fadeIn 0.6s ease 1s forwards" }}>
-            <span className="inline-flex items-center gap-1.5 bg-[rgba(255,59,48,0.12)] border border-[rgba(255,59,48,0.3)] text-white text-xs font-semibold px-3.5 py-1.5 rounded-full tracking-wide uppercase">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#FF3B30] animate-pulse" />
+            <span className="inline-flex items-center gap-1.5 bg-[rgba(239,68,68,0.12)] border border-[rgba(239,68,68,0.3)] text-white text-xs font-semibold px-3.5 py-1.5 rounded-full tracking-wide uppercase">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#EF4444] animate-pulse" />
               +10 anos · +5.000 eventos
             </span>
           </div>

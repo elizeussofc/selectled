@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -46,7 +46,7 @@ export function Header({ citySlug }: HeaderProps) {
       )}
     >
       {!scrolled && (
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#FF3B30]/40 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#EF4444]/40 to-transparent" />
       )}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -93,8 +93,8 @@ export function Header({ citySlug }: HeaderProps) {
               className={cn(
                 "px-3 py-1.5 text-[13px] font-semibold transition-colors duration-150 rounded-md ml-1",
                 pathname.startsWith(`/${citySlug}/vendas`)
-                  ? "text-[#FF3B30] bg-[rgba(255,59,48,0.1)]"
-                  : "text-[#FF3B30] hover:bg-[rgba(255,59,48,0.08)]"
+                  ? "text-[#EF4444] bg-[rgba(239,68,68,0.1)]"
+                  : "text-[#EF4444] hover:bg-[rgba(239,68,68,0.08)]"
               )}
             >
               {t.nav.venda}
@@ -106,7 +106,7 @@ export function Header({ citySlug }: HeaderProps) {
             <CitySwitcher currentCity={citySlug} />
             <Link
               href={`/${citySlug}/orcamento`}
-              className="hidden sm:inline-flex items-center h-8 px-4 rounded-lg bg-[#FF3B30] text-white text-xs font-semibold hover:bg-[#FF1A0E] transition-colors shadow-md shadow-red-900/30"
+              className="hidden sm:inline-flex items-center h-8 px-4 rounded-lg bg-[#EF4444] text-white text-xs font-semibold hover:bg-[#FF1A0E] transition-colors shadow-md shadow-red-900/30"
             >
               {t.nav.orcamento}
             </Link>
@@ -140,7 +140,7 @@ export function Header({ citySlug }: HeaderProps) {
             <Link
               href={`/${citySlug}/vendas`}
               onClick={() => setMenuOpen(false)}
-              className="px-3 py-2.5 rounded-lg text-sm font-semibold text-[#FF3B30] hover:bg-[rgba(255,59,48,0.08)] transition-colors"
+              className="px-3 py-2.5 rounded-lg text-sm font-semibold text-[#EF4444] hover:bg-[rgba(239,68,68,0.08)] transition-colors"
             >
               {t.nav.venda}
             </Link>
@@ -148,7 +148,7 @@ export function Header({ citySlug }: HeaderProps) {
               <Link
                 href={`/${citySlug}/orcamento`}
                 onClick={() => setMenuOpen(false)}
-                className="flex items-center justify-center h-10 rounded-lg bg-[#FF3B30] text-white text-sm font-semibold hover:bg-[#FF1A0E] transition-colors animate-cta-pulse"
+                className="flex items-center justify-center h-10 rounded-lg bg-[#EF4444] text-white text-sm font-semibold hover:bg-[#FF1A0E] transition-colors animate-cta-pulse"
               >
                 {t.sections.ctaPrimary}
               </Link>

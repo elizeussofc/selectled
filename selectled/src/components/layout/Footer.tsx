@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { MessageCircle, MapPin, Mail, Phone } from "lucide-react";
@@ -96,7 +96,7 @@ export function Footer({ citySlug }: FooterProps) {
               <li>
                 <Link
                   href={`/${citySlug}/vendas`}
-                  className="text-sm text-[#FF3B30] hover:text-[#FF6B60] transition-colors font-medium"
+                  className="text-sm text-[#EF4444] hover:text-[#FF6B60] transition-colors font-medium"
                 >
                   {t.buyPanel}
                 </Link>
@@ -114,7 +114,7 @@ export function Footer({ citySlug }: FooterProps) {
                     href={`/${c.slug}`}
                     className={`text-sm transition-colors ${
                       c.slug === citySlug
-                        ? "text-[#FF3B30]"
+                        ? "text-[#EF4444]"
                         : "text-[#6E6E73] hover:text-[#A1A1A6]"
                     }`}
                   >
@@ -133,7 +133,7 @@ export function Footer({ citySlug }: FooterProps) {
             {city && (
               <div className="space-y-3">
                 <div className="flex gap-2.5">
-                  <MapPin size={14} className="text-[#FF3B30] mt-0.5 shrink-0" />
+                  <MapPin size={14} className="text-[#EF4444] mt-0.5 shrink-0" />
                   <p className="text-sm text-[#6E6E73]">
                     {city.address.street}
                     {city.address.complement && <>, {city.address.complement}</>}
@@ -141,13 +141,13 @@ export function Footer({ citySlug }: FooterProps) {
                   </p>
                 </div>
                 <div className="flex gap-2.5">
-                  <Mail size={14} className="text-[#FF3B30] mt-0.5 shrink-0" />
+                  <Mail size={14} className="text-[#EF4444] mt-0.5 shrink-0" />
                   <a href={`mailto:${city.rep.email}`} className="text-sm text-[#6E6E73] hover:text-[#A1A1A6] transition-colors">
                     {city.rep.email}
                   </a>
                 </div>
                 <div className="flex gap-2.5">
-                  <Phone size={14} className="text-[#FF3B30] mt-0.5 shrink-0" />
+                  <Phone size={14} className="text-[#EF4444] mt-0.5 shrink-0" />
                   <a
                     href={`https://wa.me/${city.rep.whatsapp}`}
                     target="_blank"

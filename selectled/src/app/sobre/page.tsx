@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { cities } from "@/data/cities";
 import { CitySearch } from "@/components/splash/CitySearch";
@@ -84,7 +84,7 @@ export default function SobrePage() {
           </Link>
           <nav className="flex items-center gap-4 text-sm text-[#A1A1A6]">
             <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
-            <Link href="/sao-paulo/orcamento" className="px-4 py-1.5 bg-[#FF3B30] text-white rounded-lg text-sm font-semibold hover:bg-[#FF1A0E] transition-colors">
+            <Link href="/sao-paulo/orcamento" className="px-4 py-1.5 bg-[#EF4444] text-white rounded-lg text-sm font-semibold hover:bg-[#FF1A0E] transition-colors">
               Orçamento
             </Link>
           </nav>
@@ -96,7 +96,7 @@ export default function SobrePage() {
         <section className="py-24 border-b border-[#1C1C1E]">
           <Container>
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#FF3B30] mb-4">Sobre nós</p>
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#EF4444] mb-4">Sobre nós</p>
               <h1 className="text-5xl sm:text-6xl font-bold text-white mb-6 leading-tight" style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.03em" }}>
                 Sobre a Select LED
               </h1>
@@ -123,8 +123,8 @@ export default function SobrePage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {values.map(({ icon: Icon, title, desc }) => (
                 <div key={title} className="p-6 bg-[#141414] border border-[#2C2C2E] rounded-2xl">
-                  <div className="p-2.5 bg-[rgba(255,59,48,0.1)] rounded-xl w-fit mb-4">
-                    <Icon size={20} className="text-[#FF3B30]" />
+                  <div className="p-2.5 bg-[rgba(239,68,68,0.1)] rounded-xl w-fit mb-4">
+                    <Icon size={20} className="text-[#EF4444]" />
                   </div>
                   <h3 className="font-semibold text-white mb-2" style={{ fontFamily: "var(--font-display)" }}>{title}</h3>
                   <p className="text-sm text-[#6E6E73] leading-relaxed">{desc}</p>
@@ -146,11 +146,11 @@ export default function SobrePage() {
                   {i < timeline.length - 1 && (
                     <div className="absolute left-[19px] top-10 w-0.5 h-full bg-[#2C2C2E]" />
                   )}
-                  <div className="w-10 h-10 rounded-full bg-[#1C1C1E] border-2 border-[#FF3B30] flex items-center justify-center shrink-0 z-10">
-                    <Calendar size={14} className="text-[#FF3B30]" />
+                  <div className="w-10 h-10 rounded-full bg-[#1C1C1E] border-2 border-[#EF4444] flex items-center justify-center shrink-0 z-10">
+                    <Calendar size={14} className="text-[#EF4444]" />
                   </div>
                   <div className="pt-1.5">
-                    <span className="text-sm font-bold text-[#FF3B30]">{t.year}</span>
+                    <span className="text-sm font-bold text-[#EF4444]">{t.year}</span>
                     <p className="text-[#A1A1A6] mt-0.5">{t.event}</p>
                   </div>
                 </div>
@@ -168,7 +168,7 @@ export default function SobrePage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
               {team.map((member) => (
                 <div key={member.name} className="bg-[#141414] border border-[#2C2C2E] rounded-2xl p-5 text-center">
-                  <div className="w-20 h-20 rounded-full mx-auto mb-4 border-2 border-[rgba(255,59,48,0.2)] overflow-hidden bg-[#1C1C1E] flex items-center justify-center">
+                  <div className="w-20 h-20 rounded-full mx-auto mb-4 border-2 border-[rgba(239,68,68,0.2)] overflow-hidden bg-[#1C1C1E] flex items-center justify-center">
                     {member.photo ? (
                       // eslint-disable-next-line @next/next/no-img-element
                       <img src={member.photo} alt={member.name} className="w-full h-full object-cover object-top" />
@@ -177,7 +177,7 @@ export default function SobrePage() {
                     )}
                   </div>
                   <h3 className="text-sm font-semibold text-white mb-1">{member.name}</h3>
-                  <p className="text-xs text-[#FF3B30] font-medium mb-2">{member.role}</p>
+                  <p className="text-xs text-[#EF4444] font-medium mb-2">{member.role}</p>
                   <p className="text-xs text-[#6E6E73] leading-relaxed">{member.specialty}</p>
                 </div>
               ))}
@@ -199,9 +199,9 @@ export default function SobrePage() {
                 <Link
                   key={city.slug}
                   href={`/${city.slug}`}
-                  className="flex items-center gap-2.5 p-3.5 bg-[#141414] border border-[#2C2C2E] rounded-xl hover:border-[rgba(255,59,48,0.3)] hover:bg-[rgba(255,59,48,0.04)] transition-all group"
+                  className="flex items-center gap-2.5 p-3.5 bg-[#141414] border border-[#2C2C2E] rounded-xl hover:border-[rgba(239,68,68,0.3)] hover:bg-[rgba(239,68,68,0.04)] transition-all group"
                 >
-                  <MapPin size={13} className="text-[#3A3A3C] group-hover:text-[#FF3B30] transition-colors shrink-0" />
+                  <MapPin size={13} className="text-[#3A3A3C] group-hover:text-[#EF4444] transition-colors shrink-0" />
                   <div>
                     <p className="text-sm font-medium text-[#F5F5F7]">{city.name}</p>
                     <p className="text-xs text-[#6E6E73]">{city.region}</p>
@@ -221,7 +221,7 @@ export default function SobrePage() {
           <Container>
             <div className="max-w-3xl mx-auto">
               <div className="text-center mb-10">
-                <p className="text-xs font-semibold uppercase tracking-widest text-[#FF3B30] mb-2">Ecossistema</p>
+                <p className="text-xs font-semibold uppercase tracking-widest text-[#EF4444] mb-2">Ecossistema</p>
                 <h2 className="text-3xl font-bold text-white" style={{ fontFamily: "var(--font-display)" }}>Somos parte do Select Hub</h2>
                 <p className="text-[#A1A1A6] mt-3">Um ecossistema de empresas parceiras que oferecem soluções completas para produção de eventos.</p>
               </div>

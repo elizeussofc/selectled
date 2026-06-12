@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
@@ -46,7 +46,7 @@ export function CitySwitcher({ currentCity }: CitySwitcherProps) {
         )}
         aria-label="Trocar cidade"
       >
-        <MapPin size={13} className="text-[#FF3B30]" />
+        <MapPin size={13} className="text-[#EF4444]" />
         <span>{city?.name ?? currentCity}</span>
         <ChevronDown size={12} className="text-[#6E6E73]" />
       </button>
@@ -85,7 +85,7 @@ export function CitySwitcher({ currentCity }: CitySwitcherProps) {
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   placeholder="Buscar cidade..."
-                  className="w-full bg-[#1C1C1E] border border-[#2C2C2E] rounded-lg pl-8 pr-3 py-2 text-sm text-[#F5F5F7] placeholder:text-[#6E6E73] outline-none focus:border-[#FF3B30] transition-colors"
+                  className="w-full bg-[#1C1C1E] border border-[#2C2C2E] rounded-lg pl-8 pr-3 py-2 text-sm text-[#F5F5F7] placeholder:text-[#6E6E73] outline-none focus:border-[#EF4444] transition-colors"
                   autoFocus
                 />
               </div>
@@ -99,7 +99,7 @@ export function CitySwitcher({ currentCity }: CitySwitcherProps) {
                   className={cn(
                     "flex flex-col items-start px-3 py-2.5 rounded-lg text-left transition-all duration-150",
                     c.slug === currentCity
-                      ? "bg-[rgba(255,59,48,0.12)] border border-[rgba(255,59,48,0.3)] text-[#FF3B30]"
+                      ? "bg-[rgba(239,68,68,0.12)] border border-[rgba(239,68,68,0.3)] text-[#EF4444]"
                       : "hover:bg-[#1C1C1E] text-[#A1A1A6] hover:text-[#F5F5F7]"
                   )}
                 >
