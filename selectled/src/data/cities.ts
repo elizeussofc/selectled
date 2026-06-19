@@ -22,7 +22,7 @@ export type City = {
   heroBg: string;
 };
 
-export const cities: City[] = [
+const _allCities: City[] = [
   {
     slug: "sao-paulo",
     name: "São Paulo",
@@ -378,6 +378,8 @@ export const cities: City[] = [
     heroBg: "/heroes/ribeirao-preto.webp",
   },
 ];
+
+export const cities = _allCities.filter((c) => c.slug === "sao-paulo");
 
 export const getCityBySlug = (slug: string): City | undefined =>
   cities.find((c) => c.slug === slug);
