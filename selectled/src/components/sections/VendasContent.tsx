@@ -1,6 +1,7 @@
 ﻿"use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { MessageCircle, ChevronRight, ArrowDown, ExternalLink, Globe, Wrench, Shield, GraduationCap } from "lucide-react";
 import type { City } from "@/data/cities";
 import { products } from "@/data/products";
@@ -146,13 +147,14 @@ export function VendasContent({ city, citySlug }: Props) {
                   key={product.slug}
                   className="group bg-[#141414] border border-[#2C2C2E] rounded-2xl overflow-hidden hover:border-[rgba(255,0,0,0.4)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-red-900/20"
                 >
-                  <div className="relative h-48 bg-gradient-to-br from-[#1A1A1A] to-[#0D0D0D] flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="text-3xl font-black text-[rgba(255,0,0,0.15)] mb-1" style={{ fontFamily: "var(--font-display)" }}>
-                        {product.shortName}
-                      </div>
-                      <div className="text-xs text-[#3A3A3C]">{product.pitch} pitch</div>
-                    </div>
+                  <div className="relative h-48 bg-gradient-to-br from-[#1A1A1A] to-[#0D0D0D]">
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover"
+                    />
                     {product.tag && (
                       <div className="absolute top-3 right-3">
                         <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${

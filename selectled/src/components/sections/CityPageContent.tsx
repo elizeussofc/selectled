@@ -212,7 +212,7 @@ export function CityPageContent({ city, cases, cidade }: Props) {
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-display)" }}>
                 {t.sections.servicesTitle}
               </h2>
-              <p className="text-[#A1A1A6] max-w-sm mx-auto text-sm">
+              <p className="text-[#A1A1A6] mx-auto text-sm md:whitespace-nowrap">
                 {tpl(t.sections.servicesSubtitle, { city: city.name })}
               </p>
             </div>
