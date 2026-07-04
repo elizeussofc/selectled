@@ -77,10 +77,10 @@ export const cities: City[] = [
     lat: -23.4538,
     lng: -46.5333,
     rep: {
-      name: "A confirmar",
+      name: "Elizzeu Santos",
       role: "Representante Comercial",
-      photo: "/team/placeholder.jpg",
-      whatsapp: "5511971945576",
+      photo: "/team/elizzeu.jpg",
+      whatsapp: "5511958691438",
       email: "guarulhos@selectled.com.br",
     },
     address: {
