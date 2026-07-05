@@ -6,8 +6,8 @@ import { useRouter } from "next/navigation";
 export type TransitionPhase = "idle" | "playing" | "revealing";
 
 export const TRANSITION_FADE_MS = 700;
-const VIDEO_DURATION_MS = 6000;
-const REVEAL_LEAD_MS = 1000;
+const VIDEO_DURATION_MS = 2970;
+const REVEAL_LEAD_MS = 0;
 const REVEAL_AT_MS = VIDEO_DURATION_MS - REVEAL_LEAD_MS;
 
 interface CityTransitionContextValue {
