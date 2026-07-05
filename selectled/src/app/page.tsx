@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { CityGrid } from "@/components/splash/CityGrid";
 import { CitySearch } from "@/components/splash/CitySearch";
 import { GeoBanner } from "@/components/splash/GeoBanner";
@@ -70,15 +69,15 @@ export default function SplashPage() {
   return (
     <main className="relative min-h-screen flex flex-col overflow-hidden bg-[#0A0A0A]">
 
-      {/* ── Background foto ── */}
+      {/* ── Background vídeo ── */}
       <div className="absolute inset-0">
-        <Image
-          src="/hero-splash.jpg"
-          alt=""
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw"
+        <video
+          className="absolute inset-0 w-full h-full object-cover opacity-60"
+          src="/videos/splash-bg.webm"
+          autoPlay
+          loop
+          muted
+          playsInline
         />
         {/* Camadas de overlay */}
         <div className="absolute inset-0 bg-black/70" />
