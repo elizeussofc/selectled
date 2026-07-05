@@ -39,6 +39,14 @@ export function VendasContent({ city, citySlug }: Props) {
         <section className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-[#0A0A0A]" />
+            <video
+              className="absolute inset-0 w-full h-full object-cover opacity-50"
+              src="/videos/vendas-hero-bg.webm"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_40%,rgba(255,0,0,0.08)_0%,transparent_70%)]" />
             <div
               className="absolute inset-0 opacity-[0.04]"
@@ -54,11 +62,11 @@ export function VendasContent({ city, citySlug }: Props) {
               {tpl(v.badge, { city: city.name })}
             </p>
             <h1
-              className="text-6xl sm:text-7xl md:text-8xl font-bold text-white mb-6 leading-none"
+              className="text-[10vw] sm:text-7xl md:text-8xl font-bold text-white mb-6 leading-none"
               style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.04em" }}
             >
-              {v.h1Part1}<br />
-              <span className="text-[#FF0000]">{v.h1Part2}</span>
+              <span className="block whitespace-nowrap">{v.h1Part1}</span>
+              <span className="block whitespace-nowrap text-[#FF0000]">{v.h1Part2}</span>
             </h1>
             <p className="text-xl text-[#A1A1A6] mb-12 max-w-lg mx-auto leading-relaxed">
               {tpl(v.desc, { city: city.name })}
