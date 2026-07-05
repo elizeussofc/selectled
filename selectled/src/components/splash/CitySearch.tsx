@@ -1,9 +1,9 @@
 ﻿"use client";
 
 import { useState, useRef, useEffect } from "react";
-import { useRouter } from "next/navigation";
 import { Search, MapPin } from "lucide-react";
 import { cities } from "@/data/cities";
+import { useCityTransition } from "@/contexts/city-transition-context";
 
 interface CitySearchProps {
   onFocus?: () => void;
@@ -13,7 +13,7 @@ export function CitySearch({ onFocus }: CitySearchProps) {
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
-  const router = useRouter();
+  const { startTransition } = useCityTransition();
 
   const results = query.length > 0
     ? cities.filter((c) =>
@@ -33,8 +33,7 @@ export function CitySearch({ onFocus }: CitySearchProps) {
   }, []);
 
   function handleSelect(slug: string) {
-    document.cookie = `preferred-city=${slug}; max-age=${60 * 60 * 24 * 30}; path=/`;
-    router.push(`/${slug}`);
+    startTransition(slug);
   }
 
   return (

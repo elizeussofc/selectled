@@ -1,8 +1,8 @@
 ﻿"use client";
 
-import { useRouter } from "next/navigation";
 import { MapPin } from "lucide-react";
 import { cities } from "@/data/cities";
+import { useCityTransition } from "@/contexts/city-transition-context";
 
 const groups = [
   { label: "Capital",          regions: ["Capital"] },
@@ -14,11 +14,10 @@ const groups = [
 ];
 
 export function CityGrid() {
-  const router = useRouter();
+  const { startTransition } = useCityTransition();
 
   function handleCity(slug: string) {
-    document.cookie = `preferred-city=${slug}; max-age=${60 * 60 * 24 * 30}; path=/`;
-    router.push(`/${slug}`);
+    startTransition(slug);
   }
 
   return (

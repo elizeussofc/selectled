@@ -1,5 +1,6 @@
 ﻿"use client";
 
+import { useState, type CSSProperties } from "react";
 import Link from "next/link";
 import {
   Monitor, Volume2, Camera, Wifi, BadgeCheck,
@@ -16,6 +17,7 @@ import { Button } from "@/components/ui/Button";
 import { Container, Section } from "@/components/ui/Container";
 import { useT } from "@/contexts/language-context";
 import { tpl } from "@/data/translations";
+import { useCityTransition, TRANSITION_FADE_MS } from "@/contexts/city-transition-context";
 
 const LED_COLS = 16;
 const LED_ROWS = 11;
@@ -63,6 +65,19 @@ interface Props {
 
 export function CityPageContent({ city, cases, cidade }: Props) {
   const t = useT();
+  const { phase } = useCityTransition();
+  const [enteringViaTransition] = useState(() => phase === "playing");
+
+  const mainStyle: CSSProperties | undefined =
+    enteringViaTransition && phase === "playing"
+      ? { transform: "scale(1.15)", opacity: 0 }
+      : enteringViaTransition && phase === "revealing"
+      ? {
+          transform: "scale(1)",
+          opacity: 1,
+          transition: `transform ${TRANSITION_FADE_MS}ms ease, opacity ${TRANSITION_FADE_MS}ms ease`,
+        }
+      : undefined;
 
   const testimonials = t.testimonials.map((t) => ({
     ...t,
@@ -78,7 +93,7 @@ export function CityPageContent({ city, cases, cidade }: Props) {
     <>
       <Header citySlug={cidade} />
 
-      <main className="bg-[#0A0A0A]">
+      <main className="bg-[#0A0A0A]" style={mainStyle}>
         {/* Hero */}
         <section className="relative min-h-[90vh] flex items-center overflow-hidden">
           <div className="absolute inset-0">
