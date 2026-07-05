@@ -72,6 +72,14 @@ export default function SplashPage() {
       {/* ── Background vídeo ── */}
       <div className="absolute inset-0">
         <video
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/videos/splash-bg-base.webm"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+        <video
           className="absolute inset-0 w-full h-full object-cover opacity-60"
           src="/videos/splash-bg.webm"
           autoPlay
