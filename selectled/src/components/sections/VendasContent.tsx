@@ -57,7 +57,7 @@ export function VendasContent({ city, citySlug }: Props) {
             />
           </div>
 
-          <Container className="relative z-10 py-40">
+          <Container className="relative z-10 py-40 animate-hero-zoom-in">
             <p className="text-xs font-semibold uppercase tracking-widest text-[#FF0000] mb-6">
               {tpl(v.badge, { city: city.name })}
             </p>

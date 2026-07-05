@@ -69,6 +69,10 @@
   80%  { transform: scale(1.02); }
   100% { opacity: 1; transform: scale(1); }
 }
+@keyframes heroZoomIn {
+  0%   { opacity: 0; transform: scale(0.92); }
+  100% { opacity: 1; transform: scale(1); }
+}
 @keyframes ledR {
   0%   { text-shadow: 0 0 40px rgba(255,32,32,0.7), 0 0 100px rgba(255,32,32,0.3); }
   15%  { text-shadow: 0 0 10px rgba(255,32,32,0.2), 0 0 20px rgba(255,32,32,0.05); }
@@ -143,6 +147,7 @@
 .animate-pulse-red  { animation: pulseRed 2s ease-in-out infinite; }
 .animate-float      { animation: float 4s ease-in-out infinite; }
 .animate-cta-pulse  { animation: ctaPulse 2s ease-in-out infinite; }
+.animate-hero-zoom-in { animation: heroZoomIn 0.9s var(--ease-expo) both; }
 
 /* Staggered children */
 .stagger > * { animation: fadeUp 0.6s var(--ease-expo) both; }
