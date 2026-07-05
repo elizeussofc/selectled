@@ -83,6 +83,14 @@ export function CityPageContent({ city, cases, cidade }: Props) {
         <section className="relative min-h-[90vh] flex items-center overflow-hidden">
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-[#060606]" />
+            <video
+              className="absolute inset-0 w-full h-full object-cover opacity-60"
+              src="/videos/cidade-hero-bg.webm"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
             <div className="absolute -top-20 right-0 w-[1000px] h-[1000px] rounded-full" style={{ background: "radial-gradient(circle at 80% 20%, rgba(255,0,0,0.1) 0%, transparent 55%)" }} />
             <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full" style={{ background: "radial-gradient(circle, rgba(255,0,0,0.04) 0%, transparent 60%)" }} />
             <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)", backgroundSize: "72px 72px" }} />
