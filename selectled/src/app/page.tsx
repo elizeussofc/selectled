@@ -141,7 +141,7 @@ export default function SplashPage() {
 
           {/* Headline — zoom in principal */}
           <h1
-            className="text-7xl sm:text-8xl md:text-9xl font-black leading-none tracking-tight mb-4"
+            className="text-[14vw] sm:text-8xl md:text-9xl font-black leading-none tracking-tight mb-4"
             style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.02em", opacity: 0, animation: "zoomInSettle 0.9s cubic-bezier(0.16,1,0.3,1) 0.1s forwards" }}
           >
             <span style={{
@@ -164,7 +164,7 @@ export default function SplashPage() {
 
           {/* Subtítulo — fade in */}
           <p
-            className="text-sm sm:text-base text-[#A1A1A6] mb-5 whitespace-nowrap"
+            className="text-sm sm:text-base text-[#A1A1A6] mb-5 sm:whitespace-nowrap"
             style={{ fontFamily: "var(--font-body)", opacity: 0, animation: "fadeIn 0.6s ease 1.4s forwards" }}
           >
             Selecione sua cidade para falar com o representante local
