@@ -254,14 +254,18 @@ export default function SobrePage() {
                     </p>
                     <p className="text-xs text-[#6E6E73]">{city.rep.name} · {city.rep.role}</p>
                   </div>
-                  <div className="h-32 border-t border-[#2C2C2E]">
-                    <iframe
-                      src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU3Lro&q=${encodeURIComponent(`${city.address.street}, ${city.name}`)}&zoom=14`}
-                      width="100%" height="100%"
-                      style={{ border: 0, filter: "invert(90%) hue-rotate(180deg)" }}
-                      loading="lazy"
-                      title={`Sede em ${city.name}`}
-                    />
+                  <div className="border-t border-[#2C2C2E] px-5 py-3">
+                    <a
+                      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                        `${city.address.street}, ${city.address.district}, ${city.name}, ${city.state}`
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-[#6E6E73] hover:text-[#A1A1A6] transition-colors flex items-center gap-1.5"
+                    >
+                      <MapPin size={12} className="text-[#FF0000]" />
+                      Ver no mapa
+                    </a>
                   </div>
                 </div>
               ))}
