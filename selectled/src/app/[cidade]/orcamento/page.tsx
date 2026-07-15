@@ -47,6 +47,43 @@ const SERVICE_OPTIONS = [
   { value: "credenciamento", label: "Credenciamento / Staff" },
 ];
 
+function formatDate(dateStr?: string): string {
+  if (!dateStr) return "—";
+  const [y, m, d] = dateStr.split("-");
+  if (!y || !m || !d) return dateStr;
+  return `${d}/${m}/${y}`;
+}
+
+function buildOrcamentoMessage(full: FormData, cityName: string, repName: string): string {
+  const serviceLabels = (full.services ?? [])
+    .map((v) => SERVICE_OPTIONS.find((s) => s.value === v)?.label ?? v)
+    .join(", ") || "—";
+  const locationLabel = full.location === "indoor" ? "Indoor" : full.location === "outdoor" ? "Outdoor" : "Híbrido";
+  const hasPanel = full.services?.includes("paineis-led") && full.panelWidth && full.panelHeight;
+  const panelInfo = hasPanel
+    ? `${full.panelWidth}m × ${full.panelHeight}m (${(parseFloat(full.panelWidth!) * parseFloat(full.panelHeight!)).toFixed(1)} m²)`
+    : null;
+
+  const lines = [
+    `Olá, ${repName}! Segue o orçamento que montei para um evento em ${cityName}:`,
+    "",
+    `*Tipo de evento:* ${full.eventType}`,
+    `*Data:* ${formatDate(full.eventDate)}`,
+    `*Ambiente:* ${locationLabel}`,
+    `*Público estimado:* ${full.audience?.toLocaleString("pt-BR")} pessoas`,
+    `*Serviços:* ${serviceLabels}`,
+    ...(panelInfo ? [`*Painel LED:* ${panelInfo}`] : []),
+    ...(full.details ? [`*Detalhes:* ${full.details}`] : []),
+    "",
+    "*Meus dados*",
+    `Nome: ${full.name}`,
+    ...(full.company ? [`Empresa: ${full.company}`] : []),
+    `E-mail: ${full.email}`,
+    `WhatsApp: ${full.phone}`,
+  ];
+  return lines.join("\n");
+}
+
 interface Props { params: Promise<{ cidade: string }> }
 
 export default function OrcamentoPage({ params }: Props) {
@@ -58,7 +95,7 @@ export default function OrcamentoPage({ params }: Props) {
   const searchParams = useSearchParams();
   const [step, setStep] = useState(1);
   const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [waUrl, setWaUrl] = useState<string | null>(null);
   const [formData, setFormData] = useState<Partial<FormData>>({
     location: "indoor",
     audience: 200,
@@ -101,26 +138,25 @@ export default function OrcamentoPage({ params }: Props) {
     return merged;
   }
 
-  async function handleFinalSubmit(step3Data: z.infer<typeof step3Schema>) {
-    setLoading(true);
+  function handleFinalSubmit(step3Data: z.infer<typeof step3Schema>) {
     const full = save(step3Data) as FormData;
-    try {
-      const res = await fetch("/api/orcamento", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...full, cidade, cityName: safeCity.name, repEmail: safeCity.rep.email, repName: safeCity.rep.name }),
-      });
-      if (res.ok) {
-        localStorage.removeItem(`orcamento-${cidade}`);
-        setSubmitted(true);
-      } else {
-        alert("Erro ao enviar. Tente pelo WhatsApp abaixo.");
-      }
-    } catch {
-      alert("Erro ao enviar. Tente pelo WhatsApp abaixo.");
-    } finally {
-      setLoading(false);
-    }
+
+    // Abre o WhatsApp do representante já com o orçamento organizado —
+    // precisa ser síncrono (sem await antes) para o navegador não bloquear o popup.
+    const message = buildOrcamentoMessage(full, safeCity.name, safeCity.rep.name);
+    const url = buildWhatsAppUrl(safeCity.rep.whatsapp, message);
+    setWaUrl(url);
+    window.open(url, "_blank", "noopener,noreferrer");
+
+    localStorage.removeItem(`orcamento-${cidade}`);
+    setSubmitted(true);
+
+    // Registro interno por e-mail — best effort, não bloqueia o fluxo do cliente.
+    fetch("/api/orcamento", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...full, cidade, cityName: safeCity.name, repEmail: safeCity.rep.email, repName: safeCity.rep.name }),
+    }).catch(() => {});
   }
 
   const progress = ((step - 1) / 3) * 100;
@@ -138,14 +174,15 @@ export default function OrcamentoPage({ params }: Props) {
               <CheckCircle size={32} className="text-[#30D158]" />
             </div>
             <h1 className="text-3xl font-bold text-white mb-3" style={{ fontFamily: "var(--font-display)" }}>
-              Orçamento enviado!
+              Abrimos seu WhatsApp!
             </h1>
             <p className="text-[#A1A1A6] mb-4">
-              Sua proposta chegará pelo <strong className="text-white">{city.rep.name}</strong> em até 2h úteis.
+              Seu orçamento já foi organizado e está pronto no WhatsApp de{" "}
+              <strong className="text-white">{city.rep.name}</strong> — é só conferir e apertar enviar por lá.
             </p>
-            <a href={waFallback} target="_blank" rel="noopener noreferrer" className="block mb-6">
+            <a href={waUrl ?? waFallback} target="_blank" rel="noopener noreferrer" className="block mb-6">
               <Button size="lg" variant="whatsapp" className="w-full justify-center">
-                <MessageCircle size={18} /> Quer falar agora? WhatsApp
+                <MessageCircle size={18} /> Não abriu? Reabrir WhatsApp
               </Button>
             </a>
             <Link href={`/${cidade}`} className="text-sm text-[#6E6E73] hover:text-white transition-colors">
@@ -227,7 +264,7 @@ export default function OrcamentoPage({ params }: Props) {
 
             {step === 1 && <Step1 initial={formData} onNext={(d) => { save(d); setStep(2); }} />}
             {step === 2 && <Step2 initial={formData} onNext={(d) => { save(d); setStep(3); }} onBack={() => setStep(1)} />}
-            {step === 3 && <Step3 initial={formData} onSubmit={handleFinalSubmit} onBack={() => setStep(2)} loading={loading} cityName={city.name} />}
+            {step === 3 && <Step3 initial={formData} onSubmit={handleFinalSubmit} onBack={() => setStep(2)} cityName={city.name} />}
           </div>
         </div>
       </div>
@@ -341,11 +378,10 @@ function Step2({ initial, onNext, onBack }: { initial: Partial<FormData>; onNext
 }
 
 /* ── Step 3 ── */
-function Step3({ initial, onSubmit, onBack, loading, cityName }: {
+function Step3({ initial, onSubmit, onBack, cityName }: {
   initial: Partial<FormData>;
   onSubmit: (d: z.infer<typeof step3Schema>) => void;
   onBack: () => void;
-  loading: boolean;
   cityName: string;
 }) {
   const { register, handleSubmit, formState: { errors } } = useForm<z.infer<typeof step3Schema>>({
@@ -378,8 +414,8 @@ function Step3({ initial, onSubmit, onBack, loading, cityName }: {
         <button type="button" onClick={onBack} className="flex items-center gap-2 px-4 py-2.5 text-sm text-[#A1A1A6] hover:text-white transition-colors">
           <ArrowLeft size={14} /> Anterior
         </button>
-        <Button type="submit" size="lg" className="flex-1 justify-center" disabled={loading}>
-          {loading ? "Enviando..." : `Enviar e receber proposta em até 2h`}
+        <Button type="submit" size="lg" className="flex-1 justify-center">
+          <MessageCircle size={16} /> Enviar orçamento via WhatsApp
         </Button>
       </div>
     </form>

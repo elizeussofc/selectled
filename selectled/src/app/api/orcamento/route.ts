@@ -11,14 +11,15 @@ export async function POST(req: NextRequest) {
       location,
       audience,
       services,
-      width,
-      height,
+      panelWidth,
+      panelHeight,
       details,
       name,
       company,
       email,
       phone,
       acceptWhatsApp,
+      repName,
     } = body;
 
     if (!name || !email || !phone || !cidade) {
@@ -33,8 +34,8 @@ export async function POST(req: NextRequest) {
 
     const servicesList = Array.isArray(services) ? services.join(", ") : services ?? "—";
     const panelInfo =
-      services?.includes("paineis-led") && width && height
-        ? `${width}m × ${height}m (${(parseFloat(width) * parseFloat(height)).toFixed(1)} m²)`
+      services?.includes("paineis-led") && panelWidth && panelHeight
+        ? `${panelWidth}m × ${panelHeight}m (${(parseFloat(panelWidth) * parseFloat(panelHeight)).toFixed(1)} m²)`
         : "—";
 
     const htmlBody = `
@@ -64,6 +65,7 @@ export async function POST(req: NextRequest) {
         <h2 style="color: #FF0000; font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 16px;">Dados do evento</h2>
         <table style="width: 100%; border-collapse: collapse;">
           <tr><td style="padding: 8px 0; color: #6E6E73; font-size: 14px; width: 140px;">Cidade</td><td style="color: #F5F5F7; font-size: 14px;">${cidade}</td></tr>
+          ${repName ? `<tr><td style="padding: 8px 0; color: #6E6E73; font-size: 14px;">Representante</td><td style="color: #F5F5F7; font-size: 14px;">${repName}</td></tr>` : ""}
           <tr><td style="padding: 8px 0; color: #6E6E73; font-size: 14px;">Tipo</td><td style="color: #F5F5F7; font-size: 14px;">${eventType ?? "—"}</td></tr>
           <tr><td style="padding: 8px 0; color: #6E6E73; font-size: 14px;">Data</td><td style="color: #F5F5F7; font-size: 14px;">${eventDate ?? "—"}</td></tr>
           <tr><td style="padding: 8px 0; color: #6E6E73; font-size: 14px;">Ambiente</td><td style="color: #F5F5F7; font-size: 14px;">${location ?? "—"}</td></tr>
