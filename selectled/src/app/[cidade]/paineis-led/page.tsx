@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!city) return {};
   return {
     title: `Aluguel de Painel de LED em ${city.name} | Locação Diária | Select LED`,
-    description: `Locação de painéis de LED em ${city.name} a partir de R$ 450/m². P2, P2.5, P3 e outdoor. Entrega + montagem + operador. Orçamento em 2h.`,
+    description: `Locação de painéis de LED em ${city.name}. P2, P2.5, P3 e outdoor. Entrega + montagem + operador. Orçamento em 2h.`,
     alternates: { canonical: `https://selectled.com.br/${cidade}/paineis-led` },
   };
 }
@@ -31,7 +31,7 @@ export default async function PaineisLEDPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: [
-      { "@type": "Question", name: `Quanto custa alugar painel de LED em ${city.name}?`, acceptedAnswer: { "@type": "Answer", text: `Os preços variam de R$ 450/m²/dia (P4 outdoor) a R$ 800/m²/dia (P2.5 indoor). Solicite uma proposta personalizada.` } },
+      { "@type": "Question", name: `Quanto custa alugar painel de LED em ${city.name}?`, acceptedAnswer: { "@type": "Answer", text: `O valor varia conforme o modelo do painel, a metragem e o tempo de locação. Entre em contato para receber uma proposta personalizada.` } },
       { "@type": "Question", name: `Vocês fazem montagem em ${city.name}?`, acceptedAnswer: { "@type": "Answer", text: "Sim! Realizamos toda a montagem, calibração e desmontagem." } },
       { "@type": "Question", name: "Posso alugar por apenas um dia?", acceptedAnswer: { "@type": "Answer", text: "Sim, trabalhamos com locações por evento — diárias ou multi-diárias." } },
     ],
