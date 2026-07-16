@@ -1,4 +1,5 @@
 ﻿import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/blog";
 import { Container, Section } from "@/components/ui/Container";
@@ -61,14 +62,16 @@ export default function BlogPage() {
                     className="group bg-[#111] border border-[#1C1C1E] rounded-2xl overflow-hidden hover:border-[rgba(255,0,0,0.3)] transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/60"
                   >
                     <div className="h-44 relative overflow-hidden bg-[#0D0D0D]">
-                      {/* Grid pattern */}
-                      <div
-                        className="absolute inset-0 opacity-[0.04]"
-                        style={{
-                          backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
-                          backgroundSize: "36px 36px",
-                        }}
+                      {/* Post image */}
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                       />
+                      {/* Darken for legibility */}
+                      <div className="absolute inset-0 bg-[#0A0A0A]/40" />
                       {/* Red glow accent */}
                       <div
                         className={`absolute w-40 h-40 rounded-full opacity-20 group-hover:opacity-30 transition-opacity duration-300 ${
@@ -81,18 +84,14 @@ export default function BlogPage() {
                         }`}
                         style={{ background: "radial-gradient(circle, #FF0000 0%, transparent 70%)" }}
                       />
-                      {/* Post number */}
-                      <div className="absolute bottom-3 right-4 text-[64px] font-black leading-none text-white/[0.04] select-none" style={{ fontFamily: "var(--font-display)" }}>
-                        {String(idx + 1).padStart(2, "0")}
-                      </div>
                       {/* Category badge */}
                       <div className="absolute top-3 left-3">
-                        <span className="text-xs font-semibold bg-[rgba(255,0,0,0.15)] border border-[rgba(255,0,0,0.2)] text-[#FF0000] px-2.5 py-1 rounded-full">
+                        <span className="text-xs font-semibold bg-[rgba(255,0,0,0.15)] border border-[rgba(255,0,0,0.2)] text-[#FF0000] px-2.5 py-1 rounded-full backdrop-blur-sm">
                           {post.category}
                         </span>
                       </div>
                       {/* Bottom fade */}
-                      <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#111] to-transparent" />
+                      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#111] to-transparent" />
                     </div>
                     <div className="p-5">
                       <h2 className="text-base font-semibold text-white mb-2 line-clamp-2 group-hover:text-[#FF0000] transition-colors" style={{ fontFamily: "var(--font-display)" }}>

@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getPostBySlug, getAllPostSlugs, getAllPosts } from "@/lib/blog";
@@ -96,10 +97,13 @@ export default async function BlogPostPage({ params }: Props) {
                 {post.title}
               </h1>
               <p className="text-lg text-[#A1A1A6] mb-6">{post.description}</p>
-              <div className="flex flex-wrap items-center gap-4 text-sm text-[#6E6E73]">
+              <div className="flex flex-wrap items-center gap-4 text-sm text-[#6E6E73] mb-8">
                 <span className="flex items-center gap-1.5"><Calendar size={13} />{new Date(post.date).toLocaleDateString("pt-BR", { day: "2-digit", month: "long", year: "numeric" })}</span>
                 <span className="flex items-center gap-1.5"><Clock size={13} />{post.readingTime}</span>
                 <span className="text-[#3A3A3C]">por {post.author}</span>
+              </div>
+              <div className="relative w-full aspect-[1200/630] rounded-2xl overflow-hidden border border-[#1C1C1E]">
+                <Image src={post.image} alt={post.title} fill sizes="(max-width: 768px) 100vw, 768px" className="object-cover" priority />
               </div>
             </div>
           </Container>
