@@ -9,6 +9,11 @@ export const metadata: Metadata = {
   title: "Sobre a Select LED | +10 anos em Painéis de LED no Brasil",
   description: "Conheça a Select LED, parte do Select Hub. +10 anos de mercado, +5.000 eventos, 3 sedes e atendimento em 16 cidades do estado de SP.",
   alternates: { canonical: "https://selectledpro.com.br/sobre" },
+  openGraph: {
+    title: "Sobre a Select LED | +10 anos em Painéis de LED no Brasil",
+    description: "Conheça a Select LED, parte do Select Hub. +10 anos de mercado, +5.000 eventos, 3 sedes e atendimento em 16 cidades do estado de SP.",
+    images: [`/api/og?title=${encodeURIComponent("Sobre a Select LED")}&type=default`],
+  },
 };
 
 const team = [

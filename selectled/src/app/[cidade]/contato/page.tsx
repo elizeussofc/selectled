@@ -11,10 +11,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { cidade } = await params;
   const city = getCityBySlug(cidade);
   if (!city) return {};
+  const title = `Contato Select LED em ${city.name} | Fale com ${city.rep.name}`;
+  const description = `Entre em contato com a Select LED em ${city.name}. WhatsApp direto com ${city.rep.name}. Endereço: ${city.address.street}.`;
   return {
-    title: `Contato Select LED em ${city.name} | Fale com ${city.rep.name}`,
-    description: `Entre em contato com a Select LED em ${city.name}. WhatsApp direto com ${city.rep.name}. Endereço: ${city.address.street}.`,
+    title,
+    description,
     alternates: { canonical: `https://selectledpro.com.br/${cidade}/contato` },
+    openGraph: { title, description, images: [`/api/og?title=${encodeURIComponent(title)}&city=${encodeURIComponent(city.name)}&type=city`] },
   };
 }
 

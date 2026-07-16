@@ -9,6 +9,11 @@ export const metadata: Metadata = {
   title: "Blog | Select LED — Tudo sobre Painéis de LED para Eventos",
   description: "Artigos, guias e dicas sobre painéis de LED para eventos. Aprenda sobre modelos, preços, instalação e tendências do mercado.",
   alternates: { canonical: "https://selectledpro.com.br/blog" },
+  openGraph: {
+    title: "Blog | Select LED — Tudo sobre Painéis de LED para Eventos",
+    description: "Artigos, guias e dicas sobre painéis de LED para eventos. Aprenda sobre modelos, preços, instalação e tendências do mercado.",
+    images: [`/api/og?title=${encodeURIComponent("Blog Select LED")}&type=blog`],
+  },
 };
 
 export default function BlogPage() {

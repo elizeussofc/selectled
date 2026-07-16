@@ -17,9 +17,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { cidade } = await params;
   const city = getCityBySlug(cidade);
   if (!city) return {};
+  const title = `Instalação de Painel LED em ${city.name} | Equipe Certificada | Select LED`;
+  const description = `Instalação profissional de painéis de LED em ${city.name}. Equipe técnica certificada, projeto de estrutura, cabeamento e comissionamento incluso.`;
   return {
-    title: `Instalação de Painel LED em ${city.name} | Equipe Certificada | Select LED`,
-    description: `Instalação profissional de painéis de LED em ${city.name}. Equipe técnica certificada, projeto de estrutura, cabeamento e comissionamento incluso.`,
+    title,
+    description,
+    alternates: { canonical: `https://selectledpro.com.br/${cidade}/vendas/instalacao` },
+    openGraph: { title, description, images: [`/api/og?title=${encodeURIComponent(title)}&city=${encodeURIComponent(city.name)}&type=city`] },
   };
 }
 

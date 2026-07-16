@@ -12,10 +12,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { cidade } = await params;
   const city = getCityBySlug(cidade);
   if (!city) return {};
+  const title = `Som e Iluminação para Eventos em ${city.name} | Select LED`;
+  const description = `Locação de sistema de som e iluminação em ${city.name}. Mesa digital, line array, moving heads. Operador incluso. Orçamento em 2h.`;
   return {
-    title: `Som e Iluminação para Eventos em ${city.name} | Select LED`,
-    description: `Locação de sistema de som e iluminação em ${city.name}. Mesa digital, line array, moving heads. Operador incluso. Orçamento em 2h.`,
+    title,
+    description,
     alternates: { canonical: `https://selectledpro.com.br/${cidade}/som-iluminacao` },
+    openGraph: { title, description, images: [`/api/og?title=${encodeURIComponent(title)}&city=${encodeURIComponent(city.name)}&type=city`] },
   };
 }
 

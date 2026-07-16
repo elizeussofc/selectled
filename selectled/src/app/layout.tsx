@@ -25,6 +25,20 @@ export const metadata: Metadata = {
   },
   description:
     "Locação e venda de painéis de LED para eventos em toda a Grande SP e interior. Atendimento local, +10 anos, +5.000 eventos. Orçamento em 2h.",
+  keywords: [
+    "painel de led para eventos",
+    "aluguel de painel de led",
+    "locação de painel de led",
+    "painel de led para eventos corporativos",
+    "painel de led para casamento",
+    "painel de led para igreja",
+    "tela de led para eventos",
+    "video wall para eventos",
+    "empresa de painel de led",
+    "comprar painel de led",
+    "painel de led indoor",
+    "painel de led outdoor",
+  ],
   metadataBase: new URL("https://selectledpro.com.br"),
   openGraph: {
     type: "website",
@@ -33,7 +47,7 @@ export const metadata: Metadata = {
     siteName: "Select LED",
     title: "Select LED — Painéis de LED para Eventos no Brasil",
     description: "Locação e venda de painéis de LED para eventos em toda a Grande SP e interior.",
-    images: [{ url: "/og-default.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/api/og", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
@@ -43,6 +57,19 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  // Após criar a propriedade no Google Search Console, cole o código de verificação aqui:
+  // verification: { google: "SEU_CODIGO_AQUI" },
 };
 
 export default function RootLayout({

@@ -12,9 +12,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { cidade } = await params;
   const city = getCityBySlug(cidade);
   if (!city) return {};
+  const title = `Painel LED Outdoor em ${city.name} | Compra e Instalação IP65 | Select LED`;
+  const description = `Compra de painéis de LED outdoor IP65 em ${city.name}. P3.9 e P4 com alto brilho. Suporta chuva, sol e vento. Garantia 2 anos.`;
   return {
-    title: `Painel LED Outdoor em ${city.name} | Compra e Instalação IP65 | Select LED`,
-    description: `Compra de painéis de LED outdoor IP65 em ${city.name}. P3.9 e P4 com alto brilho. Suporta chuva, sol e vento. Garantia 2 anos.`,
+    title,
+    description,
+    alternates: { canonical: `https://selectledpro.com.br/${cidade}/vendas/outdoor` },
+    openGraph: { title, description, images: [`/api/og?title=${encodeURIComponent(title)}&city=${encodeURIComponent(city.name)}&type=city`] },
   };
 }
 

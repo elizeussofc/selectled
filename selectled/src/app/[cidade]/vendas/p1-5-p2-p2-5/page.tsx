@@ -12,9 +12,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { cidade } = await params;
   const city = getCityBySlug(cidade);
   if (!city) return {};
+  const title = `Painel LED P1.5, P2 e P2.5 em ${city.name} | Alta Resolução | Select LED`;
+  const description = `Compra de painéis LED de alta resolução (P1.5, P2, P2.5) em ${city.name}. Pixel pitch ultra-fino para estúdios, igrejas e auditórios VIP. Garantia 2 anos.`;
   return {
-    title: `Painel LED P1.5, P2 e P2.5 em ${city.name} | Alta Resolução | Select LED`,
-    description: `Compra de painéis LED de alta resolução (P1.5, P2, P2.5) em ${city.name}. Pixel pitch ultra-fino para estúdios, igrejas e auditórios VIP. Garantia 2 anos.`,
+    title,
+    description,
+    alternates: { canonical: `https://selectledpro.com.br/${cidade}/vendas/p1-5-p2-p2-5` },
+    openGraph: { title, description, images: [`/api/og?title=${encodeURIComponent(title)}&city=${encodeURIComponent(city.name)}&type=city`] },
   };
 }
 

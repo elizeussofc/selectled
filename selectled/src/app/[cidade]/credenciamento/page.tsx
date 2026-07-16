@@ -12,10 +12,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { cidade } = await params;
   const city = getCityBySlug(cidade);
   if (!city) return {};
+  const title = `Credenciamento de Eventos em ${city.name} | Staff e QR Code | Select LED`;
+  const description = `Sistema de credenciamento digital para eventos em ${city.name}. QR Code, RFID, impressão de crachás, totem e staff. Orçamento em 2h.`;
   return {
-    title: `Credenciamento de Eventos em ${city.name} | Staff e QR Code | Select LED`,
-    description: `Sistema de credenciamento digital para eventos em ${city.name}. QR Code, RFID, impressão de crachás, totem e staff. Orçamento em 2h.`,
+    title,
+    description,
     alternates: { canonical: `https://selectledpro.com.br/${cidade}/credenciamento` },
+    openGraph: { title, description, images: [`/api/og?title=${encodeURIComponent(title)}&city=${encodeURIComponent(city.name)}&type=city`] },
   };
 }
 

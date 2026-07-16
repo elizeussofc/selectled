@@ -15,10 +15,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { cidade } = await params;
   const city = getCityBySlug(cidade);
   if (!city) return {};
+  const title = `Aluguel de Painel de LED em ${city.name} | Locação Diária | Select LED`;
+  const description = `Locação de painéis de LED em ${city.name}. P2, P2.5, P3 e outdoor. Entrega + montagem + operador. Orçamento em 2h.`;
   return {
-    title: `Aluguel de Painel de LED em ${city.name} | Locação Diária | Select LED`,
-    description: `Locação de painéis de LED em ${city.name}. P2, P2.5, P3 e outdoor. Entrega + montagem + operador. Orçamento em 2h.`,
+    title,
+    description,
     alternates: { canonical: `https://selectledpro.com.br/${cidade}/paineis-led` },
+    openGraph: { title, description, images: [`/api/og?title=${encodeURIComponent(title)}&city=${encodeURIComponent(city.name)}&type=city`] },
   };
 }
 

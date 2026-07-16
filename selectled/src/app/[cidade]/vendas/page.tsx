@@ -11,10 +11,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { cidade } = await params;
   const city = getCityBySlug(cidade);
   if (!city) return {};
+  const title = `Comprar Painel de LED em ${city.name} | Indoor e Outdoor | Select LED`;
+  const description = `Venda de painéis de LED em ${city.name}. P1.5, P2, P3, outdoor. Instalação inclusa, garantia 2 anos e financiamento em até 48x.`;
   return {
-    title: `Comprar Painel de LED em ${city.name} | Indoor e Outdoor | Select LED`,
-    description: `Venda de painéis de LED em ${city.name}. P1.5, P2, P3, outdoor. Instalação inclusa, garantia 2 anos e financiamento em até 48x.`,
+    title,
+    description,
     alternates: { canonical: `https://selectledpro.com.br/${cidade}/vendas` },
+    openGraph: { title, description, images: [`/api/og?title=${encodeURIComponent(title)}&city=${encodeURIComponent(city.name)}&type=city`] },
   };
 }
 

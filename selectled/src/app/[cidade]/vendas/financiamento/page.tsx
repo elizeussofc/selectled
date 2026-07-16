@@ -18,9 +18,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { cidade } = await params;
   const city = getCityBySlug(cidade);
   if (!city) return {};
+  const title = `Financiamento de Painel LED em ${city.name} | Até 48x | Select LED`;
+  const description = `Financie seu painel de LED em ${city.name} em até 48 parcelas. Aprovação rápida, entrada flexível e assessoria completa da Select LED.`;
   return {
-    title: `Financiamento de Painel LED em ${city.name} | Até 48x | Select LED`,
-    description: `Financie seu painel de LED em ${city.name} em até 48 parcelas. Aprovação rápida, entrada flexível e assessoria completa da Select LED.`,
+    title,
+    description,
+    alternates: { canonical: `https://selectledpro.com.br/${cidade}/vendas/financiamento` },
+    openGraph: { title, description, images: [`/api/og?title=${encodeURIComponent(title)}&city=${encodeURIComponent(city.name)}&type=city`] },
   };
 }
 

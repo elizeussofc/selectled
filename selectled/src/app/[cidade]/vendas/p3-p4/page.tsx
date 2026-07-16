@@ -12,9 +12,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { cidade } = await params;
   const city = getCityBySlug(cidade);
   if (!city) return {};
+  const title = `Painel LED P3 e P4 em ${city.name} | Média Densidade | Select LED`;
+  const description = `Compra de painéis LED P3 e P4 em ${city.name}. Versatilidade para shows, feiras e fachadas. Custo-benefício excelente e garantia 2 anos.`;
   return {
-    title: `Painel LED P3 e P4 em ${city.name} | Média Densidade | Select LED`,
-    description: `Compra de painéis LED P3 e P4 em ${city.name}. Versatilidade para shows, feiras e fachadas. Custo-benefício excelente e garantia 2 anos.`,
+    title,
+    description,
+    alternates: { canonical: `https://selectledpro.com.br/${cidade}/vendas/p3-p4` },
+    openGraph: { title, description, images: [`/api/og?title=${encodeURIComponent(title)}&city=${encodeURIComponent(city.name)}&type=city`] },
   };
 }
 

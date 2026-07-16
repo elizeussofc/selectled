@@ -12,10 +12,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { cidade } = await params;
   const city = getCityBySlug(cidade);
   if (!city) return {};
+  const title = `Internet para Eventos em ${city.name} | Wi-Fi Gerenciado | Select LED`;
+  const description = `Infraestrutura de internet para eventos em ${city.name}. Wi-Fi gerenciado, link dedicado, backup 4G. Técnico presente. Orçamento em 2h.`;
   return {
-    title: `Internet para Eventos em ${city.name} | Wi-Fi Gerenciado | Select LED`,
-    description: `Infraestrutura de internet para eventos em ${city.name}. Wi-Fi gerenciado, link dedicado, backup 4G. Técnico presente. Orçamento em 2h.`,
+    title,
+    description,
     alternates: { canonical: `https://selectledpro.com.br/${cidade}/internet-eventos` },
+    openGraph: { title, description, images: [`/api/og?title=${encodeURIComponent(title)}&city=${encodeURIComponent(city.name)}&type=city`] },
   };
 }
 
