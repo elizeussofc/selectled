@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `Comprar Painel de LED em ${city.name} | Indoor e Outdoor | Select LED`,
     description: `Venda de painéis de LED em ${city.name}. P1.5, P2, P3, outdoor. Instalação inclusa, garantia 2 anos e financiamento em até 48x.`,
-    alternates: { canonical: `https://selectled.com.br/${cidade}/vendas` },
+    alternates: { canonical: `https://selectledpro.com.br/${cidade}/vendas` },
   };
 }
 

@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `Foto e Filmagem para Eventos em ${city.name} | Select LED`,
     description: `Cobertura fotográfica e videográfica para eventos em ${city.name}. 4K, streaming ao vivo, drone. Entrega em 7 dias. Orçamento em 2h.`,
-    alternates: { canonical: `https://selectled.com.br/${cidade}/foto-filmagem` },
+    alternates: { canonical: `https://selectledpro.com.br/${cidade}/foto-filmagem` },
   };
 }
 

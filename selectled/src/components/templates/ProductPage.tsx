@@ -108,14 +108,6 @@ export function ProductPage({
                       ))}
                     </tr>
                   ))}
-                  <tr className="border-b border-[#1C1C1E] bg-[rgba(255,0,0,0.03)]">
-                    <td className="py-3.5 px-5 text-[#6E6E73] font-medium">A partir de</td>
-                    {products.map((p) => (
-                      <td key={p.slug} className="py-3.5 px-5">
-                        <span className="font-bold text-white">R$ {p.priceFrom.toLocaleString("pt-BR")}/m²</span>
-                      </td>
-                    ))}
-                  </tr>
                 </tbody>
               </table>
             </div>

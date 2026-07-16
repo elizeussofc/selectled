@@ -185,13 +185,7 @@ export function VendasContent({ city, citySlug }: Props) {
                     </div>
                     <p className="text-xs text-[#6E6E73] mb-4">{product.description}</p>
                     <div className="flex items-center justify-between">
-                      <div>
-                        <p className="text-xs text-[#6E6E73]">{v.from}</p>
-                        <p className="text-lg font-bold text-white">
-                          R$ {product.priceFrom.toLocaleString("pt-BR")}
-                          <span className="text-xs text-[#6E6E73] font-normal">/m²</span>
-                        </p>
-                      </div>
+                      <p className="text-sm font-semibold text-white">{v.from}</p>
                       <a
                         href={`https://wa.me/${city.rep.whatsapp}?text=${encodeURIComponent(`Olá, tenho interesse no ${product.name} para ${city.name}.`)}`}
                         target="_blank"

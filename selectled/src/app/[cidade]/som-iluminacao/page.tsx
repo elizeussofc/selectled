@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `Som e Iluminação para Eventos em ${city.name} | Select LED`,
     description: `Locação de sistema de som e iluminação em ${city.name}. Mesa digital, line array, moving heads. Operador incluso. Orçamento em 2h.`,
-    alternates: { canonical: `https://selectled.com.br/${cidade}/som-iluminacao` },
+    alternates: { canonical: `https://selectledpro.com.br/${cidade}/som-iluminacao` },
   };
 }
 

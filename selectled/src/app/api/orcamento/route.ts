@@ -78,7 +78,7 @@ export async function POST(req: NextRequest) {
     </tr>
     <tr>
       <td style="background: #0D0D0D; padding: 16px 32px; text-align: center;">
-        <p style="color: #6E6E73; font-size: 12px; margin: 0;">Select LED · selectled.com.br · CNPJ 35.554.822/0001-07</p>
+        <p style="color: #6E6E73; font-size: 12px; margin: 0;">Select LED · selectledpro.com.br · CNPJ 35.554.822/0001-07</p>
       </td>
     </tr>
   </table>
@@ -138,7 +138,7 @@ export async function POST(req: NextRequest) {
     </tr>
     <tr>
       <td style="background: #0D0D0D; padding: 16px 32px; text-align: center;">
-        <p style="color: #6E6E73; font-size: 12px; margin: 0;">Select LED · selectled.com.br</p>
+        <p style="color: #6E6E73; font-size: 12px; margin: 0;">Select LED · selectledpro.com.br</p>
       </td>
     </tr>
   </table>

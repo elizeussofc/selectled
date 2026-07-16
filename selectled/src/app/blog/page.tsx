@@ -7,7 +7,7 @@ import { Calendar, Clock } from "lucide-react";
 export const metadata: Metadata = {
   title: "Blog | Select LED — Tudo sobre Painéis de LED para Eventos",
   description: "Artigos, guias e dicas sobre painéis de LED para eventos. Aprenda sobre modelos, preços, instalação e tendências do mercado.",
-  alternates: { canonical: "https://selectled.com.br/blog" },
+  alternates: { canonical: "https://selectledpro.com.br/blog" },
 };
 
 export default function BlogPage() {

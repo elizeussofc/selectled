@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `Contato Select LED em ${city.name} | Fale com ${city.rep.name}`,
     description: `Entre em contato com a Select LED em ${city.name}. WhatsApp direto com ${city.rep.name}. Endereço: ${city.address.street}.`,
-    alternates: { canonical: `https://selectled.com.br/${cidade}/contato` },
+    alternates: { canonical: `https://selectledpro.com.br/${cidade}/contato` },
   };
 }
 
@@ -27,7 +27,7 @@ export default async function ContatoPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     name: `Contato Select LED ${city.name}`,
-    url: `https://selectled.com.br/${cidade}/contato`,
+    url: `https://selectledpro.com.br/${cidade}/contato`,
     mainEntity: {
       "@type": "LocalBusiness",
       name: `Select LED ${city.name}`,

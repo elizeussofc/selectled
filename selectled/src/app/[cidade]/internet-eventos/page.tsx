@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `Internet para Eventos em ${city.name} | Wi-Fi Gerenciado | Select LED`,
     description: `Infraestrutura de internet para eventos em ${city.name}. Wi-Fi gerenciado, link dedicado, backup 4G. Técnico presente. Orçamento em 2h.`,
-    alternates: { canonical: `https://selectled.com.br/${cidade}/internet-eventos` },
+    alternates: { canonical: `https://selectledpro.com.br/${cidade}/internet-eventos` },
   };
 }
 

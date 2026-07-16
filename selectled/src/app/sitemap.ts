@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { getAllCitySlugs } from "@/data/cities";
 import { getAllPostSlugs } from "@/lib/blog";
 
-const BASE_URL = "https://selectled.com.br";
+const BASE_URL = "https://selectledpro.com.br";
 
 const CITY_SUBPAGES = [
   "",

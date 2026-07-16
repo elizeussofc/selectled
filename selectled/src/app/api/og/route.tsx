@@ -128,7 +128,7 @@ export async function GET(req: NextRequest) {
             paddingTop: "24px",
           }}
         >
-          <span style={{ color: "#6E6E73", fontSize: "16px" }}>selectled.com.br</span>
+          <span style={{ color: "#6E6E73", fontSize: "16px" }}>selectledpro.com.br</span>
           <div
             style={{
               background: "#FF0000",

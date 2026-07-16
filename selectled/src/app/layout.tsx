@@ -25,11 +25,11 @@ export const metadata: Metadata = {
   },
   description:
     "Locação e venda de painéis de LED para eventos em toda a Grande SP e interior. Atendimento local, +10 anos, +5.000 eventos. Orçamento em 2h.",
-  metadataBase: new URL("https://selectled.com.br"),
+  metadataBase: new URL("https://selectledpro.com.br"),
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "https://selectled.com.br",
+    url: "https://selectledpro.com.br",
     siteName: "Select LED",
     title: "Select LED — Painéis de LED para Eventos no Brasil",
     description: "Locação e venda de painéis de LED para eventos em toda a Grande SP e interior.",

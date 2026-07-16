@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${post.title} | Blog Select LED`,
     description: post.description,
     openGraph: { title: post.title, description: post.description, type: "article", images: [post.image] },
-    alternates: { canonical: `https://selectled.com.br/blog/${slug}` },
+    alternates: { canonical: `https://selectledpro.com.br/blog/${slug}` },
   };
 }
 
@@ -56,9 +56,9 @@ export default async function BlogPostPage({ params }: Props) {
     description: post.description,
     datePublished: post.date,
     author: { "@type": "Organization", name: "Select LED" },
-    publisher: { "@type": "Organization", name: "Select LED", logo: { "@type": "ImageObject", url: "https://selectled.com.br/logo.svg" } },
-    image: `https://selectled.com.br${post.image}`,
-    url: `https://selectled.com.br/blog/${slug}`,
+    publisher: { "@type": "Organization", name: "Select LED", logo: { "@type": "ImageObject", url: "https://selectledpro.com.br/logo.svg" } },
+    image: `https://selectledpro.com.br${post.image}`,
+    url: `https://selectledpro.com.br/blog/${slug}`,
   };
 
   return (
@@ -129,8 +129,8 @@ export default async function BlogPostPage({ params }: Props) {
                     <p className="text-xs font-semibold text-[#F5F5F7] mb-3">Compartilhar</p>
                     <div className="flex gap-2">
                       {[
-                        { icon: XIcon, label: "X", href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=https://selectled.com.br/blog/${slug}` },
-                        { icon: LinkedinSvg, label: "LinkedIn", href: `https://linkedin.com/sharing/share-offsite/?url=https://selectled.com.br/blog/${slug}` },
+                        { icon: XIcon, label: "X", href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=https://selectledpro.com.br/blog/${slug}` },
+                        { icon: LinkedinSvg, label: "LinkedIn", href: `https://linkedin.com/sharing/share-offsite/?url=https://selectledpro.com.br/blog/${slug}` },
                       ].map(({ icon: Icon, label, href }) => (
                         <a key={label} href={href} target="_blank" rel="noopener noreferrer"
                           className="flex items-center gap-1.5 px-3 py-2 bg-[#1C1C1E] border border-[#2C2C2E] rounded-lg text-xs text-[#A1A1A6] hover:text-white transition-colors">

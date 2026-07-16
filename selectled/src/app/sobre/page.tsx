@@ -8,7 +8,7 @@ import { MapPin, Calendar, Award, Handshake, Clock, TrendingUp } from "lucide-re
 export const metadata: Metadata = {
   title: "Sobre a Select LED | +10 anos em Painéis de LED no Brasil",
   description: "Conheça a Select LED, parte do Select Hub. +10 anos de mercado, +5.000 eventos, 3 sedes e atendimento em 16 cidades do estado de SP.",
-  alternates: { canonical: "https://selectled.com.br/sobre" },
+  alternates: { canonical: "https://selectledpro.com.br/sobre" },
 };
 
 const team = [
@@ -45,8 +45,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Select LED",
-  url: "https://selectled.com.br",
-  logo: "https://selectled.com.br/logo.svg",
+  url: "https://selectledpro.com.br",
+  logo: "https://selectledpro.com.br/logo.svg",
   description: "Locação e venda de painéis de LED para eventos em toda a Grande SP e interior.",
   foundingDate: "2014",
   numberOfEmployees: { "@type": "QuantitativeValue", value: 20 },

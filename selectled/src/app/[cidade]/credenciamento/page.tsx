@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `Credenciamento de Eventos em ${city.name} | Staff e QR Code | Select LED`,
     description: `Sistema de credenciamento digital para eventos em ${city.name}. QR Code, RFID, impressão de crachás, totem e staff. Orçamento em 2h.`,
-    alternates: { canonical: `https://selectled.com.br/${cidade}/credenciamento` },
+    alternates: { canonical: `https://selectledpro.com.br/${cidade}/credenciamento` },
   };
 }
 

@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/_next/"],
       },
     ],
-    sitemap: "https://selectled.com.br/sitemap.xml",
-    host: "https://selectled.com.br",
+    sitemap: "https://selectledpro.com.br/sitemap.xml",
+    host: "https://selectledpro.com.br",
   };
 }

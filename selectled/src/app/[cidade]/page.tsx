@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: `Aluguel de painel de LED em ${city.name} com ${city.rep.name}. Orçamento em 2h.`,
       images: [`/api/og?city=${cidade}`],
     },
-    alternates: { canonical: `https://selectled.com.br/${cidade}` },
+    alternates: { canonical: `https://selectledpro.com.br/${cidade}` },
     other: {
       "geo.region": `BR-${city.state}`,
       "geo.placename": city.name,
@@ -46,7 +46,7 @@ export default async function CityHomePage({ params }: Props) {
     "@type": "LocalBusiness",
     name: `Select LED ${city.name}`,
     description: `Locação e venda de painéis de LED para eventos em ${city.name}.`,
-    url: `https://selectled.com.br/${cidade}`,
+    url: `https://selectledpro.com.br/${cidade}`,
     telephone: `+${city.rep.whatsapp}`,
     email: city.rep.email,
     address: {
@@ -70,7 +70,7 @@ export default async function CityHomePage({ params }: Props) {
         closes: "18:00",
       },
     ],
-    image: `https://selectled.com.br/api/og?city=${cidade}`,
+    image: `https://selectledpro.com.br/api/og?city=${cidade}`,
   };
 
   return (

@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `Aluguel de Painel de LED em ${city.name} | Locação Diária | Select LED`,
     description: `Locação de painéis de LED em ${city.name}. P2, P2.5, P3 e outdoor. Entrega + montagem + operador. Orçamento em 2h.`,
-    alternates: { canonical: `https://selectled.com.br/${cidade}/paineis-led` },
+    alternates: { canonical: `https://selectledpro.com.br/${cidade}/paineis-led` },
   };
 }
 
